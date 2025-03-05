@@ -8,7 +8,7 @@ The end game of this series is to build scalable **.NET applications with Clean 
 
 #### By Mukesh Murugan | [LinkedIn](https://www.linkedin.com/in/iammukeshm/) | [Blog](https://www.codewithmukesh.com) | [Youtube](https://www.youtube.com/@codewithmukesh?sub_confirmation=1)
 
-### Join the Series along with 5,000+ other .NET Developers! 🎉 - [Subscribe](https://newsletter.codewithmukesh.com/subscribe)
+### Join the Series along with 5,000+ other .NET Developers! 🎉 - [Subscribe](https://newsletter.codewithmukesh.com)
 
 ### Subscribe to my YouTube Channel for .NET Content! 🎉 - [Subscribe](https://www.youtube.com/@codewithmukesh?sub_confirmation=1)
 
