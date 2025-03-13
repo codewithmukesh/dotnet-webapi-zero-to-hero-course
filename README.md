@@ -6,6 +6,8 @@ Hi Everyone, 👋
 
 _**NET Web API Zero to Hero**_ is  a Course for .NET Developers to learn .NET Web API Development effectively, with practical guides and complete source codes attached.
 
+![.NET Zero to Hero Series](/assets/dotnet-webapi-zero-to-hero-banner.png)
+
 This FREE course is carefully designed for .NET developers of all expertise levels - beginners to advanced developers.
 
 We’ll begin with the fundamentals and progressively dive into advanced topics such as Authentication, Logging, OpenTelemetry, Validation, CQRS, Vertical Slice Architecture, Docker, integrating External Identity Providers, and much more!
