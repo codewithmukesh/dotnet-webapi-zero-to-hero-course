@@ -6,8 +6,9 @@ Course Landing Page: [https://codewithmukesh.com/courses/dotnet-webapi-zero-to-h
 
 Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6PaucIB5A_eE5_gJTSY3](https://youtube.com/playlist?list=PLigUNuP4l_bMl6PaucIB5A_eE5_gJTSY3)
 
+# Course Syllabus
 
-# Chapter 1: Getting Started with .NET Web API
+## Chapter 1: Getting Started with .NET Web API
 
 - Day #1: REST Principles for .NET Developers – Understanding RESTful architecture and best practices.  
 - Day #2: Middleware & Request Pipeline – How ASP.NET Core processes incoming requests.  
@@ -21,7 +22,7 @@ Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6Pau
 - Day #10: Minimal API Endpoints – Understanding and using Minimal APIs in ASP.NET Core.  
 - Day #11: API Documentation – Generating OpenAPI docs and exploring Swagger alternatives.  
 
-# Chapter 2: Database Management with Entity Framework Core
+## Chapter 2: Database Management with Entity Framework Core
 
 - Day #12: CRUD with EF Core – Implementing basic CRUD operations in ASP.NET Core 9.  
 - Day #13: Relationships in EF Core – Configuring One-to-One, One-to-Many, and Many-to-Many.  
