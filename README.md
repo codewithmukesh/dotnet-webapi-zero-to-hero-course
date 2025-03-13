@@ -1,14 +1,38 @@
-# .NET Web API Zero to Hero - The Ultimate .NET Course for Web Developers!
+# .NET Web API Zero to Hero - The Ultimate .NET Course for Web Developers! 🚀
 > by Mukesh Murugan - [codewithmukesh.com](https://codewithmukesh.com/courses/dotnet-webapi-zero-to-hero/)
 >
 
-Course Landing Page: [https://codewithmukesh.com/courses/dotnet-webapi-zero-to-hero/](https://codewithmukesh.com/courses/dotnet-webapi-zero-to-hero/)
+Hi Everyone, 👋
 
-Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6PaucIB5A_eE5_gJTSY3](https://youtube.com/playlist?list=PLigUNuP4l_bMl6PaucIB5A_eE5_gJTSY3)
+_**NET Web API Zero to Hero**_ is  a Course for .NET Developers to learn .NET Web API Development effectively, with practical guides and complete source codes attached.
 
-# Course Syllabus
+This FREE course is carefully designed for .NET developers of all expertise levels - beginners to advanced developers.
 
-# Chapter 1: Getting Started with .NET Web API
+We’ll begin with the fundamentals and progressively dive into advanced topics such as Authentication, Logging, OpenTelemetry, Validation, CQRS, Vertical Slice Architecture, Docker, integrating External Identity Providers, and much more!
+
+By the end of this course, you’ll have the expertise to design, build, and deploy robust, scalable .NET Web APIs like a PRO.
+
+To stay connected with this ongoing course, here are few things you can do,
+1. Subscribe to my .NET Newsletter, and you will receive an email everytime a new piece of content is posted in this course - [Subscribe Here](https://newsletter.codewithmukesh.com/).
+2. Follow me on [LinkedIn](https://www.linkedin.com/in/iammukeshm/).
+3. Subscribe to my [.NET YouTube Channel](https://www.youtube.com/@codewithmukesh?sub_confirmation=1).
+
+
+## Important Links ❤️
+
+- Course Landing Page: [https://codewithmukesh.com/courses/dotnet-webapi-zero-to-hero/](https://codewithmukesh.com/courses/dotnet-webapi-zero-to-hero/)
+
+- Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6PaucIB5A_eE5_gJTSY3](https://youtube.com/playlist?list=PLigUNuP4l_bMl6PaucIB5A_eE5_gJTSY3)
+
+- If you find this course helpful, do support me: [https://buymeacoffee.com/codewithmukesh](https://buymeacoffee.com/codewithmukesh) 
+
+# Course Syllabus 👨‍🚀
+
+I have carefully structured the course into well-defined chapters, ensuring a logical progression of topics. Each chapter builds on the previous one, providing a step-by-step learning experience that covers both fundamental concepts and advanced techniques.
+
+Here is the course syllabus.
+
+## Chapter 1: Getting Started with .NET Web API
 
 - REST Principles for .NET Developers – Understanding RESTful architecture and best practices.  
 - Middleware & Request Pipeline – How ASP.NET Core processes incoming requests.  
@@ -22,7 +46,7 @@ Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6Pau
 - Minimal API Endpoints – Understanding and using Minimal APIs in ASP.NET Core.  
 - API Documentation – Generating OpenAPI docs and exploring Swagger alternatives.  
 
-# Chapter 2: Database Management with Entity Framework Core
+## Chapter 2: Database Management with Entity Framework Core
 
 - CRUD with EF Core – Implementing basic CRUD operations in ASP.NET Core 9.  
 - Relationships in EF Core – Configuring One-to-One, One-to-Many, and Many-to-Many.  
@@ -41,7 +65,7 @@ Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6Pau
 - Stored Procedures – Executing raw SQL and stored procedures efficiently.  
 - Lazy, Eager & Explicit Loading – Managing how related entities are retrieved.  
 
-# Chapter 3: API Security & Authentication  
+## Chapter 3: API Security & Authentication  
 
 - API Key Authentication – Securing APIs with API keys.  
 - Implementing JWT Authentication – Adding token-based authentication.  
@@ -105,7 +129,7 @@ Complete YouTube Playlist: [https://youtube.com/playlist?list=PLigUNuP4l_bMl6Pau
 - Automated Test Pipelines – Running CI/CD Tests for APIs  
 - Handling API Contracts – Preventing Breaking Changes
 
-## Chapter 9: Deployment, DevOps & Scaling  
+## Chapter 10: Deployment, DevOps & Scaling  
 - Getting Started with Docker – Containerizing Your API  
 - Built-In Docker Support for .NET Applications
 - Building & Deploying .NET APIs with GitHub Actions  
