@@ -15,6 +15,6 @@ Master the fundamentals of .NET Web API development.
 | Middleware & Request Pipeline | Coming Soon |
 | Dependency Injection | Coming Soon |
 | Service Lifetimes | Coming Soon |
-| Global Exception Handling | Coming Soon |
+| [Global Exception Handling](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [Code](./global-exception-handling/) |
 | Structured Logging with Serilog | Coming Soon |
 | API Documentation | Coming Soon |
