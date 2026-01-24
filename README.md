@@ -1,7 +1,7 @@
 # .NET Web API Zero to Hero - Free ASP.NET Core REST API Course
 
 [![GitHub stars](https://img.shields.io/github/stars/codewithmukesh/dotnet-webapi-zero-to-hero-course?style=social)](https://github.com/codewithmukesh/dotnet-webapi-zero-to-hero-course)
-[![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
+[![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![YouTube](https://img.shields.io/badge/YouTube-codewithmukesh-red?logo=youtube)](https://www.youtube.com/@codewithmukesh?sub_confirmation=1)
 
@@ -13,7 +13,7 @@ The **ultimate FREE course** for learning **ASP.NET Core Web API** development f
 
 ## What You'll Learn
 
-- Build production-ready **REST APIs** with **ASP.NET Core 9**
+- Build production-ready **REST APIs** with **ASP.NET Core 10**
 - Master **Entity Framework Core** with PostgreSQL & SQL Server
 - Secure APIs with **JWT tokens**, **OAuth 2.0** & role-based authorization
 - Implement **Clean Architecture** & **Domain-Driven Design (DDD)**
@@ -31,7 +31,7 @@ The **ultimate FREE course** for learning **ASP.NET Core Web API** development f
 | **Beginners** | New to backend development? Start here with C# Web API fundamentals |
 | **C# Developers** | Know C# but want to master ASP.NET Core Web API development |
 | **Students** | Preparing for .NET developer interviews and real-world projects |
-| **Professionals** | Upgrading from .NET Framework to modern .NET Core/9 |
+| **Professionals** | Upgrading from .NET Framework to modern .NET 10 |
 | **Full-Stack Devs** | Frontend developers wanting to build their own backend APIs |
 
 ## Quick Start
@@ -65,7 +65,7 @@ dotnet run --project RestfulApiBestPractices.Api
 ## Prerequisites
 
 - Basic knowledge of **C# programming**
-- **.NET 9 SDK** installed ([Download here](https://dotnet.microsoft.com/download))
+- **.NET 10 SDK** installed ([Download here](https://dotnet.microsoft.com/download))
 - **Visual Studio 2022** / **VS Code** / **JetBrains Rider**
 - Enthusiasm to learn backend development!
 
@@ -93,7 +93,7 @@ Yes! All content including articles, videos, and source code is 100% free foreve
 <details>
 <summary><strong>What version of .NET does this cover?</strong></summary>
 
-This course is updated for **.NET 9** (2025). Earlier modules include .NET 8 samples in the archive folder for reference.
+This course is updated for **.NET 10** (2025). Earlier modules include .NET 8 samples in the archive folder for reference.
 </details>
 
 <details>
