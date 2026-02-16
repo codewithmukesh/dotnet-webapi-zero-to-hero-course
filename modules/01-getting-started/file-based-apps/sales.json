@@ -1,0 +1,7 @@
+[
+  { "Product": "Laptop", "Amount": 999.99, "Date": "2026-01-15" },
+  { "Product": "Mouse", "Amount": 29.99, "Date": "2026-01-15" },
+  { "Product": "Laptop", "Amount": 999.99, "Date": "2026-01-16" },
+  { "Product": "Keyboard", "Amount": 79.99, "Date": "2026-01-16" },
+  { "Product": "Mouse", "Amount": 29.99, "Date": "2026-01-17" }
+]

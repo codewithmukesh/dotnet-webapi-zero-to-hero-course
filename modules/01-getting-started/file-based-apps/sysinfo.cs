@@ -1,0 +1,15 @@
+Console.WriteLine("=== System Information ===");
+Console.WriteLine();
+Console.WriteLine($"Machine Name:    {Environment.MachineName}");
+Console.WriteLine($"User Name:       {Environment.UserName}");
+Console.WriteLine($"OS:              {Environment.OSVersion}");
+Console.WriteLine($".NET Version:    {Environment.Version}");
+Console.WriteLine($"64-bit OS:       {Environment.Is64BitOperatingSystem}");
+Console.WriteLine($"64-bit Process:  {Environment.Is64BitProcess}");
+Console.WriteLine($"Processor Count: {Environment.ProcessorCount}");
+Console.WriteLine($"Current Dir:     {Environment.CurrentDirectory}");
+Console.WriteLine();
+Console.WriteLine("=== Environment Variables ===");
+Console.WriteLine();
+Console.WriteLine($"PATH entries: {Environment.GetEnvironmentVariable("PATH")?.Split(Path.PathSeparator).Length ?? 0}");
+Console.WriteLine($"TEMP:         {Path.GetTempPath()}");

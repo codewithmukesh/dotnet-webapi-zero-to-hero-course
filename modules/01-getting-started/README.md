@@ -11,6 +11,7 @@ Master the fundamentals of .NET Web API development.
 | Lesson | Code |
 |--------|------|
 | [REST Principles](https://codewithmukesh.com/blog/restful-api-best-practices-for-dotnet-developers/) | [Code](./restful-api-best-practices-for-dotnet-developers/) |
+| [File-Based Apps in .NET 10](https://codewithmukesh.com/blog/file-based-apps-dotnet-10/) | [Code](./file-based-apps/) |
 | [Minimal API Endpoints](https://codewithmukesh.com/blog/minimal-apis-aspnet-core/) | [Code](./minimal-apis-aspnet-core/) |
 | Middleware & Request Pipeline | Coming Soon |
 | Dependency Injection | Coming Soon |
