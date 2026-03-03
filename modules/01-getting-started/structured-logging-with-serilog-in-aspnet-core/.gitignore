@@ -1,0 +1,23 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider
+.idea/
+
+## VS Code
+.vscode/
+
+## Visual Studio
+.vs/
+
+## Logs
+logs/
+*.log
+
+## User-specific files
+appsettings.*.local.json
