@@ -10,13 +10,14 @@ Part of the **[.NET Web API Zero to Hero](https://codewithmukesh.com/courses/dot
 |---|--------|-------------------|---------|------|
 | 1 | REST API Best Practices | REST principles, resource naming, HTTP methods, status codes, API versioning | [Read](https://codewithmukesh.com/blog/restful-api-best-practices-for-dotnet-developers/) | [Code](./restful-api-best-practices-for-dotnet-developers/) |
 | 2 | File-Based Apps in .NET 10 | Run C# from single files, `#:package` directives, CLI tools without `.csproj` | [Read](https://codewithmukesh.com/blog/file-based-apps-dotnet-10/) | [Code](./file-based-apps/) |
-| 3 | Minimal API Endpoints | Route handlers, parameter binding, TypedResults, route groups, endpoint filters, built-in validation | [Read](https://codewithmukesh.com/blog/minimal-apis-aspnet-core/) | [Code](./minimal-apis-aspnet-core/) |
-| 4 | Global Exception Handling | `IExceptionHandler`, custom exceptions, ProblemDetails (RFC 9457), handler chaining | [Read](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [Code](./global-exception-handling/) |
-| 5 | FluentValidation | Fluent validation rules, custom validators, validation filters, replacing Data Annotations | [Read](https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/) | [Code](./fluentvalidation-in-aspnet-core/) |
-| 6 | Structured Logging with Serilog | Serilog sinks (Console, File, Seq), enrichers, correlation IDs, structured log queries | [Read](https://codewithmukesh.com/blog/structured-logging-with-serilog-in-aspnet-core/) | [Code](./structured-logging-with-serilog-in-aspnet-core/) |
-| 7 | Middleware & Request Pipeline | Coming Soon | — | — |
-| 8 | Dependency Injection Deep Dive | Coming Soon | — | — |
-| 9 | API Documentation with Scalar | Coming Soon | — | — |
+| 3 | Migrate from .sln to .slnx | New XML-based solution format, migration steps, CI/CD compatibility | [Read](https://codewithmukesh.com/blog/slnx-solution-format-dotnet/) | — |
+| 4 | Minimal API Endpoints | Route handlers, parameter binding, TypedResults, route groups, endpoint filters, built-in validation | [Read](https://codewithmukesh.com/blog/minimal-apis-aspnet-core/) | [Code](./minimal-apis-aspnet-core/) |
+| 5 | Swagger is Dead — OpenAPI Alternatives | Why Swagger was dropped, native OpenAPI 3.1, Scalar, `.http` files, Endpoints Explorer | [Read](https://codewithmukesh.com/blog/dotnet-swagger-alternatives-openapi/) | — |
+| 6 | Global Exception Handling | `IExceptionHandler`, custom exceptions, ProblemDetails (RFC 9457), handler chaining | [Read](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [Code](./global-exception-handling/) |
+| 7 | FluentValidation | Fluent validation rules, custom validators, validation filters, replacing Data Annotations | [Read](https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/) | [Code](./fluentvalidation-in-aspnet-core/) |
+| 8 | Structured Logging with Serilog | Serilog sinks (Console, File, Seq), enrichers, correlation IDs, structured log queries | [Read](https://codewithmukesh.com/blog/structured-logging-with-serilog-in-aspnet-core/) | [Code](./structured-logging-with-serilog-in-aspnet-core/) |
+| 9 | Middleware & Request Pipeline | Coming Soon | — | — |
+| 10 | Dependency Injection Deep Dive | Coming Soon | — | — |
 
 ## Prerequisites
 

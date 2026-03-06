@@ -23,13 +23,14 @@ Build a strong foundation in ASP.NET Core Web API fundamentals.
 |---|--------|---------|------|
 | 1 | REST API Best Practices | [Read](https://codewithmukesh.com/blog/restful-api-best-practices-for-dotnet-developers/) | [`restful-api-best-practices`](./modules/01-getting-started/restful-api-best-practices-for-dotnet-developers/) |
 | 2 | File-Based Apps in .NET 10 | [Read](https://codewithmukesh.com/blog/file-based-apps-dotnet-10/) | [`file-based-apps`](./modules/01-getting-started/file-based-apps/) |
-| 3 | Minimal API Endpoints | [Read](https://codewithmukesh.com/blog/minimal-apis-aspnet-core/) | [`minimal-apis`](./modules/01-getting-started/minimal-apis-aspnet-core/) |
-| 4 | Global Exception Handling | [Read](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [`global-exception-handling`](./modules/01-getting-started/global-exception-handling/) |
-| 5 | FluentValidation | [Read](https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/) | [`fluentvalidation`](./modules/01-getting-started/fluentvalidation-in-aspnet-core/) |
-| 6 | Structured Logging with Serilog | [Read](https://codewithmukesh.com/blog/structured-logging-with-serilog-in-aspnet-core/) | [`serilog-logging`](./modules/01-getting-started/structured-logging-with-serilog-in-aspnet-core/) |
-| 7 | Middleware & Request Pipeline | Coming Soon | — |
-| 8 | Dependency Injection Deep Dive | Coming Soon | — |
-| 9 | API Documentation with Scalar | Coming Soon | — |
+| 3 | Migrate from .sln to .slnx | [Read](https://codewithmukesh.com/blog/slnx-solution-format-dotnet/) | — |
+| 4 | Minimal API Endpoints | [Read](https://codewithmukesh.com/blog/minimal-apis-aspnet-core/) | [`minimal-apis`](./modules/01-getting-started/minimal-apis-aspnet-core/) |
+| 5 | Swagger is Dead — OpenAPI Alternatives | [Read](https://codewithmukesh.com/blog/dotnet-swagger-alternatives-openapi/) | — |
+| 6 | Global Exception Handling | [Read](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [`global-exception-handling`](./modules/01-getting-started/global-exception-handling/) |
+| 7 | FluentValidation | [Read](https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/) | [`fluentvalidation`](./modules/01-getting-started/fluentvalidation-in-aspnet-core/) |
+| 8 | Structured Logging with Serilog | [Read](https://codewithmukesh.com/blog/structured-logging-with-serilog-in-aspnet-core/) | [`serilog-logging`](./modules/01-getting-started/structured-logging-with-serilog-in-aspnet-core/) |
+| 9 | Middleware & Request Pipeline | Coming Soon | — |
+| 10 | Dependency Injection Deep Dive | Coming Soon | — |
 
 ### Module 02 — Database Management with EF Core
 
@@ -40,10 +41,16 @@ Master data access, migrations, and advanced EF Core patterns with PostgreSQL.
 | 1 | Web API CRUD with EF Core | [Read](https://codewithmukesh.com/blog/aspnet-core-webapi-crud-with-entity-framework-core-full-course/) | [`ef-core-crud`](./modules/02-database-management-with-ef-core/aspnet-core-webapi-crud-with-entity-framework-core-full-course/) |
 | 2 | Running Migrations | [Read](https://codewithmukesh.com/blog/running-migrations-efcore/) | [`running-migrations`](./modules/02-database-management-with-ef-core/running-migrations-efcore/) |
 | 3 | Seeding Initial Data | [Read](https://codewithmukesh.com/blog/seeding-initial-data-efcore/) | [`seeding-data`](./modules/02-database-management-with-ef-core/seeding-initial-data-efcore/) |
-| 4 | Pagination, Sorting & Searching | [Read](https://codewithmukesh.com/blog/pagination-sorting-searching-aspnet-core-webapi/) | [`pagination-sorting`](./modules/02-database-management-with-ef-core/pagination-sorting-searching-aspnet-core-webapi/) |
-| 5 | Bulk Operations | [Read](https://codewithmukesh.com/blog/bulk-operations-efcore/) | [`bulk-operations`](./modules/02-database-management-with-ef-core/bulk-operations-efcore/) |
-| 6 | Soft Deletes | [Read](https://codewithmukesh.com/blog/soft-deletes-efcore/) | [`soft-deletes`](./modules/02-database-management-with-ef-core/soft-deletes-efcore/) |
-| 7 | Concurrency Control (Optimistic Locking) | [Read](https://codewithmukesh.com/blog/concurrency-control-optimistic-locking-efcore/) | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
+| 4 | EF Core Relationships (1:1, 1:N, M:N) | [Read](https://codewithmukesh.com/blog/ef-core-relationships-one-to-one-one-to-many-many-to-many/) | — |
+| 5 | Pagination, Sorting & Searching | [Read](https://codewithmukesh.com/blog/pagination-sorting-searching-aspnet-core-webapi/) | [`pagination-sorting`](./modules/02-database-management-with-ef-core/pagination-sorting-searching-aspnet-core-webapi/) |
+| 6 | Bulk Operations | [Read](https://codewithmukesh.com/blog/bulk-operations-efcore/) | [`bulk-operations`](./modules/02-database-management-with-ef-core/bulk-operations-efcore/) |
+| 7 | Soft Deletes | [Read](https://codewithmukesh.com/blog/soft-deletes-efcore/) | [`soft-deletes`](./modules/02-database-management-with-ef-core/soft-deletes-efcore/) |
+| 8 | Concurrency Control (Optimistic Locking) | [Read](https://codewithmukesh.com/blog/concurrency-control-optimistic-locking-efcore/) | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
+| 9 | Global Query Filters | Coming Soon | — |
+| 10 | Tracking vs No-Tracking Queries | Coming Soon | — |
+| 11 | Compiled Queries | Coming Soon | — |
+| 12 | LeftJoin & RightJoin in LINQ | Coming Soon | — |
+| 13 | Multiple DbContext | Coming Soon | — |
 
 ### Upcoming Modules
 
@@ -51,12 +58,12 @@ Master data access, migrations, and advanced EF Core patterns with PostgreSQL.
 |--------|--------|
 | 03 — Security & Authentication | JWT authentication, OAuth 2.0, authorization policies, API key auth |
 | 04 — Advanced Patterns | CQRS with MediatR, AutoMapper, background jobs, rate limiting |
-| 05 — Performance & Caching | Redis, output caching, response compression, query optimization |
+| 05 — Performance & Caching | Redis, output caching, response compression, EF Core performance mistakes |
 | 06 — HTTP Clients & Resilience | Refit, Polly, retry policies, circuit breakers |
 | 07 — Architecture | Clean Architecture, Domain-Driven Design, Vertical Slice Architecture |
-| 08 — Observability | OpenTelemetry, distributed tracing, health checks, Grafana dashboards |
+| 08 — Observability | OpenTelemetry, distributed tracing, health checks, Grafana dashboards, .NET Aspire |
 | 09 — Testing | Unit tests, integration tests with TestContainers, mocking, TDD |
-| 10 — Deployment | Docker, CI/CD with GitHub Actions, production hardening |
+| 10 — Deployment | [Containerize .NET Without a Dockerfile](https://codewithmukesh.com/blog/containerize-dotnet-without-dockerfile/), CI/CD with GitHub Actions, production hardening |
 
 ## Quick Start
 
@@ -84,7 +91,7 @@ dotnet run --project <ProjectName>.Api
 ## What You'll Learn
 
 - Build production-ready **REST APIs** with **ASP.NET Core 10** and **Minimal APIs**
-- Master **Entity Framework Core 10** — CRUD, migrations, seeding, bulk ops, soft deletes, concurrency
+- Master **Entity Framework Core 10** — CRUD, migrations, seeding, relationships, bulk ops, soft deletes, concurrency
 - Implement **global exception handling** with RFC 9457 ProblemDetails
 - Validate requests with **FluentValidation** and built-in .NET 10 validation
 - Set up **structured logging** with Serilog, Seq, and correlation IDs
