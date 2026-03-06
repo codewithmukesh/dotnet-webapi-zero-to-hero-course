@@ -1,165 +1,90 @@
-# ASP.NET Core 10 Web API CRUD with Entity Framework Core
+# ASP.NET Core Web API CRUD with Entity Framework Core
 
-This project demonstrates building a production-ready ASP.NET Core 10 Web API with Entity Framework Core, PostgreSQL, and best practices including Domain-Driven Design (DDD), DTOs, and Minimal APIs.
+Build a complete Movie API with full CRUD operations, EF Core code-first migrations, Domain-Driven Design entities, DTOs, and PostgreSQL.
 
-## 🚀 Features
+## Resources
 
-- **.NET 10** - Latest LTS version with improved performance
-- **Entity Framework Core 10** - Code First approach with migrations
-- **PostgreSQL** - Running in Docker container
-- **Domain-Driven Design** - Clean domain entities with validation
-- **Minimal APIs** - Lightweight, performant endpoints
-- **Scalar UI** - Modern OpenAPI documentation interface
-- **DTOs** - Proper data transfer objects for API contracts
-- **Repository Pattern** - Clean separation of concerns
+- **Article**: [ASP.NET Core 10 Web API CRUD with Entity Framework Core - Complete Tutorial](https://codewithmukesh.com/blog/aspnet-core-webapi-crud-with-entity-framework-core-full-course/)
+- **Course**: [.NET Web API Zero to Hero](https://codewithmukesh.com/courses/dotnet-webapi-zero-to-hero/)
 
-## 📋 Prerequisites
+## What You'll Learn
+
+- Set up EF Core with PostgreSQL (code-first approach)
+- Design domain entities with DDD principles
+- Create DTOs for clean API contracts
+- Implement a service layer for business logic
+- Run database migrations
+- Build Minimal API endpoints for all CRUD operations
+
+## Prerequisites
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [Visual Studio 2026](https://visualstudio.microsoft.com/downloads/) or VS Code with C# Dev Kit
 
-## 🛠️ Setup Instructions
-
-### 1. Start PostgreSQL with Docker
+## Quick Start
 
 ```bash
+# Start PostgreSQL
 docker compose up -d
-```
 
-This will start a PostgreSQL 17 (Alpine) database on `localhost:5432` with:
-- Database: `dotnetHero`
-- Username: `admin`
-- Password: `secret`
-
-### 2. Restore NuGet Packages
-
-```bash
-dotnet restore
-```
-
-### 3. Run Migrations
-
-```bash
+# Run migrations
 dotnet ef migrations add InitialCreate --project MovieApi.Api
 dotnet ef database update --project MovieApi.Api
-```
 
-### 4. Run the Application
-
-```bash
+# Start the API
 dotnet run --project MovieApi.Api
 ```
 
-The API will be available at:
 - HTTPS: `https://localhost:7157`
 - HTTP: `http://localhost:5131`
 - Scalar UI: `https://localhost:7157/scalar/v1`
 
-## 🎯 API Endpoints
+## API Endpoints
 
-### Create a Movie
-```http
-POST /api/movies
-Content-Type: application/json
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/movies` | Create a movie |
+| GET | `/api/movies` | Get all movies |
+| GET | `/api/movies/{id}` | Get movie by ID |
+| PUT | `/api/movies/{id}` | Update a movie |
+| DELETE | `/api/movies/{id}` | Delete a movie |
 
-{
-  "title": "The Matrix",
-  "genre": "Sci-Fi",
-  "releaseDate": "1999-03-31T00:00:00Z",
-  "rating": 8.7
-}
-```
-
-### Get All Movies
-```http
-GET /api/movies
-```
-
-### Get Movie by ID
-```http
-GET /api/movies/{id}
-```
-
-### Update a Movie
-```http
-PUT /api/movies/{id}
-Content-Type: application/json
-
-{
-  "title": "The Matrix Reloaded",
-  "genre": "Sci-Fi",
-  "releaseDate": "2003-05-15T00:00:00Z",
-  "rating": 7.2
-}
-```
-
-### Delete a Movie
-```http
-DELETE /api/movies/{id}
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 MovieApi.Api/
-├── Models/                  # Domain entities
-│   ├── EntityBase.cs
-│   └── Movie.cs
-├── DTOs/                    # Data transfer objects
+├── Program.cs                          # App entry point and DI setup
+├── Models/
+│   ├── EntityBase.cs                   # Base entity with Id and timestamps
+│   └── Movie.cs                        # Movie domain entity
+├── DTOs/
 │   ├── CreateMovieDto.cs
 │   ├── UpdateMovieDto.cs
 │   └── MovieDto.cs
-├── Persistence/             # Database context and configurations
-│   ├── MovieDbContext.cs
+├── Persistence/
+│   ├── MovieDbContext.cs               # EF Core DbContext
 │   └── Configurations/
-│       └── MovieConfiguration.cs
-├── Services/                # Business logic
+│       └── MovieConfiguration.cs       # Fluent entity configuration
+├── Services/
 │   ├── IMovieService.cs
-│   └── MovieService.cs
-├── Endpoints/               # API endpoints
-│   └── MovieEndpoints.cs
-└── Program.cs               # Application entry point
+│   └── MovieService.cs                 # Business logic layer
+├── Endpoints/
+│   └── MovieEndpoints.cs               # Minimal API route definitions
+└── Migrations/                         # Auto-generated EF Core migrations
 ```
 
-## 🔧 Connection String
+## Database Configuration
 
-The default connection string in `appsettings.json`:
+| Setting | Value |
+|---------|-------|
+| Host | `localhost` |
+| Port | `5432` |
+| Database | `dotnetHero` |
+| Username | `admin` |
+| Password | `secret` |
 
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=dotnetHero;Username=admin;Password=secret;"
-  }
-}
-```
+> For production, use environment variables or a secrets manager for connection strings.
 
-**⚠️ For production**: Use environment variables, Azure Key Vault, or AWS Secrets Manager instead of hardcoding credentials.
+## License
 
-## 🧪 Testing
-
-You can test the API using:
-- **Scalar UI** - Navigate to `/scalar/v1` when running locally
-- **Postman** - Import the endpoints manually
-- **curl** - Use command line
-- **HTTPie** - For a better CLI experience
-
-## 📚 Learn More
-
-This code accompanies the article:
-- [ASP.NET Core 10 Web API CRUD with Entity Framework Core - Complete Tutorial](https://codewithmukesh.com/blog/aspnet-core-webapi-crud-with-entity-framework-core-full-course)
-
-## 🤝 Contributing
-
-This is a sample project for educational purposes. Feel free to use it as a starting point for your own projects.
-
-## 📄 License
-
-This project is provided as-is for educational purposes.
-
-## 👨‍💻 Author
-
-**Mukesh Murugan**
-- Website: [codewithmukesh.com](https://codewithmukesh.com)
-- Twitter: [@iammukeshm](https://twitter.com/iammukeshm)
-- LinkedIn: [Mukesh Murugan](https://www.linkedin.com/in/iammukeshm/)
+MIT
