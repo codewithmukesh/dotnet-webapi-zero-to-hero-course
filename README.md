@@ -29,8 +29,10 @@ Build a strong foundation in ASP.NET Core Web API fundamentals.
 | 6 | Global Exception Handling | [Read](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [`global-exception-handling`](./modules/01-getting-started/global-exception-handling/) |
 | 7 | FluentValidation | [Read](https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/) | [`fluentvalidation`](./modules/01-getting-started/fluentvalidation-in-aspnet-core/) |
 | 8 | Structured Logging with Serilog | [Read](https://codewithmukesh.com/blog/structured-logging-with-serilog-in-aspnet-core/) | [`serilog-logging`](./modules/01-getting-started/structured-logging-with-serilog-in-aspnet-core/) |
-| 9 | Middleware & Request Pipeline | Coming Soon | — |
-| 10 | Dependency Injection Deep Dive | Coming Soon | — |
+| 9 | Middleware & Request Pipeline | [Read](https://codewithmukesh.com/blog/middlewares-in-aspnet-core/) | — |
+| 10 | Filters in ASP.NET Core | [Read](https://codewithmukesh.com/blog/filters-in-aspnet-core/) | — |
+| 11 | Options Pattern | [Read](https://codewithmukesh.com/blog/options-pattern-in-aspnet-core/) | — |
+| 12 | Dependency Injection Deep Dive | Coming Soon | — |
 
 ### Module 02 — Database Management with EF Core
 
@@ -39,18 +41,19 @@ Master data access, migrations, and advanced EF Core patterns with PostgreSQL.
 | # | Lesson | Article | Code |
 |---|--------|---------|------|
 | 1 | Web API CRUD with EF Core | [Read](https://codewithmukesh.com/blog/aspnet-core-webapi-crud-with-entity-framework-core-full-course/) | [`ef-core-crud`](./modules/02-database-management-with-ef-core/aspnet-core-webapi-crud-with-entity-framework-core-full-course/) |
-| 2 | Running Migrations | [Read](https://codewithmukesh.com/blog/running-migrations-efcore/) | [`running-migrations`](./modules/02-database-management-with-ef-core/running-migrations-efcore/) |
-| 3 | Seeding Initial Data | [Read](https://codewithmukesh.com/blog/seeding-initial-data-efcore/) | [`seeding-data`](./modules/02-database-management-with-ef-core/seeding-initial-data-efcore/) |
-| 4 | EF Core Relationships (1:1, 1:N, M:N) | [Read](https://codewithmukesh.com/blog/ef-core-relationships-one-to-one-one-to-many-many-to-many/) | — |
-| 5 | Pagination, Sorting & Searching | [Read](https://codewithmukesh.com/blog/pagination-sorting-searching-aspnet-core-webapi/) | [`pagination-sorting`](./modules/02-database-management-with-ef-core/pagination-sorting-searching-aspnet-core-webapi/) |
+| 2 | EF Core Relationships (1:1, 1:N, M:N) | [Read](https://codewithmukesh.com/blog/ef-core-relationships-one-to-one-one-to-many-many-to-many/) | — |
+| 3 | Pagination, Sorting & Searching | [Read](https://codewithmukesh.com/blog/pagination-sorting-searching-aspnet-core-webapi/) | [`pagination-sorting`](./modules/02-database-management-with-ef-core/pagination-sorting-searching-aspnet-core-webapi/) |
+| 4 | Global Query Filters | [Read](https://codewithmukesh.com/blog/global-query-filters-efcore/) | — |
+| 5 | Soft Deletes | [Read](https://codewithmukesh.com/blog/soft-deletes-efcore/) | [`soft-deletes`](./modules/02-database-management-with-ef-core/soft-deletes-efcore/) |
 | 6 | Bulk Operations | [Read](https://codewithmukesh.com/blog/bulk-operations-efcore/) | [`bulk-operations`](./modules/02-database-management-with-ef-core/bulk-operations-efcore/) |
-| 7 | Soft Deletes | [Read](https://codewithmukesh.com/blog/soft-deletes-efcore/) | [`soft-deletes`](./modules/02-database-management-with-ef-core/soft-deletes-efcore/) |
-| 8 | Concurrency Control (Optimistic Locking) | [Read](https://codewithmukesh.com/blog/concurrency-control-optimistic-locking-efcore/) | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
-| 9 | Global Query Filters | Coming Soon | — |
-| 10 | Tracking vs No-Tracking Queries | Coming Soon | — |
-| 11 | Compiled Queries | Coming Soon | — |
-| 12 | LeftJoin & RightJoin in LINQ | Coming Soon | — |
-| 13 | Multiple DbContext | Coming Soon | — |
+| 7 | Multiple DbContext | [Read](https://codewithmukesh.com/blog/multiple-dbcontext-efcore/) | [`multiple-dbcontext`](./modules/02-database-management-with-ef-core/multiple-dbcontext-efcore/) |
+| 8 | Concurrency Control (Optimistic Locking) | Coming Soon | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
+| 9 | Running Migrations | Coming Soon | [`running-migrations`](./modules/02-database-management-with-ef-core/running-migrations-efcore/) |
+| 10 | Seeding Initial Data | Coming Soon | [`seeding-data`](./modules/02-database-management-with-ef-core/seeding-initial-data-efcore/) |
+| 11 | Cleaning Migrations | Coming Soon | — |
+| 12 | Tracking vs No-Tracking Queries | Coming Soon | — |
+| 13 | Compiled Queries | Coming Soon | — |
+| 14 | LeftJoin & RightJoin in LINQ | Coming Soon | — |
 
 ### Upcoming Modules
 
@@ -140,12 +143,13 @@ modules/
 │
 ├── 02-database-management-with-ef-core/   # EF Core CRUD, migrations, advanced patterns
 │   ├── aspnet-core-webapi-crud-with-entity-framework-core-full-course/
-│   ├── running-migrations-efcore/
-│   ├── seeding-initial-data-efcore/
 │   ├── pagination-sorting-searching-aspnet-core-webapi/
 │   ├── bulk-operations-efcore/
 │   ├── soft-deletes-efcore/
-│   └── concurrency-control-optimistic-locking-efcore/
+│   ├── multiple-dbcontext-efcore/
+│   ├── concurrency-control-optimistic-locking-efcore/
+│   ├── running-migrations-efcore/
+│   └── seeding-initial-data-efcore/
 │
 archive/                                   # Legacy .NET 8 samples (for reference)
 ```

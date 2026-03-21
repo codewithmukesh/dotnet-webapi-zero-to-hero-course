@@ -1,0 +1,40 @@
+services:
+  postgres-movies:
+    image: postgres:17-alpine
+    container_name: postgres-movies
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: movies
+    ports:
+      - "5432:5432"
+    volumes:
+      - movies_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d movies"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres-analytics:
+    image: postgres:17-alpine
+    container_name: postgres-analytics
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: analytics
+    ports:
+      - "5433:5432"
+    volumes:
+      - analytics_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d analytics"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  movies_data:
+  analytics_data:
