@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HybridCaching.Api/HybridCaching.Api.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/HybridCaching.Benchmarks/HybridCaching.Benchmarks.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/InMemoryCaching.Api/InMemoryCaching.Api.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/InMemoryCaching.Benchmarks/InMemoryCaching.Benchmarks.csproj" />
+  </Folder>
+</Solution>
