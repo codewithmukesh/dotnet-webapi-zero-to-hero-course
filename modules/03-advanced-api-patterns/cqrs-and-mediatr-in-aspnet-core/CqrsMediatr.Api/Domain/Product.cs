@@ -2,10 +2,10 @@ namespace CqrsMediatr.Api.Domain;
 
 public class Product
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; } = default!;
-    public string Description { get; set; } = default!;
-    public decimal Price { get; set; }
+    public Guid Id { get; init; }
+    public string Name { get; private set; } = default!;
+    public string Description { get; private set; } = default!;
+    public decimal Price { get; private set; }
 
     private Product() { }
     public Product(string name, string description, decimal price)

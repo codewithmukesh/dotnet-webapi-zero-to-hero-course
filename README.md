@@ -55,13 +55,29 @@ Master data access, migrations, and advanced EF Core patterns with PostgreSQL.
 | 13 | Compiled Queries | Coming Soon | — |
 | 14 | LeftJoin & RightJoin in LINQ | Coming Soon | — |
 
+### Module 03 — Advanced API Patterns
+
+Implement production-grade patterns for scalable APIs.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | CQRS with MediatR | [Read](https://codewithmukesh.com/blog/cqrs-and-mediatr-in-aspnet-core/) | [`cqrs-mediatr`](./modules/03-advanced-api-patterns/cqrs-and-mediatr-in-aspnet-core/) |
+
+### Module 04 — Performance & Caching
+
+Optimize API performance with caching strategies from in-memory to distributed.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | In-Memory Caching | [Read](https://codewithmukesh.com/blog/in-memory-caching-in-aspnet-core/) | [`in-memory-caching`](./modules/04-performance-and-caching/in-memory-caching-in-aspnet-core/) |
+| 2 | Distributed Caching with Redis | [Read](https://codewithmukesh.com/blog/distributed-caching-in-aspnet-core-with-redis/) | [`distributed-caching`](./modules/04-performance-and-caching/distributed-caching-in-aspnet-core-with-redis/) |
+| 3 | HybridCache in ASP.NET Core | [Read](https://codewithmukesh.com/blog/hybridcache-in-aspnet-core/) | [`hybridcache`](./modules/04-performance-and-caching/hybridcache-in-aspnet-core/) |
+
 ### Upcoming Modules
 
 | Module | Topics |
 |--------|--------|
-| 03 — Security & Authentication | JWT authentication, OAuth 2.0, authorization policies, API key auth |
-| 04 — Advanced Patterns | CQRS with MediatR, AutoMapper, background jobs, rate limiting |
-| 05 — Performance & Caching | Redis, output caching, response compression, EF Core performance mistakes |
+| 05 — Security & Authentication | JWT authentication, OAuth 2.0, authorization policies, API key auth |
 | 06 — HTTP Clients & Resilience | Refit, Polly, retry policies, circuit breakers |
 | 07 — Architecture | Clean Architecture, Domain-Driven Design, Vertical Slice Architecture |
 | 08 — Observability | OpenTelemetry, distributed tracing, health checks, Grafana dashboards, .NET Aspire |
@@ -150,6 +166,14 @@ modules/
 │   ├── concurrency-control-optimistic-locking-efcore/
 │   ├── running-migrations-efcore/
 │   └── seeding-initial-data-efcore/
+│
+├── 03-advanced-api-patterns/              # CQRS, MediatR, advanced patterns
+│   └── cqrs-and-mediatr-in-aspnet-core/
+│
+├── 04-performance-and-caching/            # In-memory, Redis, HybridCache
+│   ├── in-memory-caching-in-aspnet-core/
+│   ├── distributed-caching-in-aspnet-core-with-redis/
+│   └── hybridcache-in-aspnet-core/
 │
 archive/                                   # Legacy .NET 8 samples (for reference)
 ```

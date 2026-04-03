@@ -35,35 +35,35 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.MapGet("/products/{id:guid}", async (Guid id, ISender mediatr) =>
+app.MapGet("/products/{id:guid}", async (Guid id, ISender mediatr, CancellationToken ct) =>
 {
-    var product = await mediatr.Send(new GetProductQuery(id));
+    var product = await mediatr.Send(new GetProductQuery(id), ct);
     return product is not null ? Results.Ok(product) : Results.NotFound();
 });
 
-app.MapGet("/products", async (ISender mediatr) =>
+app.MapGet("/products", async (ISender mediatr, CancellationToken ct) =>
 {
-    var products = await mediatr.Send(new ListProductsQuery());
+    var products = await mediatr.Send(new ListProductsQuery(), ct);
     return Results.Ok(products);
 });
 
-app.MapPost("/products", async (CreateProductCommand command, IMediator mediatr) =>
+app.MapPost("/products", async (CreateProductCommand command, IMediator mediatr, CancellationToken ct) =>
 {
-    var product = await mediatr.Send(command);
-    await mediatr.Publish(new ProductCreatedNotification(product.Id, product.Name));
+    var product = await mediatr.Send(command, ct);
+    await mediatr.Publish(new ProductCreatedNotification(product.Id, product.Name), ct);
     return Results.Created($"/products/{product.Id}", product);
 });
 
-app.MapPut("/products/{id:guid}", async (Guid id, UpdateProductCommand command, ISender mediatr) =>
+app.MapPut("/products/{id:guid}", async (Guid id, UpdateProductCommand command, ISender mediatr, CancellationToken ct) =>
 {
     if (id != command.Id) return Results.BadRequest();
-    var result = await mediatr.Send(command);
+    var result = await mediatr.Send(command, ct);
     return result ? Results.NoContent() : Results.NotFound();
 });
 
-app.MapDelete("/products/{id:guid}", async (Guid id, ISender mediatr) =>
+app.MapDelete("/products/{id:guid}", async (Guid id, ISender mediatr, CancellationToken ct) =>
 {
-    var result = await mediatr.Send(new DeleteProductCommand(id));
+    var result = await mediatr.Send(new DeleteProductCommand(id), ct);
     return result ? Results.NoContent() : Results.NotFound();
 });
 
