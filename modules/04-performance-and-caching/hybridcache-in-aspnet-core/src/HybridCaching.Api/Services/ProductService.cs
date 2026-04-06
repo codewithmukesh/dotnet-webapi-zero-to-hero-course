@@ -77,4 +77,39 @@ public class ProductService(AppDbContext context, HybridCache cache, ILogger<Pro
 
         return product;
     }
+
+    public async Task<Product?> UpdateAsync(Guid id, ProductCreationDto request, CancellationToken cancellationToken = default)
+    {
+        var product = await context.Products.FindAsync([id], cancellationToken);
+        if (product is null) return null;
+
+        product.Name = request.Name;
+        product.Description = request.Description;
+        product.Price = request.Price;
+        product.Category = request.Category;
+
+        await context.SaveChangesAsync(cancellationToken);
+
+        // Invalidate the individual product and all list caches
+        logger.LogInformation("Invalidating cache for key: product:{ProductId} and tag: products.", id);
+        await cache.RemoveAsync($"product:{id}", cancellationToken);
+        await cache.RemoveByTagAsync("products", cancellationToken);
+
+        return product;
+    }
+
+    public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
+    {
+        var product = await context.Products.FindAsync([id], cancellationToken);
+        if (product is null) return false;
+
+        context.Products.Remove(product);
+        await context.SaveChangesAsync(cancellationToken);
+
+        logger.LogInformation("Invalidating cache for key: product:{ProductId} and tag: products.", id);
+        await cache.RemoveAsync($"product:{id}", cancellationToken);
+        await cache.RemoveByTagAsync("products", cancellationToken);
+
+        return true;
+    }
 }

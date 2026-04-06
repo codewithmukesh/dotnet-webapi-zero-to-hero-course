@@ -8,4 +8,6 @@ public interface IProductService
     Task<Product?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
     Task<List<Product>> GetByCategoryAsync(string category, CancellationToken cancellationToken = default);
     Task<Product> CreateAsync(ProductCreationDto request, CancellationToken cancellationToken = default);
+    Task<Product?> UpdateAsync(Guid id, ProductCreationDto request, CancellationToken cancellationToken = default);
+    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 }

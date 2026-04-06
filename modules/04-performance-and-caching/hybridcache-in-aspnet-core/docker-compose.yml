@@ -1,10 +1,10 @@
 services:
   redis:
-    image: redis:latest
+    image: redis:7.4
     container_name: redis-hybridcache
     ports:
       - "6379:6379"
-    command: redis-server --appendonly yes
+    command: redis-server --requirepass yourpassword --appendonly yes
     volumes:
       - redis-data:/data
     restart: unless-stopped
