@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ApiKeyAuth.Api/ApiKeyAuth.Api.csproj" />
+  <Project Path="ApiKeyAuth.Api.Tests/ApiKeyAuth.Api.Tests.csproj" />
+</Solution>

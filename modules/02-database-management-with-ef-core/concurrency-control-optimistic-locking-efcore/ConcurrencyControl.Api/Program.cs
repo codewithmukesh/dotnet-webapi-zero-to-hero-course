@@ -194,7 +194,7 @@ app.MapPatch("/products/{id:int}/stock-with-retry", async (
         }
         catch (DbUpdateConcurrencyException)
         {
-            // Detach the entity so we can re-read fresh data
+            // Detach the entity to re-read fresh data
             context.Entry(product).State = EntityState.Detached;
         }
     }
