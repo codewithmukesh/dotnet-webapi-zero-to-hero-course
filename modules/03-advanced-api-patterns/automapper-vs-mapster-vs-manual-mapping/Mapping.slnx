@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Mapping.Api/Mapping.Api.csproj" />
+  <Project Path="Mapping.Benchmarks/Mapping.Benchmarks.csproj" />
+</Solution>
