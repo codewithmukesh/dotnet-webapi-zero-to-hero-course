@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/aspire/">
+    <Project Path="aspire/MovieManagement.AppHost/MovieManagement.AppHost.csproj" />
+    <Project Path="aspire/MovieManagement.ServiceDefaults/MovieManagement.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MovieManagement.Api/MovieManagement.Api.csproj" />
+    <Project Path="src/MovieManagement.Application/MovieManagement.Application.csproj" />
+    <Project Path="src/MovieManagement.Domain/MovieManagement.Domain.csproj" />
+    <Project Path="src/MovieManagement.Infrastructure/MovieManagement.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MovieManagement.Domain.Tests/MovieManagement.Domain.Tests.csproj" />
+  </Folder>
+</Solution>
