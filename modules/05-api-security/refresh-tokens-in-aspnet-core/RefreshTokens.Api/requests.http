@@ -1,0 +1,32 @@
+@host = https://localhost:7166
+
+### Log in as the seeded admin to get an access token + refresh token
+# @name login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Call a protected endpoint with the access token
+GET {{host}}/api/secured
+Authorization: Bearer {{login.response.body.accessToken}}
+
+### Get a new access token using the refresh token (rotates the refresh token)
+# @name refresh
+POST {{host}}/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{login.response.body.refreshToken}}"
+}
+
+### Revoke a refresh token (logout)
+POST {{host}}/api/auth/revoke
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refresh.response.body.refreshToken}}"
+}

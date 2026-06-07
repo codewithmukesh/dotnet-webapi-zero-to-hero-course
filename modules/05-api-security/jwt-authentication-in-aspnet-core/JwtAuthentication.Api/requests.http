@@ -1,0 +1,40 @@
+@host = https://localhost:7155
+
+### Register a new user (starts with the "User" role)
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Mukesh",
+  "lastName": "Murugan",
+  "email": "mukesh@codewithmukesh.com",
+  "password": "Password123!"
+}
+
+### Log in as the seeded admin to get a JWT
+# @name login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Call a protected endpoint (any authenticated user)
+GET {{host}}/api/secured
+Authorization: Bearer {{login.response.body.token}}
+
+### Call an admin-only endpoint
+GET {{host}}/api/secured/admin
+Authorization: Bearer {{login.response.body.token}}
+
+### Promote the registered user to Admin (needs the admin token)
+POST {{host}}/api/auth/add-role
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.token}}
+
+{
+  "email": "mukesh@codewithmukesh.com",
+  "role": "Admin"
+}
