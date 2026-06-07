@@ -1,0 +1,24 @@
+@host = https://localhost:7177
+
+### Create a product that FAILS validation (name too short, price 0) -> 400 + errors
+POST {{host}}/products
+Content-Type: application/json
+
+{
+  "name": "ab",
+  "description": "",
+  "price": 0
+}
+
+### Create a valid product -> 201 Created
+POST {{host}}/products
+Content-Type: application/json
+
+{
+  "name": "Standing Desk",
+  "description": "Electric height-adjustable desk",
+  "price": 399.99
+}
+
+### List all products
+GET {{host}}/products
