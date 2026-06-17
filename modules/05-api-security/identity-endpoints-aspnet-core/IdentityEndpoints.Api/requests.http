@@ -1,0 +1,51 @@
+@host = http://localhost:5150
+
+### 1. Register a new user. 200 OK with an empty body on success.
+# Password must be 6+ chars with upper, lower, digit, and non-alphanumeric.
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "email": "dev@codewithmukesh.com",
+  "password": "Passw0rd!"
+}
+
+### 2. Try a weak password. 400 with a ProblemDetails body listing the failed rules.
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "email": "weak@codewithmukesh.com",
+  "password": "abc"
+}
+
+### 3. Log in for a TOKEN (no useCookies). Returns { tokenType, accessToken, expiresIn, refreshToken }.
+# Copy the accessToken into the @token variable below.
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "email": "dev@codewithmukesh.com",
+  "password": "Passw0rd!"
+}
+
+### 4. Call the protected endpoint WITHOUT a token. 401 Unauthorized.
+GET {{host}}/api/products
+
+### 5. Call the protected endpoint WITH the token. 200 OK.
+@token = PASTE_ACCESS_TOKEN_HERE
+GET {{host}}/api/products
+Authorization: Bearer {{token}}
+
+### 6. Refresh: exchange the refresh token for a fresh access/refresh pair.
+@refreshToken = PASTE_REFRESH_TOKEN_HERE
+POST {{host}}/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### 7. Read the current user's info (proves the token authenticates).
+GET {{host}}/manage/info
+Authorization: Bearer {{token}}

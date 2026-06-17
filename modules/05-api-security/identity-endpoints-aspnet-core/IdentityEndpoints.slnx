@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="IdentityEndpoints.Api/IdentityEndpoints.Api.csproj" />
+  <Project Path="CustomJwt.Api/CustomJwt.Api.csproj" />
+</Solution>

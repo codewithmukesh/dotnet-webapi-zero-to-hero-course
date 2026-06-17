@@ -1,0 +1,28 @@
+@host = http://localhost:5160
+
+### 1. Log in as the seeded admin. Returns a REAL JWT in accessToken.
+# Paste the accessToken at jwt.io - it decodes, and the payload contains "role": "Admin".
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### 2. Wrong password. 401 Unauthorized (lockout applies after repeated failures).
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "wrong"
+}
+
+### 3. Call the protected endpoint WITHOUT a token. 401 Unauthorized.
+GET {{host}}/api/products
+
+### 4. Call the protected endpoint WITH the JWT. 200 OK.
+@token = PASTE_ACCESS_TOKEN_HERE
+GET {{host}}/api/products
+Authorization: Bearer {{token}}
