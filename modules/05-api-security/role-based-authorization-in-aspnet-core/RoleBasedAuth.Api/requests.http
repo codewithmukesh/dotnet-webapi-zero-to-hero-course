@@ -1,0 +1,82 @@
+@host = https://localhost:7156
+
+### Log in as the admin (has BOTH Admin and Manager roles)
+# @name adminLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Log in as the manager (Manager role only)
+# @name managerLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "manager@codewithmukesh.com",
+  "password": "Manager123!"
+}
+
+### Log in as a regular user (User role only)
+# @name userLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@codewithmukesh.com",
+  "password": "User123!"
+}
+
+### View products - any authenticated user (200 for all three)
+GET {{host}}/api/products
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### Create a product - Admin OR Manager (manager: 201)
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+{
+  "name": "Webcam",
+  "stock": 15
+}
+
+### Create a product as the regular user - 403 Forbidden
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{userLogin.response.body.token}}
+
+{
+  "name": "Desk Lamp",
+  "stock": 5
+}
+
+### Delete a product - Admin only (admin: 204)
+DELETE {{host}}/api/products/1
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Delete as manager - 403 Forbidden (Manager is not Admin)
+DELETE {{host}}/api/products/2
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Restock - "ManagerOnly" named policy (manager: 200)
+PUT {{host}}/api/products/2/restock
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Audit - requires Admin AND Manager (only the seeded admin passes)
+GET {{host}}/api/products/audit
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Audit as manager - 403 (has Manager but not Admin)
+GET {{host}}/api/products/audit
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Dashboard - same endpoint, different response per role
+GET {{host}}/api/products/dashboard
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### No token at all - 401 Unauthorized
+GET {{host}}/api/products

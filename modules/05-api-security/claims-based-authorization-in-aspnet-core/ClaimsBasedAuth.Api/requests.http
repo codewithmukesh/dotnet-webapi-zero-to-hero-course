@@ -1,0 +1,66 @@
+@host = https://localhost:7157
+
+### Log in as the admin (engineering department, premium tier)
+# @name adminLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Log in as the manager (operations department, standard tier)
+# @name managerLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "manager@codewithmukesh.com",
+  "password": "Manager123!"
+}
+
+### Log in as the regular user (no department, free tier)
+# @name userLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@codewithmukesh.com",
+  "password": "User123!"
+}
+
+### Inspect your own claims - run this with each token and compare
+GET {{host}}/api/me
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Exports - requires a department claim, ANY value (admin: 200, manager: 200)
+GET {{host}}/api/exports
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Exports as the regular user - 403 (no department claim at all)
+GET {{host}}/api/exports
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### Deployments - department must equal "engineering" (admin: 200)
+GET {{host}}/api/deployments
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Deployments as manager - 403 (operations != engineering)
+GET {{host}}/api/deployments
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Premium report - subscription claim added by claims TRANSFORMATION, not the token (admin: 200)
+GET {{host}}/api/reports/premium
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Premium report as manager - 403 (standard tier)
+GET {{host}}/api/reports/premium
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Workspace - same endpoint, response branches on claims
+GET {{host}}/api/workspace
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### No token at all - 401 Unauthorized
+GET {{host}}/api/me

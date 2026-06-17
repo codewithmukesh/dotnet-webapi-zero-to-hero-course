@@ -1,0 +1,62 @@
+@host = https://localhost:7158
+
+### Log in as the admin (Admin role, STANDARD tier, joined 2024-01-15)
+# @name adminLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Log in as the manager (Manager role, PREMIUM tier, joined 2026-04-20)
+# @name managerLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "manager@codewithmukesh.com",
+  "password": "Manager123!"
+}
+
+### Log in as the regular user (User role, FREE tier, joined 2024-08-01)
+# @name userLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@codewithmukesh.com",
+  "password": "User123!"
+}
+
+### Pro insights as admin - 200 via the AdminOverrideHandler (role, not subscription)
+GET {{host}}/api/insights
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Pro insights as manager - 200 via the PremiumSubscriptionHandler (subscription, not role)
+GET {{host}}/api/insights
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Pro insights as regular user - 403 (no handler succeeds: free tier, no Admin role)
+GET {{host}}/api/insights
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### Publish a document - 200 between 09:00-18:00 UTC, 403 outside
+POST {{host}}/api/documents
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### Veterans lounge - [MinimumTenure(6)] via IAuthorizationRequirementData (user: 200, joined 2024)
+GET {{host}}/api/veterans-lounge
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### Veterans lounge as manager - 403 (joined 2026-04-20, under 6 months)
+GET {{host}}/api/veterans-lounge
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+### Imperative check - DELETE explains the failure instead of a bare 403
+DELETE {{host}}/api/documents/1
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Fallback policy in action - unknown-to-auth endpoint without a token = 401
+GET {{host}}/api/insights
