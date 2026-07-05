@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="EfCoreBulkInsert.Shared/EfCoreBulkInsert.Shared.csproj" />
+  <Project Path="EfCoreBulkInsert.Benchmarks/EfCoreBulkInsert.Benchmarks.csproj" />
+  <Project Path="EfCoreBulkInsert.Api/EfCoreBulkInsert.Api.csproj" />
+</Solution>

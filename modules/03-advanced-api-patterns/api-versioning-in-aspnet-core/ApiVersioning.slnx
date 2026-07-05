@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Versioning.MinimalApi/Versioning.MinimalApi.csproj" />
+  <Project Path="Versioning.Controllers/Versioning.Controllers.csproj" />
+</Solution>

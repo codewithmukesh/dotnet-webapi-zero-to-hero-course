@@ -1,0 +1,344 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 3 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1/" /p:OutDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0/" /p:OutputPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0/" /p:PublishDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\publish/" in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1
+// command took 0.81 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1/" /p:OutDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0/" /p:OutputPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0/" /p:PublishDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\publish/" --output "C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0/" in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1
+// command took 4.67 sec and exited with 0
+// ***** Done, took 00:00:05 (5.53 sec)   *****
+// Found 3 benchmarks:
+//   CacheBenchmarks.Uncached: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+//   CacheBenchmarks.CachedInMemory: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+//   CacheBenchmarks.CachedRedis: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: CacheBenchmarks.Uncached: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreSecondLevelCache.Benchmarks-1.dll --anonymousPipes 1544 1552 --benchmarkName EfCoreSecondLevelCache.Benchmarks.CacheBenchmarks.Uncached --job "IterationCount=10, WarmupCount=3" --benchmarkId 0 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 150300.00 ns, 150.3000 us/op
+WorkloadJitting  1: 1 op, 58563600.00 ns, 58.5636 ms/op
+
+WorkloadPilot    1: 2 op, 46340300.00 ns, 23.1702 ms/op
+WorkloadPilot    2: 3 op, 8301600.00 ns, 2.7672 ms/op
+WorkloadPilot    3: 4 op, 9107200.00 ns, 2.2768 ms/op
+WorkloadPilot    4: 5 op, 11180500.00 ns, 2.2361 ms/op
+WorkloadPilot    5: 6 op, 13605100.00 ns, 2.2675 ms/op
+WorkloadPilot    6: 7 op, 14698700.00 ns, 2.0998 ms/op
+WorkloadPilot    7: 8 op, 15963800.00 ns, 1.9955 ms/op
+WorkloadPilot    8: 9 op, 27067700.00 ns, 3.0075 ms/op
+WorkloadPilot    9: 10 op, 20533600.00 ns, 2.0534 ms/op
+WorkloadPilot   10: 11 op, 21241000.00 ns, 1.9310 ms/op
+WorkloadPilot   11: 12 op, 26645900.00 ns, 2.2205 ms/op
+WorkloadPilot   12: 13 op, 25939000.00 ns, 1.9953 ms/op
+WorkloadPilot   13: 14 op, 28755200.00 ns, 2.0539 ms/op
+WorkloadPilot   14: 15 op, 30257300.00 ns, 2.0172 ms/op
+WorkloadPilot   15: 16 op, 30680900.00 ns, 1.9176 ms/op
+WorkloadPilot   16: 32 op, 63431700.00 ns, 1.9822 ms/op
+WorkloadPilot   17: 64 op, 131660300.00 ns, 2.0572 ms/op
+WorkloadPilot   18: 128 op, 253948400.00 ns, 1.9840 ms/op
+WorkloadPilot   19: 256 op, 470048600.00 ns, 1.8361 ms/op
+WorkloadPilot   20: 512 op, 915035300.00 ns, 1.7872 ms/op
+
+WorkloadWarmup   1: 512 op, 710839400.00 ns, 1.3884 ms/op
+WorkloadWarmup   2: 512 op, 678306500.00 ns, 1.3248 ms/op
+WorkloadWarmup   3: 512 op, 638156200.00 ns, 1.2464 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 512 op, 656354000.00 ns, 1.2819 ms/op
+WorkloadActual   2: 512 op, 643661100.00 ns, 1.2572 ms/op
+WorkloadActual   3: 512 op, 643963800.00 ns, 1.2577 ms/op
+WorkloadActual   4: 512 op, 642697600.00 ns, 1.2553 ms/op
+WorkloadActual   5: 512 op, 653846100.00 ns, 1.2770 ms/op
+WorkloadActual   6: 512 op, 668423500.00 ns, 1.3055 ms/op
+WorkloadActual   7: 512 op, 648385600.00 ns, 1.2664 ms/op
+WorkloadActual   8: 512 op, 650734300.00 ns, 1.2710 ms/op
+WorkloadActual   9: 512 op, 672151900.00 ns, 1.3128 ms/op
+WorkloadActual  10: 512 op, 626348500.00 ns, 1.2233 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 512 op, 656354000.00 ns, 1.2819 ms/op
+WorkloadResult   2: 512 op, 643661100.00 ns, 1.2572 ms/op
+WorkloadResult   3: 512 op, 643963800.00 ns, 1.2577 ms/op
+WorkloadResult   4: 512 op, 642697600.00 ns, 1.2553 ms/op
+WorkloadResult   5: 512 op, 653846100.00 ns, 1.2770 ms/op
+WorkloadResult   6: 512 op, 668423500.00 ns, 1.3055 ms/op
+WorkloadResult   7: 512 op, 648385600.00 ns, 1.2664 ms/op
+WorkloadResult   8: 512 op, 650734300.00 ns, 1.2710 ms/op
+WorkloadResult   9: 512 op, 672151900.00 ns, 1.3128 ms/op
+WorkloadResult  10: 512 op, 626348500.00 ns, 1.2233 ms/op
+// GC:  3 0 0 71877304 512
+// Threading:  0 0 512
+
+// AfterAll
+// Benchmark Process 25780 has exited with code 0.
+
+Mean = 1.271 ms, StdErr = 0.008 ms (0.64%), N = 10, StdDev = 0.026 ms
+Min = 1.223 ms, Q1 = 1.257 ms, Median = 1.269 ms, Q3 = 1.281 ms, Max = 1.313 ms
+IQR = 0.023 ms, LowerFence = 1.222 ms, UpperFence = 1.316 ms
+ConfidenceInterval = [1.232 ms; 1.310 ms] (CI 99.9%), Margin = 0.039 ms (3.07% of Mean)
+Skewness = 0.01, Kurtosis = 2.2, MValue = 2
+
+// ** Remained 2 (66.7%) benchmark(s) to run. Estimated finish 2026-07-02 0:08 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: CacheBenchmarks.CachedInMemory: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreSecondLevelCache.Benchmarks-1.dll --anonymousPipes 1540 1532 --benchmarkName EfCoreSecondLevelCache.Benchmarks.CacheBenchmarks.CachedInMemory --job "IterationCount=10, WarmupCount=3" --benchmarkId 1 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 128300.00 ns, 128.3000 us/op
+WorkloadJitting  1: 1 op, 115732500.00 ns, 115.7325 ms/op
+
+WorkloadPilot    1: 2 op, 44201600.00 ns, 22.1008 ms/op
+WorkloadPilot    2: 3 op, 1765700.00 ns, 588.5667 us/op
+WorkloadPilot    3: 4 op, 1911900.00 ns, 477.9750 us/op
+WorkloadPilot    4: 5 op, 2463000.00 ns, 492.6000 us/op
+WorkloadPilot    5: 6 op, 2595700.00 ns, 432.6167 us/op
+WorkloadPilot    6: 7 op, 3213000.00 ns, 459.0000 us/op
+WorkloadPilot    7: 8 op, 3507100.00 ns, 438.3875 us/op
+WorkloadPilot    8: 9 op, 4030400.00 ns, 447.8222 us/op
+WorkloadPilot    9: 10 op, 4523300.00 ns, 452.3300 us/op
+WorkloadPilot   10: 11 op, 4851800.00 ns, 441.0727 us/op
+WorkloadPilot   11: 12 op, 5493400.00 ns, 457.7833 us/op
+WorkloadPilot   12: 13 op, 5668700.00 ns, 436.0538 us/op
+WorkloadPilot   13: 14 op, 6425500.00 ns, 458.9643 us/op
+WorkloadPilot   14: 15 op, 13936000.00 ns, 929.0667 us/op
+WorkloadPilot   15: 16 op, 12024800.00 ns, 751.5500 us/op
+WorkloadPilot   16: 32 op, 24400000.00 ns, 762.5000 us/op
+WorkloadPilot   17: 64 op, 49571100.00 ns, 774.5484 us/op
+WorkloadPilot   18: 128 op, 97477700.00 ns, 761.5445 us/op
+WorkloadPilot   19: 256 op, 195195600.00 ns, 762.4828 us/op
+WorkloadPilot   20: 512 op, 419365400.00 ns, 819.0730 us/op
+WorkloadPilot   21: 1024 op, 737438000.00 ns, 720.1543 us/op
+
+WorkloadWarmup   1: 1024 op, 710151400.00 ns, 693.5072 us/op
+WorkloadWarmup   2: 1024 op, 643967300.00 ns, 628.8743 us/op
+WorkloadWarmup   3: 1024 op, 306376900.00 ns, 299.1962 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 1024 op, 224326600.00 ns, 219.0689 us/op
+WorkloadActual   2: 1024 op, 194249500.00 ns, 189.6968 us/op
+WorkloadActual   3: 1024 op, 158709300.00 ns, 154.9896 us/op
+WorkloadActual   4: 1024 op, 138561900.00 ns, 135.3144 us/op
+WorkloadActual   5: 1024 op, 134619900.00 ns, 131.4647 us/op
+WorkloadActual   6: 1024 op, 109634000.00 ns, 107.0645 us/op
+WorkloadActual   7: 1024 op, 114507800.00 ns, 111.8240 us/op
+WorkloadActual   8: 1024 op, 100258600.00 ns, 97.9088 us/op
+WorkloadActual   9: 1024 op, 92501700.00 ns, 90.3337 us/op
+WorkloadActual  10: 1024 op, 88835700.00 ns, 86.7536 us/op
+
+// AfterActualRun
+WorkloadResult   1: 1024 op, 224326600.00 ns, 219.0689 us/op
+WorkloadResult   2: 1024 op, 194249500.00 ns, 189.6968 us/op
+WorkloadResult   3: 1024 op, 158709300.00 ns, 154.9896 us/op
+WorkloadResult   4: 1024 op, 138561900.00 ns, 135.3144 us/op
+WorkloadResult   5: 1024 op, 134619900.00 ns, 131.4647 us/op
+WorkloadResult   6: 1024 op, 109634000.00 ns, 107.0645 us/op
+WorkloadResult   7: 1024 op, 114507800.00 ns, 111.8240 us/op
+WorkloadResult   8: 1024 op, 100258600.00 ns, 97.9088 us/op
+WorkloadResult   9: 1024 op, 92501700.00 ns, 90.3337 us/op
+WorkloadResult  10: 1024 op, 88835700.00 ns, 86.7536 us/op
+// GC:  9 1 0 171293648 1024
+// Threading:  0 0 1024
+
+// AfterAll
+// Benchmark Process 45416 has exited with code 0.
+
+Mean = 132.442 us, StdErr = 13.913 us (10.51%), N = 10, StdDev = 43.998 us
+Min = 86.754 us, Q1 = 100.198 us, Median = 121.644 us, Q3 = 150.071 us, Max = 219.069 us
+IQR = 49.873 us, LowerFence = 25.388 us, UpperFence = 224.880 us
+ConfidenceInterval = [65.924 us; 198.960 us] (CI 99.9%), Margin = 66.518 us (50.22% of Mean)
+Skewness = 0.72, Kurtosis = 2.05, MValue = 2.29
+
+// ** Remained 1 (33.3%) benchmark(s) to run. Estimated finish 2026-07-02 0:07 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: CacheBenchmarks.CachedRedis: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreSecondLevelCache.Benchmarks-1.dll --anonymousPipes 1284 1288 --benchmarkName EfCoreSecondLevelCache.Benchmarks.CacheBenchmarks.CachedRedis --job "IterationCount=10, WarmupCount=3" --benchmarkId 2 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-second-level-caching\EfCoreSecondLevelCache.Benchmarks\bin\Release\net10.0\EfCoreSecondLevelCache.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 117500.00 ns, 117.5000 us/op
+WorkloadJitting  1: 1 op, 302658600.00 ns, 302.6586 ms/op
+
+WorkloadPilot    1: 2 op, 60050900.00 ns, 30.0255 ms/op
+WorkloadPilot    2: 3 op, 4134000.00 ns, 1.3780 ms/op
+WorkloadPilot    3: 4 op, 5164900.00 ns, 1.2912 ms/op
+WorkloadPilot    4: 5 op, 5710700.00 ns, 1.1421 ms/op
+WorkloadPilot    5: 6 op, 7044700.00 ns, 1.1741 ms/op
+WorkloadPilot    6: 7 op, 9031000.00 ns, 1.2901 ms/op
+WorkloadPilot    7: 8 op, 9283700.00 ns, 1.1605 ms/op
+WorkloadPilot    8: 9 op, 9677500.00 ns, 1.0753 ms/op
+WorkloadPilot    9: 10 op, 10891300.00 ns, 1.0891 ms/op
+WorkloadPilot   10: 11 op, 11826100.00 ns, 1.0751 ms/op
+WorkloadPilot   11: 12 op, 12801000.00 ns, 1.0668 ms/op
+WorkloadPilot   12: 13 op, 22117800.00 ns, 1.7014 ms/op
+WorkloadPilot   13: 14 op, 20623200.00 ns, 1.4731 ms/op
+WorkloadPilot   14: 15 op, 19954100.00 ns, 1.3303 ms/op
+WorkloadPilot   15: 16 op, 21375900.00 ns, 1.3360 ms/op
+WorkloadPilot   16: 32 op, 45166000.00 ns, 1.4114 ms/op
+WorkloadPilot   17: 64 op, 89661900.00 ns, 1.4010 ms/op
+WorkloadPilot   18: 128 op, 183508500.00 ns, 1.4337 ms/op
+WorkloadPilot   19: 256 op, 358025700.00 ns, 1.3985 ms/op
+WorkloadPilot   20: 512 op, 744874000.00 ns, 1.4548 ms/op
+
+WorkloadWarmup   1: 512 op, 734136800.00 ns, 1.4339 ms/op
+WorkloadWarmup   2: 512 op, 637595900.00 ns, 1.2453 ms/op
+WorkloadWarmup   3: 512 op, 589960100.00 ns, 1.1523 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 512 op, 434843600.00 ns, 849.3039 us/op
+WorkloadActual   2: 512 op, 319776200.00 ns, 624.5629 us/op
+WorkloadActual   3: 512 op, 297751000.00 ns, 581.5449 us/op
+WorkloadActual   4: 512 op, 278232700.00 ns, 543.4232 us/op
+WorkloadActual   5: 512 op, 261186500.00 ns, 510.1299 us/op
+WorkloadActual   6: 512 op, 223419000.00 ns, 436.3652 us/op
+WorkloadActual   7: 512 op, 216867500.00 ns, 423.5693 us/op
+WorkloadActual   8: 512 op, 205041100.00 ns, 400.4709 us/op
+WorkloadActual   9: 512 op, 215752000.00 ns, 421.3906 us/op
+WorkloadActual  10: 512 op, 208664100.00 ns, 407.5471 us/op
+
+// AfterActualRun
+WorkloadResult   1: 512 op, 319776200.00 ns, 624.5629 us/op
+WorkloadResult   2: 512 op, 297751000.00 ns, 581.5449 us/op
+WorkloadResult   3: 512 op, 278232700.00 ns, 543.4232 us/op
+WorkloadResult   4: 512 op, 261186500.00 ns, 510.1299 us/op
+WorkloadResult   5: 512 op, 223419000.00 ns, 436.3652 us/op
+WorkloadResult   6: 512 op, 216867500.00 ns, 423.5693 us/op
+WorkloadResult   7: 512 op, 205041100.00 ns, 400.4709 us/op
+WorkloadResult   8: 512 op, 215752000.00 ns, 421.3906 us/op
+WorkloadResult   9: 512 op, 208664100.00 ns, 407.5471 us/op
+// GC:  6 1 0 119292960 512
+// Threading:  1110 0 512
+
+// AfterAll
+// Benchmark Process 16176 has exited with code 0.
+
+Mean = 483.223 us, StdErr = 27.925 us (5.78%), N = 9, StdDev = 83.774 us
+Min = 400.471 us, Q1 = 421.391 us, Median = 436.365 us, Q3 = 543.423 us, Max = 624.563 us
+IQR = 122.033 us, LowerFence = 238.342 us, UpperFence = 726.472 us
+ConfidenceInterval = [342.446 us; 623.999 us] (CI 99.9%), Margin = 140.776 us (29.13% of Mean)
+Skewness = 0.46, Kurtosis = 1.39, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-07-02 0:07 (0h 0m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: Balanced)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\EfCoreSecondLevelCache.Benchmarks.CacheBenchmarks-report.csv
+  BenchmarkDotNet.Artifacts\results\EfCoreSecondLevelCache.Benchmarks.CacheBenchmarks-report-github.md
+  BenchmarkDotNet.Artifacts\results\EfCoreSecondLevelCache.Benchmarks.CacheBenchmarks-report.html
+
+// * Detailed results *
+CacheBenchmarks.Uncached: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 1.271 ms, StdErr = 0.008 ms (0.64%), N = 10, StdDev = 0.026 ms
+Min = 1.223 ms, Q1 = 1.257 ms, Median = 1.269 ms, Q3 = 1.281 ms, Max = 1.313 ms
+IQR = 0.023 ms, LowerFence = 1.222 ms, UpperFence = 1.316 ms
+ConfidenceInterval = [1.232 ms; 1.310 ms] (CI 99.9%), Margin = 0.039 ms (3.07% of Mean)
+Skewness = 0.01, Kurtosis = 2.2, MValue = 2
+-------------------- Histogram --------------------
+[1.208 ms ; 1.239 ms) | @
+[1.239 ms ; 1.284 ms) | @@@@@@@
+[1.284 ms ; 1.329 ms) | @@
+---------------------------------------------------
+
+CacheBenchmarks.CachedInMemory: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 132.442 us, StdErr = 13.913 us (10.51%), N = 10, StdDev = 43.998 us
+Min = 86.754 us, Q1 = 100.198 us, Median = 121.644 us, Q3 = 150.071 us, Max = 219.069 us
+IQR = 49.873 us, LowerFence = 25.388 us, UpperFence = 224.880 us
+ConfidenceInterval = [65.924 us; 198.960 us] (CI 99.9%), Margin = 66.518 us (50.22% of Mean)
+Skewness = 0.72, Kurtosis = 2.05, MValue = 2.29
+-------------------- Histogram --------------------
+[ 84.230 us ; 137.838 us) | @@@@@@@
+[137.838 us ; 177.579 us) | @
+[177.579 us ; 231.187 us) | @@
+---------------------------------------------------
+
+CacheBenchmarks.CachedRedis: Job-YFEFPZ(IterationCount=10, WarmupCount=3)
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 483.223 us, StdErr = 27.925 us (5.78%), N = 9, StdDev = 83.774 us
+Min = 400.471 us, Q1 = 421.391 us, Median = 436.365 us, Q3 = 543.423 us, Max = 624.563 us
+IQR = 122.033 us, LowerFence = 238.342 us, UpperFence = 726.472 us
+ConfidenceInterval = [342.446 us; 623.999 us] (CI 99.9%), Margin = 140.776 us (29.13% of Mean)
+Skewness = 0.46, Kurtosis = 1.39, MValue = 2
+-------------------- Histogram --------------------
+[365.558 us ; 492.977 us) | @@@@@
+[492.977 us ; 598.697 us) | @@@
+[598.697 us ; 677.423 us) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.4, Windows 11 (10.0.26200.8737)
+Intel Core Ultra 9 275HX 2.70GHz, 1 CPU, 24 logical and 24 physical cores
+.NET SDK 10.0.301
+  [Host]     : .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+  Job-YFEFPZ : .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+
+IterationCount=10  WarmupCount=3  
+
+| Method         | Mean       | Error     | StdDev   | Ratio | RatioSD | Gen0    | Gen1   | Allocated | Alloc Ratio |
+|--------------- |-----------:|----------:|---------:|------:|--------:|--------:|-------:|----------:|------------:|
+| Uncached       | 1,270.8 us |  39.04 us | 25.82 us |  1.00 |    0.03 |  5.8594 |      - | 137.09 KB |        1.00 |
+| CachedInMemory |   132.4 us |  66.52 us | 44.00 us |  0.10 |    0.03 |  8.7891 | 0.9766 | 163.36 KB |        1.19 |
+| CachedRedis    |   483.2 us | 140.78 us | 83.77 us |  0.38 |    0.06 | 11.7188 | 1.9531 | 227.53 KB |        1.66 |
+
+// * Warnings *
+MinIterationTime
+  CacheBenchmarks.CachedInMemory: IterationCount=10, WarmupCount=3 -> The minimum observed iteration time is 88.836ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+
+// * Hints *
+Outliers
+  CacheBenchmarks.CachedRedis: IterationCount=10, WarmupCount=3 -> 1 outlier  was  removed (849.30 us)
+
+// * Legends *
+  Mean        : Arithmetic mean of all measurements
+  Error       : Half of 99.9% confidence interval
+  StdDev      : Standard deviation of all measurements
+  Ratio       : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD     : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Gen0        : GC Generation 0 collects per 1000 operations
+  Gen1        : GC Generation 1 collects per 1000 operations
+  Allocated   : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  Alloc Ratio : Allocated memory ratio distribution ([Current]/[Baseline])
+  1 us        : 1 Microsecond (0.000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:27 (27.05 sec), executed benchmarks: 3
+
+Global total time: 00:00:33 (33.08 sec), executed benchmarks: 3
+// * Artifacts cleanup *
+Artifacts cleanup is finished

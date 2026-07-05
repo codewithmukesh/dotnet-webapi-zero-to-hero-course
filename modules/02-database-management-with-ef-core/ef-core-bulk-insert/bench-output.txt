@@ -1,0 +1,763 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 12 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1/" /p:OutDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0/" /p:OutputPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0/" /p:PublishDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\publish/" in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1
+// command took 0.82 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1/" /p:OutDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0/" /p:OutputPath="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0/" /p:PublishDir="C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\publish/" --output "C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0/" in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1
+// command took 4.58 sec and exited with 0
+// ***** Done, took 00:00:05 (5.44 sec)   *****
+// Found 12 benchmarks:
+//   InsertBenchmarks.AddThenSaveEachRow: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+//   InsertBenchmarks.AddRangeThenSaveOnce: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+//   InsertBenchmarks.AddRangeAutoDetectOff: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+//   InsertBenchmarks.ChunkedAddRangeClear: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+//   InsertBenchmarks.BulkExtensionsBulkInsert: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+//   InsertBenchmarks.NpgsqlBinaryCopy: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+//   InsertBenchmarks.AddThenSaveEachRow: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+//   InsertBenchmarks.AddRangeThenSaveOnce: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+//   InsertBenchmarks.AddRangeAutoDetectOff: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+//   InsertBenchmarks.ChunkedAddRangeClear: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+//   InsertBenchmarks.BulkExtensionsBulkInsert: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+//   InsertBenchmarks.NpgsqlBinaryCopy: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.AddThenSaveEachRow: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1448 1580 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.AddThenSaveEachRow(RowCount: 1000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 0 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 1386663700.00 ns, 1.3867 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 985121100.00 ns, 985.1211 ms/op
+WorkloadActual   2: 1 op, 1011994500.00 ns, 1.0120 s/op
+WorkloadActual   3: 1 op, 972312200.00 ns, 972.3122 ms/op
+WorkloadActual   4: 1 op, 931521000.00 ns, 931.5210 ms/op
+WorkloadActual   5: 1 op, 972105500.00 ns, 972.1055 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 985121100.00 ns, 985.1211 ms/op
+WorkloadResult   2: 1 op, 1011994500.00 ns, 1.0120 s/op
+WorkloadResult   3: 1 op, 972312200.00 ns, 972.3122 ms/op
+WorkloadResult   4: 1 op, 931521000.00 ns, 931.5210 ms/op
+WorkloadResult   5: 1 op, 972105500.00 ns, 972.1055 ms/op
+// GC:  14 1 0 277049120 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 30768 has exited with code 0.
+
+Mean = 974.611 ms, StdErr = 12.993 ms (1.33%), N = 5, StdDev = 29.053 ms
+Min = 931.521 ms, Q1 = 972.106 ms, Median = 972.312 ms, Q3 = 985.121 ms, Max = 1,011.995 ms
+IQR = 13.016 ms, LowerFence = 952.582 ms, UpperFence = 1,004.644 ms
+ConfidenceInterval = [862.738 ms; 1,086.483 ms] (CI 99.9%), Margin = 111.873 ms (11.48% of Mean)
+Skewness = -0.22, Kurtosis = 1.52, MValue = 2
+
+// ** Remained 11 (91.7%) benchmark(s) to run. Estimated finish 2026-07-01 19:24 (0h 1m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.AddRangeThenSaveOnce: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1632 1424 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.AddRangeThenSaveOnce(RowCount: 1000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 1 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 256595100.00 ns, 256.5951 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 79997400.00 ns, 79.9974 ms/op
+WorkloadActual   2: 1 op, 53528200.00 ns, 53.5282 ms/op
+WorkloadActual   3: 1 op, 55614500.00 ns, 55.6145 ms/op
+WorkloadActual   4: 1 op, 85868000.00 ns, 85.8680 ms/op
+WorkloadActual   5: 1 op, 90475200.00 ns, 90.4752 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 79997400.00 ns, 79.9974 ms/op
+WorkloadResult   2: 1 op, 53528200.00 ns, 53.5282 ms/op
+WorkloadResult   3: 1 op, 55614500.00 ns, 55.6145 ms/op
+WorkloadResult   4: 1 op, 85868000.00 ns, 85.8680 ms/op
+WorkloadResult   5: 1 op, 90475200.00 ns, 90.4752 ms/op
+// GC:  0 0 0 11805784 1
+// Threading:  1 0 1
+
+// AfterAll
+// Benchmark Process 8368 has exited with code 0.
+
+Mean = 73.097 ms, StdErr = 7.750 ms (10.60%), N = 5, StdDev = 17.330 ms
+Min = 53.528 ms, Q1 = 55.614 ms, Median = 79.997 ms, Q3 = 85.868 ms, Max = 90.475 ms
+IQR = 30.253 ms, LowerFence = 10.234 ms, UpperFence = 131.248 ms
+ConfidenceInterval = [6.366 ms; 139.828 ms] (CI 99.9%), Margin = 66.731 ms (91.29% of Mean)
+Skewness = -0.2, Kurtosis = 0.8, MValue = 2
+
+// ** Remained 10 (83.3%) benchmark(s) to run. Estimated finish 2026-07-01 19:24 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.AddRangeAutoDetectOff: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1412 1664 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.AddRangeAutoDetectOff(RowCount: 1000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 2 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 239301700.00 ns, 239.3017 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 74225600.00 ns, 74.2256 ms/op
+WorkloadActual   2: 1 op, 53534900.00 ns, 53.5349 ms/op
+WorkloadActual   3: 1 op, 50215600.00 ns, 50.2156 ms/op
+WorkloadActual   4: 1 op, 63810500.00 ns, 63.8105 ms/op
+WorkloadActual   5: 1 op, 68274000.00 ns, 68.2740 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 74225600.00 ns, 74.2256 ms/op
+WorkloadResult   2: 1 op, 53534900.00 ns, 53.5349 ms/op
+WorkloadResult   3: 1 op, 50215600.00 ns, 50.2156 ms/op
+WorkloadResult   4: 1 op, 63810500.00 ns, 63.8105 ms/op
+WorkloadResult   5: 1 op, 68274000.00 ns, 68.2740 ms/op
+// GC:  0 0 0 11277648 1
+// Threading:  1 0 1
+
+// AfterAll
+// Benchmark Process 38152 has exited with code 0.
+
+Mean = 62.012 ms, StdErr = 4.487 ms (7.24%), N = 5, StdDev = 10.033 ms
+Min = 50.216 ms, Q1 = 53.535 ms, Median = 63.810 ms, Q3 = 68.274 ms, Max = 74.226 ms
+IQR = 14.739 ms, LowerFence = 31.426 ms, UpperFence = 90.383 ms
+ConfidenceInterval = [23.379 ms; 100.645 ms] (CI 99.9%), Margin = 38.633 ms (62.30% of Mean)
+Skewness = -0.04, Kurtosis = 0.95, MValue = 2
+
+// ** Remained 9 (75.0%) benchmark(s) to run. Estimated finish 2026-07-01 19:24 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.ChunkedAddRangeClear: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1688 1684 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.ChunkedAddRangeClear(RowCount: 1000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 3 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 262309200.00 ns, 262.3092 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 74715200.00 ns, 74.7152 ms/op
+WorkloadActual   2: 1 op, 52499600.00 ns, 52.4996 ms/op
+WorkloadActual   3: 1 op, 58375200.00 ns, 58.3752 ms/op
+WorkloadActual   4: 1 op, 83062100.00 ns, 83.0621 ms/op
+WorkloadActual   5: 1 op, 81749000.00 ns, 81.7490 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 74715200.00 ns, 74.7152 ms/op
+WorkloadResult   2: 1 op, 52499600.00 ns, 52.4996 ms/op
+WorkloadResult   3: 1 op, 58375200.00 ns, 58.3752 ms/op
+WorkloadResult   4: 1 op, 83062100.00 ns, 83.0621 ms/op
+WorkloadResult   5: 1 op, 81749000.00 ns, 81.7490 ms/op
+// GC:  0 0 0 11302408 1
+// Threading:  1 0 1
+
+// AfterAll
+// Benchmark Process 35728 has exited with code 0.
+
+Mean = 70.080 ms, StdErr = 6.214 ms (8.87%), N = 5, StdDev = 13.895 ms
+Min = 52.500 ms, Q1 = 58.375 ms, Median = 74.715 ms, Q3 = 81.749 ms, Max = 83.062 ms
+IQR = 23.374 ms, LowerFence = 23.314 ms, UpperFence = 116.810 ms
+ConfidenceInterval = [16.576 ms; 123.584 ms] (CI 99.9%), Margin = 53.504 ms (76.35% of Mean)
+Skewness = -0.24, Kurtosis = 0.87, MValue = 2
+
+// ** Remained 8 (66.7%) benchmark(s) to run. Estimated finish 2026-07-01 19:23 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.BulkExtensionsBulkInsert: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1412 1664 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.BulkExtensionsBulkInsert(RowCount: 1000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 4 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 143901300.00 ns, 143.9013 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 58815100.00 ns, 58.8151 ms/op
+WorkloadActual   2: 1 op, 49876900.00 ns, 49.8769 ms/op
+WorkloadActual   3: 1 op, 53815500.00 ns, 53.8155 ms/op
+WorkloadActual   4: 1 op, 53394000.00 ns, 53.3940 ms/op
+WorkloadActual   5: 1 op, 52589600.00 ns, 52.5896 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 58815100.00 ns, 58.8151 ms/op
+WorkloadResult   2: 1 op, 49876900.00 ns, 49.8769 ms/op
+WorkloadResult   3: 1 op, 53815500.00 ns, 53.8155 ms/op
+WorkloadResult   4: 1 op, 53394000.00 ns, 53.3940 ms/op
+WorkloadResult   5: 1 op, 52589600.00 ns, 52.5896 ms/op
+// GC:  0 0 0 543976 1
+// Threading:  0 0 1
+// Exceptions:  3
+
+// AfterAll
+// Benchmark Process 37804 has exited with code 0.
+
+Mean = 53.698 ms, StdErr = 1.451 ms (2.70%), N = 5, StdDev = 3.245 ms
+Min = 49.877 ms, Q1 = 52.590 ms, Median = 53.394 ms, Q3 = 53.816 ms, Max = 58.815 ms
+IQR = 1.226 ms, LowerFence = 50.751 ms, UpperFence = 55.654 ms
+ConfidenceInterval = [41.203 ms; 66.194 ms] (CI 99.9%), Margin = 12.495 ms (23.27% of Mean)
+Skewness = 0.45, Kurtosis = 1.62, MValue = 2
+
+// ** Remained 7 (58.3%) benchmark(s) to run. Estimated finish 2026-07-01 19:23 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.NpgsqlBinaryCopy: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1412 1664 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.NpgsqlBinaryCopy(RowCount: 1000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 5 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 69418100.00 ns, 69.4181 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 48705900.00 ns, 48.7059 ms/op
+WorkloadActual   2: 1 op, 50839200.00 ns, 50.8392 ms/op
+WorkloadActual   3: 1 op, 49069800.00 ns, 49.0698 ms/op
+WorkloadActual   4: 1 op, 52124800.00 ns, 52.1248 ms/op
+WorkloadActual   5: 1 op, 50893500.00 ns, 50.8935 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 48705900.00 ns, 48.7059 ms/op
+WorkloadResult   2: 1 op, 50839200.00 ns, 50.8392 ms/op
+WorkloadResult   3: 1 op, 49069800.00 ns, 49.0698 ms/op
+WorkloadResult   4: 1 op, 52124800.00 ns, 52.1248 ms/op
+WorkloadResult   5: 1 op, 50893500.00 ns, 50.8935 ms/op
+// GC:  0 0 0 51192 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 30396 has exited with code 0.
+
+Mean = 50.327 ms, StdErr = 0.633 ms (1.26%), N = 5, StdDev = 1.416 ms
+Min = 48.706 ms, Q1 = 49.070 ms, Median = 50.839 ms, Q3 = 50.894 ms, Max = 52.125 ms
+IQR = 1.824 ms, LowerFence = 46.334 ms, UpperFence = 53.629 ms
+ConfidenceInterval = [44.873 ms; 55.780 ms] (CI 99.9%), Margin = 5.454 ms (10.84% of Mean)
+Skewness = -0.01, Kurtosis = 1, MValue = 2
+
+// ** Remained 6 (50.0%) benchmark(s) to run. Estimated finish 2026-07-01 19:23 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.AddThenSaveEachRow: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1640 1632 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.AddThenSaveEachRow(RowCount: 10000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 6 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 22110615100.00 ns, 22.1106 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 20973487800.00 ns, 20.9735 s/op
+WorkloadActual   2: 1 op, 26293673300.00 ns, 26.2937 s/op
+WorkloadActual   3: 1 op, 35421625500.00 ns, 35.4216 s/op
+WorkloadActual   4: 1 op, 38611065700.00 ns, 38.6111 s/op
+WorkloadActual   5: 1 op, 36413535000.00 ns, 36.4135 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 20973487800.00 ns, 20.9735 s/op
+WorkloadResult   2: 1 op, 26293673300.00 ns, 26.2937 s/op
+WorkloadResult   3: 1 op, 35421625500.00 ns, 35.4216 s/op
+WorkloadResult   4: 1 op, 38611065700.00 ns, 38.6111 s/op
+WorkloadResult   5: 1 op, 36413535000.00 ns, 36.4135 s/op
+// GC:  1424 141 0 26529784704 1
+// Threading:  3 0 1
+
+// AfterAll
+// Benchmark Process 34792 has exited with code 0.
+
+Mean = 31.543 s, StdErr = 3.376 s (10.70%), N = 5, StdDev = 7.550 s
+Min = 20.973 s, Q1 = 26.294 s, Median = 35.422 s, Q3 = 36.414 s, Max = 38.611 s
+IQR = 10.120 s, LowerFence = 11.114 s, UpperFence = 51.593 s
+ConfidenceInterval = [2.471 s; 60.614 s] (CI 99.9%), Margin = 29.071 s (92.16% of Mean)
+Skewness = -0.37, Kurtosis = 1.02, MValue = 2
+
+// ** Remained 5 (41.7%) benchmark(s) to run. Estimated finish 2026-07-01 19:29 (0h 2m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.AddRangeThenSaveOnce: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1700 1688 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.AddRangeThenSaveOnce(RowCount: 10000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 7 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 1304585400.00 ns, 1.3046 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 829346500.00 ns, 829.3465 ms/op
+WorkloadActual   2: 1 op, 726246300.00 ns, 726.2463 ms/op
+WorkloadActual   3: 1 op, 631692400.00 ns, 631.6924 ms/op
+WorkloadActual   4: 1 op, 632917800.00 ns, 632.9178 ms/op
+WorkloadActual   5: 1 op, 603883000.00 ns, 603.8830 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 829346500.00 ns, 829.3465 ms/op
+WorkloadResult   2: 1 op, 726246300.00 ns, 726.2463 ms/op
+WorkloadResult   3: 1 op, 631692400.00 ns, 631.6924 ms/op
+WorkloadResult   4: 1 op, 632917800.00 ns, 632.9178 ms/op
+WorkloadResult   5: 1 op, 603883000.00 ns, 603.8830 ms/op
+// GC:  6 5 1 107401288 1
+// Threading:  10 0 1
+
+// AfterAll
+// Benchmark Process 35580 has exited with code 0.
+
+Mean = 684.817 ms, StdErr = 41.636 ms (6.08%), N = 5, StdDev = 93.101 ms
+Min = 603.883 ms, Q1 = 631.692 ms, Median = 632.918 ms, Q3 = 726.246 ms, Max = 829.346 ms
+IQR = 94.554 ms, LowerFence = 489.862 ms, UpperFence = 868.077 ms
+ConfidenceInterval = [326.318 ms; 1,043.316 ms] (CI 99.9%), Margin = 358.499 ms (52.35% of Mean)
+Skewness = 0.56, Kurtosis = 1.32, MValue = 2
+
+// ** Remained 4 (33.3%) benchmark(s) to run. Estimated finish 2026-07-01 19:29 (0h 1m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.AddRangeAutoDetectOff: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1320 1448 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.AddRangeAutoDetectOff(RowCount: 10000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 8 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 1273427100.00 ns, 1.2734 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 921405100.00 ns, 921.4051 ms/op
+WorkloadActual   2: 1 op, 748768300.00 ns, 748.7683 ms/op
+WorkloadActual   3: 1 op, 609995100.00 ns, 609.9951 ms/op
+WorkloadActual   4: 1 op, 507149100.00 ns, 507.1491 ms/op
+WorkloadActual   5: 1 op, 504774300.00 ns, 504.7743 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 921405100.00 ns, 921.4051 ms/op
+WorkloadResult   2: 1 op, 748768300.00 ns, 748.7683 ms/op
+WorkloadResult   3: 1 op, 609995100.00 ns, 609.9951 ms/op
+WorkloadResult   4: 1 op, 507149100.00 ns, 507.1491 ms/op
+WorkloadResult   5: 1 op, 504774300.00 ns, 504.7743 ms/op
+// GC:  6 5 2 102083568 1
+// Threading:  10 0 1
+
+// AfterAll
+// Benchmark Process 39156 has exited with code 0.
+
+Mean = 658.418 ms, StdErr = 79.423 ms (12.06%), N = 5, StdDev = 177.594 ms
+Min = 504.774 ms, Q1 = 507.149 ms, Median = 609.995 ms, Q3 = 748.768 ms, Max = 921.405 ms
+IQR = 241.619 ms, LowerFence = 144.720 ms, UpperFence = 1,111.197 ms
+ConfidenceInterval = [-25.434 ms; 1,342.271 ms] (CI 99.9%), Margin = 683.852 ms (103.86% of Mean)
+Skewness = 0.42, Kurtosis = 1.19, MValue = 2
+
+// ** Remained 3 (25.0%) benchmark(s) to run. Estimated finish 2026-07-01 19:28 (0h 1m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.ChunkedAddRangeClear: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1400 1688 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.ChunkedAddRangeClear(RowCount: 10000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 9 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 1196269900.00 ns, 1.1963 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 836554500.00 ns, 836.5545 ms/op
+WorkloadActual   2: 1 op, 733160000.00 ns, 733.1600 ms/op
+WorkloadActual   3: 1 op, 662237600.00 ns, 662.2376 ms/op
+WorkloadActual   4: 1 op, 572744600.00 ns, 572.7446 ms/op
+WorkloadActual   5: 1 op, 543205700.00 ns, 543.2057 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 836554500.00 ns, 836.5545 ms/op
+WorkloadResult   2: 1 op, 733160000.00 ns, 733.1600 ms/op
+WorkloadResult   3: 1 op, 662237600.00 ns, 662.2376 ms/op
+WorkloadResult   4: 1 op, 572744600.00 ns, 572.7446 ms/op
+WorkloadResult   5: 1 op, 543205700.00 ns, 543.2057 ms/op
+// GC:  7 6 3 101294224 1
+// Threading:  10 0 1
+
+// AfterAll
+// Benchmark Process 29068 has exited with code 0.
+
+Mean = 669.580 ms, StdErr = 53.537 ms (8.00%), N = 5, StdDev = 119.713 ms
+Min = 543.206 ms, Q1 = 572.745 ms, Median = 662.238 ms, Q3 = 733.160 ms, Max = 836.554 ms
+IQR = 160.415 ms, LowerFence = 332.122 ms, UpperFence = 973.783 ms
+ConfidenceInterval = [208.610 ms; 1,130.551 ms] (CI 99.9%), Margin = 460.970 ms (68.84% of Mean)
+Skewness = 0.23, Kurtosis = 1.11, MValue = 2
+
+// ** Remained 2 (16.7%) benchmark(s) to run. Estimated finish 2026-07-01 19:28 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.BulkExtensionsBulkInsert: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1396 1304 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.BulkExtensionsBulkInsert(RowCount: 10000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 10 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 253084600.00 ns, 253.0846 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 138629300.00 ns, 138.6293 ms/op
+WorkloadActual   2: 1 op, 172418000.00 ns, 172.4180 ms/op
+WorkloadActual   3: 1 op, 145227500.00 ns, 145.2275 ms/op
+WorkloadActual   4: 1 op, 148246200.00 ns, 148.2462 ms/op
+WorkloadActual   5: 1 op, 146911400.00 ns, 146.9114 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 138629300.00 ns, 138.6293 ms/op
+WorkloadResult   2: 1 op, 172418000.00 ns, 172.4180 ms/op
+WorkloadResult   3: 1 op, 145227500.00 ns, 145.2275 ms/op
+WorkloadResult   4: 1 op, 148246200.00 ns, 148.2462 ms/op
+WorkloadResult   5: 1 op, 146911400.00 ns, 146.9114 ms/op
+// GC:  0 0 0 4365928 1
+// Threading:  0 0 1
+// Exceptions:  3
+
+// AfterAll
+// Benchmark Process 39764 has exited with code 0.
+
+Mean = 150.286 ms, StdErr = 5.774 ms (3.84%), N = 5, StdDev = 12.912 ms
+Min = 138.629 ms, Q1 = 145.227 ms, Median = 146.911 ms, Q3 = 148.246 ms, Max = 172.418 ms
+IQR = 3.019 ms, LowerFence = 140.699 ms, UpperFence = 152.774 ms
+ConfidenceInterval = [100.568 ms; 200.005 ms] (CI 99.9%), Margin = 49.718 ms (33.08% of Mean)
+Skewness = 0.84, Kurtosis = 1.87, MValue = 2
+
+// ** Remained 1 (8.3%) benchmark(s) to run. Estimated finish 2026-07-01 19:27 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: InsertBenchmarks.NpgsqlBinaryCopy: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet EfCoreBulkInsert.Benchmarks-1.dll --anonymousPipes 1740 676 --benchmarkName "EfCoreBulkInsert.Benchmarks.InsertBenchmarks.NpgsqlBinaryCopy(RowCount: 10000)" --job "InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1" --benchmarkId 11 in C:\Users\mukesh\repos\codewithmukesh\dotnet-webapi-zero-to-hero-course\modules\02-database-management-with-ef-core\ef-core-bulk-insert\EfCoreBulkInsert.Benchmarks\bin\Release\net10.0\EfCoreBulkInsert.Benchmarks-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.4
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1)
+
+WorkloadWarmup   1: 1 op, 139002300.00 ns, 139.0023 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 146513200.00 ns, 146.5132 ms/op
+WorkloadActual   2: 1 op, 125653000.00 ns, 125.6530 ms/op
+WorkloadActual   3: 1 op, 127336400.00 ns, 127.3364 ms/op
+WorkloadActual   4: 1 op, 116173300.00 ns, 116.1733 ms/op
+WorkloadActual   5: 1 op, 83000100.00 ns, 83.0001 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 146513200.00 ns, 146.5132 ms/op
+WorkloadResult   2: 1 op, 125653000.00 ns, 125.6530 ms/op
+WorkloadResult   3: 1 op, 127336400.00 ns, 127.3364 ms/op
+WorkloadResult   4: 1 op, 116173300.00 ns, 116.1733 ms/op
+WorkloadResult   5: 1 op, 83000100.00 ns, 83.0001 ms/op
+// GC:  0 0 0 492776 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 7132 has exited with code 0.
+
+Mean = 119.735 ms, StdErr = 10.421 ms (8.70%), N = 5, StdDev = 23.302 ms
+Min = 83.000 ms, Q1 = 116.173 ms, Median = 125.653 ms, Q3 = 127.336 ms, Max = 146.513 ms
+IQR = 11.163 ms, LowerFence = 99.429 ms, UpperFence = 144.081 ms
+ConfidenceInterval = [30.006 ms; 209.465 ms] (CI 99.9%), Margin = 89.729 ms (74.94% of Mean)
+Skewness = -0.47, Kurtosis = 1.59, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-07-01 19:27 (0h 0m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: Balanced)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\EfCoreBulkInsert.Benchmarks.InsertBenchmarks-report.csv
+  BenchmarkDotNet.Artifacts\results\EfCoreBulkInsert.Benchmarks.InsertBenchmarks-report-github.md
+  BenchmarkDotNet.Artifacts\results\EfCoreBulkInsert.Benchmarks.InsertBenchmarks-report.html
+
+// * Detailed results *
+InsertBenchmarks.AddThenSaveEachRow: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 974.611 ms, StdErr = 12.993 ms (1.33%), N = 5, StdDev = 29.053 ms
+Min = 931.521 ms, Q1 = 972.106 ms, Median = 972.312 ms, Q3 = 985.121 ms, Max = 1,011.995 ms
+IQR = 13.016 ms, LowerFence = 952.582 ms, UpperFence = 1,004.644 ms
+ConfidenceInterval = [862.738 ms; 1,086.483 ms] (CI 99.9%), Margin = 111.873 ms (11.48% of Mean)
+Skewness = -0.22, Kurtosis = 1.52, MValue = 2
+-------------------- Histogram --------------------
+[909.221 ms ;   953.821 ms) | @
+[953.821 ms ; 1,014.350 ms) | @@@@
+---------------------------------------------------
+
+InsertBenchmarks.AddRangeThenSaveOnce: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 73.097 ms, StdErr = 7.750 ms (10.60%), N = 5, StdDev = 17.330 ms
+Min = 53.528 ms, Q1 = 55.614 ms, Median = 79.997 ms, Q3 = 85.868 ms, Max = 90.475 ms
+IQR = 30.253 ms, LowerFence = 10.234 ms, UpperFence = 131.248 ms
+ConfidenceInterval = [6.366 ms; 139.828 ms] (CI 99.9%), Margin = 66.731 ms (91.29% of Mean)
+Skewness = -0.2, Kurtosis = 0.8, MValue = 2
+-------------------- Histogram --------------------
+[40.227 ms ;  71.935 ms) | @@
+[71.935 ms ; 103.777 ms) | @@@
+---------------------------------------------------
+
+InsertBenchmarks.AddRangeAutoDetectOff: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 62.012 ms, StdErr = 4.487 ms (7.24%), N = 5, StdDev = 10.033 ms
+Min = 50.216 ms, Q1 = 53.535 ms, Median = 63.810 ms, Q3 = 68.274 ms, Max = 74.226 ms
+IQR = 14.739 ms, LowerFence = 31.426 ms, UpperFence = 90.383 ms
+ConfidenceInterval = [23.379 ms; 100.645 ms] (CI 99.9%), Margin = 38.633 ms (62.30% of Mean)
+Skewness = -0.04, Kurtosis = 0.95, MValue = 2
+-------------------- Histogram --------------------
+[44.174 ms ; 61.317 ms) | @@
+[61.317 ms ; 76.719 ms) | @@@
+---------------------------------------------------
+
+InsertBenchmarks.ChunkedAddRangeClear: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 70.080 ms, StdErr = 6.214 ms (8.87%), N = 5, StdDev = 13.895 ms
+Min = 52.500 ms, Q1 = 58.375 ms, Median = 74.715 ms, Q3 = 81.749 ms, Max = 83.062 ms
+IQR = 23.374 ms, LowerFence = 23.314 ms, UpperFence = 116.810 ms
+ConfidenceInterval = [16.576 ms; 123.584 ms] (CI 99.9%), Margin = 53.504 ms (76.35% of Mean)
+Skewness = -0.24, Kurtosis = 0.87, MValue = 2
+-------------------- Histogram --------------------
+[44.772 ms ; 68.224 ms) | @@
+[68.224 ms ; 93.727 ms) | @@@
+---------------------------------------------------
+
+InsertBenchmarks.BulkExtensionsBulkInsert: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 53.698 ms, StdErr = 1.451 ms (2.70%), N = 5, StdDev = 3.245 ms
+Min = 49.877 ms, Q1 = 52.590 ms, Median = 53.394 ms, Q3 = 53.816 ms, Max = 58.815 ms
+IQR = 1.226 ms, LowerFence = 50.751 ms, UpperFence = 55.654 ms
+ConfidenceInterval = [41.203 ms; 66.194 ms] (CI 99.9%), Margin = 12.495 ms (23.27% of Mean)
+Skewness = 0.45, Kurtosis = 1.62, MValue = 2
+-------------------- Histogram --------------------
+[49.355 ms ; 54.337 ms) | @@@@
+[54.337 ms ; 56.324 ms) | 
+[56.324 ms ; 61.306 ms) | @
+---------------------------------------------------
+
+InsertBenchmarks.NpgsqlBinaryCopy: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 50.327 ms, StdErr = 0.633 ms (1.26%), N = 5, StdDev = 1.416 ms
+Min = 48.706 ms, Q1 = 49.070 ms, Median = 50.839 ms, Q3 = 50.894 ms, Max = 52.125 ms
+IQR = 1.824 ms, LowerFence = 46.334 ms, UpperFence = 53.629 ms
+ConfidenceInterval = [44.873 ms; 55.780 ms] (CI 99.9%), Margin = 5.454 ms (10.84% of Mean)
+Skewness = -0.01, Kurtosis = 1, MValue = 2
+-------------------- Histogram --------------------
+[47.619 ms ; 49.975 ms) | @@
+[49.975 ms ; 52.569 ms) | @@@
+---------------------------------------------------
+
+InsertBenchmarks.AddThenSaveEachRow: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 31.543 s, StdErr = 3.376 s (10.70%), N = 5, StdDev = 7.550 s
+Min = 20.973 s, Q1 = 26.294 s, Median = 35.422 s, Q3 = 36.414 s, Max = 38.611 s
+IQR = 10.120 s, LowerFence = 11.114 s, UpperFence = 51.593 s
+ConfidenceInterval = [2.471 s; 60.614 s] (CI 99.9%), Margin = 29.071 s (92.16% of Mean)
+Skewness = -0.37, Kurtosis = 1.02, MValue = 2
+-------------------- Histogram --------------------
+[17.839 s ; 31.222 s) | @@
+[31.222 s ; 44.406 s) | @@@
+---------------------------------------------------
+
+InsertBenchmarks.AddRangeThenSaveOnce: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 684.817 ms, StdErr = 41.636 ms (6.08%), N = 5, StdDev = 93.101 ms
+Min = 603.883 ms, Q1 = 631.692 ms, Median = 632.918 ms, Q3 = 726.246 ms, Max = 829.346 ms
+IQR = 94.554 ms, LowerFence = 489.862 ms, UpperFence = 868.077 ms
+ConfidenceInterval = [326.318 ms; 1,043.316 ms] (CI 99.9%), Margin = 358.499 ms (52.35% of Mean)
+Skewness = 0.56, Kurtosis = 1.32, MValue = 2
+-------------------- Histogram --------------------
+[593.605 ms ; 736.525 ms) | @@@@
+[736.525 ms ; 900.807 ms) | @
+---------------------------------------------------
+
+InsertBenchmarks.AddRangeAutoDetectOff: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 658.418 ms, StdErr = 79.423 ms (12.06%), N = 5, StdDev = 177.594 ms
+Min = 504.774 ms, Q1 = 507.149 ms, Median = 609.995 ms, Q3 = 748.768 ms, Max = 921.405 ms
+IQR = 241.619 ms, LowerFence = 144.720 ms, UpperFence = 1,111.197 ms
+ConfidenceInterval = [-25.434 ms; 1,342.271 ms] (CI 99.9%), Margin = 683.852 ms (103.86% of Mean)
+Skewness = 0.42, Kurtosis = 1.19, MValue = 2
+-------------------- Histogram --------------------
+[490.458 ms ;   763.085 ms) | @@@@
+[763.085 ms ; 1,057.718 ms) | @
+---------------------------------------------------
+
+InsertBenchmarks.ChunkedAddRangeClear: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 669.580 ms, StdErr = 53.537 ms (8.00%), N = 5, StdDev = 119.713 ms
+Min = 543.206 ms, Q1 = 572.745 ms, Median = 662.238 ms, Q3 = 733.160 ms, Max = 836.554 ms
+IQR = 160.415 ms, LowerFence = 332.122 ms, UpperFence = 973.783 ms
+ConfidenceInterval = [208.610 ms; 1,130.551 ms] (CI 99.9%), Margin = 460.970 ms (68.84% of Mean)
+Skewness = 0.23, Kurtosis = 1.11, MValue = 2
+-------------------- Histogram --------------------
+[510.836 ms ; 694.608 ms) | @@@
+[694.608 ms ; 876.743 ms) | @@
+---------------------------------------------------
+
+InsertBenchmarks.BulkExtensionsBulkInsert: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 150.286 ms, StdErr = 5.774 ms (3.84%), N = 5, StdDev = 12.912 ms
+Min = 138.629 ms, Q1 = 145.227 ms, Median = 146.911 ms, Q3 = 148.246 ms, Max = 172.418 ms
+IQR = 3.019 ms, LowerFence = 140.699 ms, UpperFence = 152.774 ms
+ConfidenceInterval = [100.568 ms; 200.005 ms] (CI 99.9%), Margin = 49.718 ms (33.08% of Mean)
+Skewness = 0.84, Kurtosis = 1.87, MValue = 2
+-------------------- Histogram --------------------
+[133.527 ms ; 153.348 ms) | @@@@
+[153.348 ms ; 162.508 ms) | 
+[162.508 ms ; 182.328 ms) | @
+---------------------------------------------------
+
+InsertBenchmarks.NpgsqlBinaryCopy: Job-VCYZKC(InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1) [RowCount=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 119.735 ms, StdErr = 10.421 ms (8.70%), N = 5, StdDev = 23.302 ms
+Min = 83.000 ms, Q1 = 116.173 ms, Median = 125.653 ms, Q3 = 127.336 ms, Max = 146.513 ms
+IQR = 11.163 ms, LowerFence = 99.429 ms, UpperFence = 144.081 ms
+ConfidenceInterval = [30.006 ms; 209.465 ms] (CI 99.9%), Margin = 89.729 ms (74.94% of Mean)
+Skewness = -0.47, Kurtosis = 1.59, MValue = 2
+-------------------- Histogram --------------------
+[ 65.114 ms ; 100.886 ms) | @
+[100.886 ms ; 113.457 ms) | 
+[113.457 ms ; 149.229 ms) | @@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.4, Windows 11 (10.0.26200.8737)
+Intel Core Ultra 9 275HX 2.70GHz, 1 CPU, 24 logical and 24 physical cores
+.NET SDK 10.0.301
+  [Host]     : .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+  Job-VCYZKC : .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+
+InvocationCount=1  IterationCount=5  LaunchCount=1  
+RunStrategy=Monitoring  UnrollFactor=1  WarmupCount=1  
+
+| Method                   | RowCount | Mean         | Error         | StdDev       | Ratio | RatioSD | Gen0         | Gen1        | Gen2      | Allocated      | Alloc Ratio |
+|------------------------- |--------- |-------------:|--------------:|-------------:|------:|--------:|-------------:|------------:|----------:|---------------:|------------:|
+| AddThenSaveEachRow       | 1000     |    974.61 ms |    111.873 ms |    29.053 ms | 14.01 |    3.28 |   14000.0000 |   1000.0000 |         - |   270555.78 KB |      23.467 |
+| AddRangeThenSaveOnce     | 1000     |     73.10 ms |     66.731 ms |    17.330 ms |  1.05 |    0.34 |            - |           - |         - |    11529.09 KB |       1.000 |
+| AddRangeAutoDetectOff    | 1000     |     62.01 ms |     38.633 ms |    10.033 ms |  0.89 |    0.25 |            - |           - |         - |    11013.33 KB |       0.955 |
+| ChunkedAddRangeClear     | 1000     |     70.08 ms |     53.504 ms |    13.895 ms |  1.01 |    0.30 |            - |           - |         - |    11037.51 KB |       0.957 |
+| BulkExtensionsBulkInsert | 1000     |     53.70 ms |     12.495 ms |     3.245 ms |  0.77 |    0.18 |            - |           - |         - |      531.23 KB |       0.046 |
+| NpgsqlBinaryCopy         | 1000     |     50.33 ms |      5.454 ms |     1.416 ms |  0.72 |    0.17 |            - |           - |         - |       49.99 KB |       0.004 |
+|                          |          |              |               |              |       |         |              |             |           |                |             |
+| AddThenSaveEachRow       | 10000    | 31,542.68 ms | 29,071.304 ms | 7,549.725 ms | 46.69 |   11.57 | 1424000.0000 | 141000.0000 |         - | 25907992.88 KB |     247.016 |
+| AddRangeThenSaveOnce     | 10000    |    684.82 ms |    358.499 ms |    93.101 ms |  1.01 |    0.17 |    6000.0000 |   5000.0000 | 1000.0000 |   104884.07 KB |       1.000 |
+| AddRangeAutoDetectOff    | 10000    |    658.42 ms |    683.852 ms |   177.594 ms |  0.97 |    0.27 |    6000.0000 |   5000.0000 | 2000.0000 |    99690.98 KB |       0.950 |
+| ChunkedAddRangeClear     | 10000    |    669.58 ms |    460.970 ms |   119.713 ms |  0.99 |    0.20 |    7000.0000 |   6000.0000 | 3000.0000 |    98920.14 KB |       0.943 |
+| BulkExtensionsBulkInsert | 10000    |    150.29 ms |     49.718 ms |    12.912 ms |  0.22 |    0.03 |            - |           - |         - |      4263.6 KB |       0.041 |
+| NpgsqlBinaryCopy         | 10000    |    119.74 ms |     89.729 ms |    23.302 ms |  0.18 |    0.04 |            - |           - |         - |      481.23 KB |       0.005 |
+
+// * Warnings *
+MinIterationTime
+  InsertBenchmarks.AddRangeThenSaveOnce: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1     -> The minimum observed iteration time is 53.528ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+  InsertBenchmarks.AddRangeAutoDetectOff: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1    -> The minimum observed iteration time is 50.216ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+  InsertBenchmarks.ChunkedAddRangeClear: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1     -> The minimum observed iteration time is 52.5ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+  InsertBenchmarks.BulkExtensionsBulkInsert: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1 -> The minimum observed iteration time is 49.877ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+  InsertBenchmarks.NpgsqlBinaryCopy: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1         -> The minimum observed iteration time is 48.706ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+  InsertBenchmarks.NpgsqlBinaryCopy: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1         -> The minimum observed iteration time is 83ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+
+// * Hints *
+Outliers
+  InsertBenchmarks.AddThenSaveEachRow: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1       -> 2 outliers were detected (931.52 ms, 1.01 s)
+  InsertBenchmarks.BulkExtensionsBulkInsert: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1 -> 2 outliers were detected (49.88 ms, 58.82 ms)
+  InsertBenchmarks.BulkExtensionsBulkInsert: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1 -> 2 outliers were detected (138.63 ms, 172.42 ms)
+  InsertBenchmarks.NpgsqlBinaryCopy: InvocationCount=1, IterationCount=5, LaunchCount=1, RunStrategy=Monitoring, UnrollFactor=1, WarmupCount=1         -> 2 outliers were detected (83.00 ms, 146.51 ms)
+
+// * Legends *
+  RowCount    : Value of the 'RowCount' parameter
+  Mean        : Arithmetic mean of all measurements
+  Error       : Half of 99.9% confidence interval
+  StdDev      : Standard deviation of all measurements
+  Ratio       : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD     : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Gen0        : GC Generation 0 collects per 1000 operations
+  Gen1        : GC Generation 1 collects per 1000 operations
+  Gen2        : GC Generation 2 collects per 1000 operations
+  Allocated   : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  Alloc Ratio : Allocated memory ratio distribution ([Current]/[Baseline])
+  1 ms        : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:04:07 (247.86 sec), executed benchmarks: 12
+
+Global total time: 00:04:14 (254.03 sec), executed benchmarks: 12
+// * Artifacts cleanup *
+Artifacts cleanup is finished

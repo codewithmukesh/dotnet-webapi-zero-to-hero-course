@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="EfCoreSecondLevelCache.Shared/EfCoreSecondLevelCache.Shared.csproj" />
+  <Project Path="EfCoreSecondLevelCache.Benchmarks/EfCoreSecondLevelCache.Benchmarks.csproj" />
+  <Project Path="EfCoreSecondLevelCache.Api/EfCoreSecondLevelCache.Api.csproj" />
+</Solution>
