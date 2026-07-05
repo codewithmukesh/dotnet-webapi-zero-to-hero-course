@@ -22,6 +22,7 @@ Part of the **[.NET Web API Zero to Hero](https://codewithmukesh.com/courses/dot
 | 12 | Tracking vs No-Tracking Queries | Change tracker overhead, `AsNoTracking`, `AsNoTrackingWithIdentityResolution`, benchmarks | Coming Soon | — |
 | 13 | Compiled Queries | `EF.CompileAsyncQuery`, eliminating translation overhead, hot path optimization | Coming Soon | — |
 | 14 | LeftJoin & RightJoin in LINQ | New .NET 10 LINQ join operators, replacing `GroupJoin` workarounds | Coming Soon | — |
+| 15 | EF Core Interceptors | All 7 interceptor types, audit fields via `ISaveChangesInterceptor`, scoped services (current user) without breaking DI | [Read](https://codewithmukesh.com/blog/ef-core-interceptors/) | [Code](./ef-core-interceptors/) |
 
 ## Prerequisites
 

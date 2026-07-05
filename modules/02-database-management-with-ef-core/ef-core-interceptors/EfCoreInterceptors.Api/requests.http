@@ -1,0 +1,30 @@
+@host = http://localhost:5050
+
+### Create a product (interceptor stamps CreatedAtUtc + CreatedBy)
+POST {{host}}/products
+Content-Type: application/json
+X-User-Id: mukesh
+
+{
+  "name": "Keyboard",
+  "price": 49.99
+}
+
+### Update a product (interceptor stamps UpdatedAtUtc + UpdatedBy)
+PUT {{host}}/products/1
+Content-Type: application/json
+X-User-Id: alice
+
+{
+  "name": "Mechanical Keyboard",
+  "price": 89.99
+}
+
+### List products (soft-deleted rows hidden by the global query filter)
+GET {{host}}/products
+
+### Soft delete a product (interceptor turns DELETE into UPDATE)
+DELETE {{host}}/products/1
+
+### List soft-deleted products (IgnoreQueryFilters bypasses the filter)
+GET {{host}}/products/deleted
