@@ -29,9 +29,9 @@ Build a strong foundation in ASP.NET Core Web API fundamentals.
 | 6 | Global Exception Handling | [Read](https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/) | [`global-exception-handling`](./modules/01-getting-started/global-exception-handling/) |
 | 7 | FluentValidation | [Read](https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/) | [`fluentvalidation`](./modules/01-getting-started/fluentvalidation-in-aspnet-core/) |
 | 8 | Structured Logging with Serilog | [Read](https://codewithmukesh.com/blog/structured-logging-with-serilog-in-aspnet-core/) | [`serilog-logging`](./modules/01-getting-started/structured-logging-with-serilog-in-aspnet-core/) |
-| 9 | Middleware & Request Pipeline | [Read](https://codewithmukesh.com/blog/middlewares-in-aspnet-core/) | — |
-| 10 | Filters in ASP.NET Core | [Read](https://codewithmukesh.com/blog/filters-in-aspnet-core/) | — |
-| 11 | Options Pattern | [Read](https://codewithmukesh.com/blog/options-pattern-in-aspnet-core/) | — |
+| 9 | Middleware & Request Pipeline | [Read](https://codewithmukesh.com/blog/middlewares-in-aspnet-core/) | [`middlewares`](./modules/01-getting-started/middlewares-in-aspnet-core/) |
+| 10 | Filters in ASP.NET Core | [Read](https://codewithmukesh.com/blog/filters-in-aspnet-core/) | [`filters`](./modules/01-getting-started/filters-in-aspnet-core/) |
+| 11 | Options Pattern | [Read](https://codewithmukesh.com/blog/options-pattern-in-aspnet-core/) | [`options-pattern`](./modules/01-getting-started/options-pattern-in-aspnet-core/) |
 | 12 | Dependency Injection Deep Dive | Coming Soon | — |
 
 ### Module 02 — Database Management with EF Core
@@ -50,10 +50,13 @@ Master data access, migrations, and advanced EF Core patterns with PostgreSQL.
 | 8 | Concurrency Control (Optimistic Locking) | Coming Soon | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
 | 9 | Running Migrations | Coming Soon | [`running-migrations`](./modules/02-database-management-with-ef-core/running-migrations-efcore/) |
 | 10 | Seeding Initial Data | Coming Soon | [`seeding-data`](./modules/02-database-management-with-ef-core/seeding-initial-data-efcore/) |
-| 11 | Cleaning Migrations | Coming Soon | — |
-| 12 | Tracking vs No-Tracking Queries | Coming Soon | — |
+| 11 | Cleaning Migrations | Coming Soon | [`cleaning-migrations`](./modules/02-database-management-with-ef-core/cleaning-migrations-efcore/) |
+| 12 | Tracking vs No-Tracking Queries | Coming Soon | [`tracking-vs-no-tracking`](./modules/02-database-management-with-ef-core/tracking-vs-no-tracking-queries-efcore/) |
 | 13 | Compiled Queries | Coming Soon | — |
 | 14 | LeftJoin & RightJoin in LINQ | Coming Soon | — |
+| 15 | EF Core Interceptors | [Read](https://codewithmukesh.com/blog/ef-core-interceptors/) | [`ef-core-interceptors`](./modules/02-database-management-with-ef-core/ef-core-interceptors/) |
+| 16 | EF Core Bulk Insert (Benchmarks) | Coming Soon | [`ef-core-bulk-insert`](./modules/02-database-management-with-ef-core/ef-core-bulk-insert/) |
+| 17 | EF Core Second-Level Caching | Coming Soon | [`ef-core-second-level-caching`](./modules/02-database-management-with-ef-core/ef-core-second-level-caching/) |
 
 ### Module 03 — Advanced API Patterns
 
@@ -62,6 +65,10 @@ Implement production-grade patterns for scalable APIs.
 | # | Lesson | Article | Code |
 |---|--------|---------|------|
 | 1 | CQRS with MediatR | [Read](https://codewithmukesh.com/blog/cqrs-and-mediatr-in-aspnet-core/) | [`cqrs-mediatr`](./modules/03-advanced-api-patterns/cqrs-and-mediatr-in-aspnet-core/) |
+| 2 | CQRS Without MediatR (Custom Dispatcher) | [Read](https://codewithmukesh.com/blog/cqrs-without-mediatr/) | [`cqrs-without-mediatr`](./modules/03-advanced-api-patterns/cqrs-without-mediatr/) |
+| 3 | Validation with MediatR Pipeline Behavior | [Read](https://codewithmukesh.com/blog/validation-with-mediatr-pipeline-behavior-and-fluentvalidation/) | [`validation-pipeline`](./modules/03-advanced-api-patterns/validation-with-mediatr-pipeline-behavior-and-fluentvalidation/) |
+| 4 | AutoMapper vs Mapster vs Manual Mapping | [Read](https://codewithmukesh.com/blog/automapper-vs-mapster-vs-manual-mapping-dotnet/) | [`mapping-benchmark`](./modules/03-advanced-api-patterns/automapper-vs-mapster-vs-manual-mapping/) |
+| 5 | API Versioning | Coming Soon | [`api-versioning`](./modules/03-advanced-api-patterns/api-versioning-in-aspnet-core/) |
 
 ### Module 04 — Performance & Caching
 
@@ -73,16 +80,56 @@ Optimize API performance with caching strategies from in-memory to distributed.
 | 2 | Distributed Caching with Redis | [Read](https://codewithmukesh.com/blog/distributed-caching-in-aspnet-core-with-redis/) | [`distributed-caching`](./modules/04-performance-and-caching/distributed-caching-in-aspnet-core-with-redis/) |
 | 3 | HybridCache in ASP.NET Core | [Read](https://codewithmukesh.com/blog/hybridcache-in-aspnet-core/) | [`hybridcache`](./modules/04-performance-and-caching/hybridcache-in-aspnet-core/) |
 
+### Module 05 — Security & Authentication
+
+Secure your APIs with authentication, authorization, and traffic controls.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | JWT Authentication | [Read](https://codewithmukesh.com/blog/jwt-authentication-in-aspnet-core/) | [`jwt-auth`](./modules/05-api-security/jwt-authentication-in-aspnet-core/) |
+| 2 | Refresh Tokens | [Read](https://codewithmukesh.com/blog/refresh-tokens-in-aspnet-core/) | [`refresh-tokens`](./modules/05-api-security/refresh-tokens-in-aspnet-core/) |
+| 3 | Identity Endpoints (MapIdentityApi) | [Read](https://codewithmukesh.com/blog/identity-endpoints-aspnet-core/) | [`identity-endpoints`](./modules/05-api-security/identity-endpoints-aspnet-core/) |
+| 4 | Custom User Management | [Read](https://codewithmukesh.com/blog/custom-user-management-in-aspnet-core/) | [`custom-user-management`](./modules/05-api-security/custom-user-management-in-aspnet-core/) |
+| 5 | Role-Based Authorization | [Read](https://codewithmukesh.com/blog/role-based-authorization-in-aspnet-core/) | [`role-based-auth`](./modules/05-api-security/role-based-authorization-in-aspnet-core/) |
+| 6 | Claims-Based Authorization | [Read](https://codewithmukesh.com/blog/claims-based-authorization-in-aspnet-core/) | [`claims-based-auth`](./modules/05-api-security/claims-based-authorization-in-aspnet-core/) |
+| 7 | Policy-Based Authorization | [Read](https://codewithmukesh.com/blog/policy-based-authorization-in-aspnet-core/) | [`policy-based-auth`](./modules/05-api-security/policy-based-authorization-in-aspnet-core/) |
+| 8 | API Key Authentication | [Read](https://codewithmukesh.com/blog/api-key-authentication-aspnet-core/) | [`api-key-auth`](./modules/05-api-security/api-key-authentication-aspnet-core/) |
+| 9 | CORS | [Read](https://codewithmukesh.com/blog/cors-in-aspnet-core/) | [`cors`](./modules/05-api-security/cors-in-aspnet-core/) |
+| 10 | Rate Limiting | [Read](https://codewithmukesh.com/blog/rate-limiting-aspnet-core/) | [`rate-limiting`](./modules/05-api-security/rate-limiting-aspnet-core/) |
+
+### Module 08 — Architecture & Best Practices
+
+Structure real-world applications with proven architectural patterns.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | Clean Architecture in .NET | [Read](https://codewithmukesh.com/blog/clean-architecture-dotnet/) | [`clean-architecture`](./modules/08-architecture-best-practices/clean-architecture-dotnet/) |
+| 2 | Clean Architecture vs Vertical Slice Architecture | Coming Soon | [`clean-vs-vsa`](./modules/08-architecture-best-practices/clean-architecture-vs-vertical-slice-architecture/) |
+
+### Module 10 — Observability
+
+Monitor and diagnose production APIs.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | Health Checks in ASP.NET Core | Coming Soon | [`health-checks`](./modules/10-observability/health-checks-in-aspnet-core/) |
+
+### Module 12 — Background Processing
+
+Run work outside the request pipeline.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | IHostedService & BackgroundService | [Read](https://codewithmukesh.com/blog/ihostedservice-vs-backgroundservice-dotnet/) | [`ihostedservice-backgroundservice`](./modules/12-background-processing/ihostedservice-backgroundservice/) |
+
 ### Upcoming Modules
 
 | Module | Topics |
 |--------|--------|
-| 05 — Security & Authentication | JWT authentication, OAuth 2.0, authorization policies, API key auth |
 | 06 — HTTP Clients & Resilience | Refit, Polly, retry policies, circuit breakers |
-| 07 — Architecture | Clean Architecture, Domain-Driven Design, Vertical Slice Architecture |
-| 08 — Observability | OpenTelemetry, distributed tracing, health checks, Grafana dashboards, .NET Aspire |
+| 07 — Messaging & Real-Time | SignalR, background queues, event-driven patterns |
 | 09 — Testing | Unit tests, integration tests with TestContainers, mocking, TDD |
-| 10 — Deployment | [Containerize .NET Without a Dockerfile](https://codewithmukesh.com/blog/containerize-dotnet-without-dockerfile/), CI/CD with GitHub Actions, production hardening |
+| 11 — Deployment & CI/CD | [Containerize .NET Without a Dockerfile](https://codewithmukesh.com/blog/containerize-dotnet-without-dockerfile/), GitHub Actions, production hardening |
 
 ## Quick Start
 
@@ -155,7 +202,10 @@ modules/
 │   ├── minimal-apis-aspnet-core/
 │   ├── global-exception-handling/
 │   ├── fluentvalidation-in-aspnet-core/
-│   └── structured-logging-with-serilog-in-aspnet-core/
+│   ├── structured-logging-with-serilog-in-aspnet-core/
+│   ├── middlewares-in-aspnet-core/
+│   ├── filters-in-aspnet-core/
+│   └── options-pattern-in-aspnet-core/
 │
 ├── 02-database-management-with-ef-core/   # EF Core CRUD, migrations, advanced patterns
 │   ├── aspnet-core-webapi-crud-with-entity-framework-core-full-course/
@@ -165,15 +215,46 @@ modules/
 │   ├── multiple-dbcontext-efcore/
 │   ├── concurrency-control-optimistic-locking-efcore/
 │   ├── running-migrations-efcore/
-│   └── seeding-initial-data-efcore/
+│   ├── seeding-initial-data-efcore/
+│   ├── cleaning-migrations-efcore/
+│   ├── tracking-vs-no-tracking-queries-efcore/
+│   ├── ef-core-interceptors/
+│   ├── ef-core-bulk-insert/
+│   └── ef-core-second-level-caching/
 │
-├── 03-advanced-api-patterns/              # CQRS, MediatR, advanced patterns
-│   └── cqrs-and-mediatr-in-aspnet-core/
+├── 03-advanced-api-patterns/              # CQRS, MediatR, mapping, versioning
+│   ├── cqrs-and-mediatr-in-aspnet-core/
+│   ├── cqrs-without-mediatr/
+│   ├── validation-with-mediatr-pipeline-behavior-and-fluentvalidation/
+│   ├── automapper-vs-mapster-vs-manual-mapping/
+│   └── api-versioning-in-aspnet-core/
 │
 ├── 04-performance-and-caching/            # In-memory, Redis, HybridCache
 │   ├── in-memory-caching-in-aspnet-core/
 │   ├── distributed-caching-in-aspnet-core-with-redis/
 │   └── hybridcache-in-aspnet-core/
+│
+├── 05-api-security/                       # JWT, refresh tokens, authorization, CORS, rate limiting
+│   ├── jwt-authentication-in-aspnet-core/
+│   ├── refresh-tokens-in-aspnet-core/
+│   ├── identity-endpoints-aspnet-core/
+│   ├── custom-user-management-in-aspnet-core/
+│   ├── role-based-authorization-in-aspnet-core/
+│   ├── claims-based-authorization-in-aspnet-core/
+│   ├── policy-based-authorization-in-aspnet-core/
+│   ├── api-key-authentication-aspnet-core/
+│   ├── cors-in-aspnet-core/
+│   └── rate-limiting-aspnet-core/
+│
+├── 08-architecture-best-practices/        # Clean Architecture, Vertical Slice
+│   ├── clean-architecture-dotnet/
+│   └── clean-architecture-vs-vertical-slice-architecture/
+│
+├── 10-observability/                      # Health checks, monitoring
+│   └── health-checks-in-aspnet-core/
+│
+├── 12-background-processing/              # Hosted services & background work
+│   └── ihostedservice-backgroundservice/
 │
 archive/                                   # Legacy .NET 8 samples (for reference)
 ```
