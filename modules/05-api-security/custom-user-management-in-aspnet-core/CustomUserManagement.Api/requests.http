@@ -1,0 +1,112 @@
+@host = http://localhost:5170
+
+### 1. Log in as the seeded super-admin. Copy the accessToken from the response.
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Set the admin token here (paste from step 1).
+@adminToken = PASTE_ADMIN_TOKEN_HERE
+
+### 2. Register a new user WITH custom fields (FirstName/LastName). Returns 201 + the user.
+# Check the app console - a confirmation email (with token) is logged.
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "jane@codewithmukesh.com",
+  "password": "Jane123!",
+  "firstName": "Jane",
+  "lastName": "Doe"
+}
+
+### 3. List users (paged) with their roles. Admin only.
+GET {{host}}/api/admin/users?page=1&pageSize=10
+Authorization: Bearer {{adminToken}}
+
+### 4. Search users by email or name.
+GET {{host}}/api/admin/users?search=jane
+Authorization: Bearer {{adminToken}}
+
+### 5. Assign the Admin role to a user. Replace {id} with a real user id from step 3.
+POST {{host}}/api/admin/users/{id}/roles
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "role": "Admin"
+}
+
+### 6. Remove a role.
+DELETE {{host}}/api/admin/users/{id}/roles/Admin
+Authorization: Bearer {{adminToken}}
+
+### 7. Lock a user (temporary security lockout).
+POST {{host}}/api/admin/users/{id}/lock
+Authorization: Bearer {{adminToken}}
+
+### 8. Unlock a user.
+POST {{host}}/api/admin/users/{id}/unlock
+Authorization: Bearer {{adminToken}}
+
+### 9. Disable a user (permanent admin switch - blocks login even with the right password).
+POST {{host}}/api/admin/users/{id}/disable
+Authorization: Bearer {{adminToken}}
+
+### 10. Enable a user again.
+POST {{host}}/api/admin/users/{id}/enable
+Authorization: Bearer {{adminToken}}
+
+### 11. Delete a user.
+DELETE {{host}}/api/admin/users/{id}
+Authorization: Bearer {{adminToken}}
+
+### --- Self-service (/me) - log in as the user first and paste their token ---
+@userToken = PASTE_USER_TOKEN_HERE
+
+### 12. Get my own profile.
+GET {{host}}/api/me
+Authorization: Bearer {{userToken}}
+
+### 13. Update my own profile.
+PUT {{host}}/api/me
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "profilePictureUrl": "https://cdn.example.com/jane.png"
+}
+
+### 14. Change my own password.
+POST {{host}}/api/me/change-password
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{
+  "currentPassword": "Jane123!",
+  "newPassword": "Jane456!"
+}
+
+### 15. Forgot password - logs a reset token to the console.
+POST {{host}}/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "jane@codewithmukesh.com"
+}
+
+### 16. Reset password with the token from the console.
+POST {{host}}/auth/reset-password
+Content-Type: application/json
+
+{
+  "email": "jane@codewithmukesh.com",
+  "token": "PASTE_RESET_TOKEN_FROM_CONSOLE",
+  "newPassword": "Jane789!"
+}
