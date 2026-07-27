@@ -1,0 +1,57 @@
+# Probe wiring for the health endpoints in src/HealthChecks.Api/Program.cs.
+#
+# The contract this enforces:
+#   liveness  -> /health/live  runs NO checks, so a database outage can never
+#                trigger a restart. Restarting never fixes a downstream dependency.
+#   readiness -> /health/ready runs the checks tagged "ready", so a failing
+#                dependency only pulls the pod out of the Service until it recovers.
+#   startup   -> /health/live  gives a slow boot up to 150s (30 x 5) before
+#                liveness starts counting failures.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthchecks-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: healthchecks-api
+  template:
+    metadata:
+      labels:
+        app: healthchecks-api
+    spec:
+      # SIGTERM and endpoint removal happen in parallel, not in sequence. The
+      # preStop sleep keeps the pod alive long enough for readiness to start
+      # returning 503 and for that to propagate to every kube-proxy, so traffic
+      # drains before the process goes away. This is what stops the burst of
+      # 502s on every deploy. Pairs with AddApplicationLifecycleHealthCheck.
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: api
+          image: healthchecks-api:latest
+          ports:
+            - containerPort: 8080
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep", "10"]
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 8080
+            periodSeconds: 10
+            failureThreshold: 3
+          startupProbe:
+            httpGet:
+              path: /health/live
+              port: 8080
+            failureThreshold: 30
+            periodSeconds: 5

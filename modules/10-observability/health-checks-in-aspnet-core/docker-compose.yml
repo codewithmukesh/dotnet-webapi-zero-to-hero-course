@@ -21,6 +21,16 @@ services:
       - redis-data:/data
     restart: unless-stopped
 
+  # Stands in for the downstream payments API. Answers 200 on any path, so both
+  # the AddUrlGroup check (/health/live) and PaymentGatewayHealthCheck (/ping)
+  # hit something real instead of a third-party URL you would be billed for.
+  payments:
+    image: traefik/whoami:latest
+    container_name: healthchecks-payments
+    ports:
+      - "8088:80"
+    restart: unless-stopped
+
 volumes:
   postgres-data:
   redis-data:

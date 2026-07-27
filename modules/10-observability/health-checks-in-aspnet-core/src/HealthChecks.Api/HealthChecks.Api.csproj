@@ -7,10 +7,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+    <!-- REQUIRED. AspNetCore.HealthChecks.UI.InMemory.Storage 9.0.0 pins EF Core
+         InMemory 8.0.11, but everything else here drags EF Core core to 10.0.0.
+         The 8.x provider then calls an EF internal whose signature changed in 10
+         and the app dies at startup with MissingMethodException. This explicit
+         reference lifts the provider to 10.0.0 so the versions line up. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Common" Version="10.8.0" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="10.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.11.9" />
