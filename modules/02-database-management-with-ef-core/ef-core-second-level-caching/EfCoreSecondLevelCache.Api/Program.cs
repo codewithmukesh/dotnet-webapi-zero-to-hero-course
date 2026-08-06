@@ -84,9 +84,12 @@ app.MapPost("/products/deactivate-old", async (
 
     // Without this line the cached /products response keeps serving the
     // now-deactivated rows until the 5-minute TTL expires.
+    // The dependency name MUST carry the same prefix you passed to
+    // UseCacheKeyPrefix ("EF_"), otherwise nothing matches and this silently
+    // does nothing.
     cache.InvalidateCacheDependencies(new EFCacheKey(new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
-        nameof(AppDbContext.Products)
+        $"EF_{nameof(AppDbContext.Products)}"
     }));
 
     return Results.Ok(new { Deactivated = affected });

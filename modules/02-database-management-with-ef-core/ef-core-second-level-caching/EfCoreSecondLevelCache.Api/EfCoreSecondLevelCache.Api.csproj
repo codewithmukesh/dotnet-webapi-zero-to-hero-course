@@ -11,8 +11,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
-    <PackageReference Include="EFCoreSecondLevelCacheInterceptor" Version="5.3.12" />
-    <PackageReference Include="EFCoreSecondLevelCacheInterceptor.MemoryCache" Version="5.3.12" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor" Version="5.5.0" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor.MemoryCache" Version="5.5.0" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.11.9" />
   </ItemGroup>
   <ItemGroup>

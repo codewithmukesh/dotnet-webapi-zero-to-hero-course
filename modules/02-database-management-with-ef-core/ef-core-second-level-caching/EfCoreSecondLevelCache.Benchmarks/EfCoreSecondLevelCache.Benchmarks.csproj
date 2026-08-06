@@ -7,9 +7,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.15.4" />
-    <PackageReference Include="EFCoreSecondLevelCacheInterceptor" Version="5.3.12" />
-    <PackageReference Include="EFCoreSecondLevelCacheInterceptor.MemoryCache" Version="5.3.12" />
-    <PackageReference Include="EFCoreSecondLevelCacheInterceptor.StackExchange.Redis" Version="5.3.12" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor" Version="5.5.0" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor.MemoryCache" Version="5.5.0" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor.StackExchange.Redis" Version="5.5.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.0" />
   </ItemGroup>
   <ItemGroup>
