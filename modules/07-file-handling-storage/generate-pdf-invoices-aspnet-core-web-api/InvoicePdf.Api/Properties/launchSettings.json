@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "InvoicePdf.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51808;http://localhost:51809"
+    }
+  }
+}

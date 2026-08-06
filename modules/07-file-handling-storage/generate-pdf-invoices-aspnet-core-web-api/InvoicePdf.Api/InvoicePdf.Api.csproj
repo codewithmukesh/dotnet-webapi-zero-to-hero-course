@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>invoicepdf-c1f0a7d2-6b4e-4a91-8f3c-2d5e7b9a1c04</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IronPdf" Version="2026.8.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
+    <!-- Pinned above the transitive 2.0.0 that Microsoft.AspNetCore.OpenApi
+         pulls in: CVE-2026-49451 (stack-overflow DoS) is patched in 2.7.5+. -->
+    <PackageReference Include="Microsoft.OpenApi" Version="2.11.0" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.16.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Invoices\Templates\invoice.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

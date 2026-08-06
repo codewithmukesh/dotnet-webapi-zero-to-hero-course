@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Invoice {{Number}}</title>
+<style>
+  /* Paged Media rules. Chromium honours these. wkhtmltopdf handles the paging
+     rules too, but not the Grid layout below - its Qt WebKit engine is a
+     2012 fork that predates CSS Grid and Flexbox. */
+  @page {
+    size: A4;
+    margin: 18mm 14mm 24mm 14mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: #1f2430;
+    /* Without this, Chromium drops every background colour when printing. */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* ---------- Masthead: CSS Grid, not a layout table ---------- */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #1f2430;
+  }
+
+  .seller-name {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin: 0 0 4px;
+  }
+
+  .muted { color: #6b7280; }
+
+  .doc-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-align: right;
+    margin: 0 0 6px;
+  }
+
+  .doc-meta {
+    text-align: right;
+    font-size: 10.5px;
+  }
+
+  .doc-meta dt {
+    display: inline-block;
+    min-width: 74px;
+    color: #6b7280;
+  }
+
+  .doc-meta dd { display: inline; margin: 0 0 0 6px; font-variant-numeric: tabular-nums; }
+  .doc-meta div { margin-bottom: 2px; }
+
+  /* ---------- Parties ---------- */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin: 18px 0 16px;
+  }
+
+  .party-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: #6b7280;
+    margin-bottom: 5px;
+  }
+
+  .party-name { font-weight: 700; }
+
+  /* ---------- Line items ---------- */
+  table.lines {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+  }
+
+  /* The one rule that makes a multi-page invoice readable: repeat the header
+     row at the top of every page. */
+  table.lines thead { display: table-header-group; }
+
+  table.lines th {
+    background: #1f2430;
+    color: #ffffff;
+    font-size: 8.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    text-align: left;
+    padding: 7px 8px;
+  }
+
+  table.lines td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+  }
+
+  /* Never split a single line item across a page boundary. */
+  table.lines tbody tr { break-inside: avoid; }
+
+  table.lines tbody tr:nth-child(even) td { background: #f7f8fa; }
+
+  .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .sku {
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: 9.5px;
+    color: #4b5563;
+    white-space: nowrap;
+  }
+
+  /* ---------- Totals ---------- */
+  .summary {
+    display: grid;
+    grid-template-columns: 1fr 232px;
+    gap: 24px;
+    margin-top: 16px;
+    /* Keep the totals block whole - a total split across pages looks broken. */
+    break-inside: avoid;
+  }
+
+  .totals { width: 100%; border-collapse: collapse; }
+
+  .totals td { padding: 5px 8px; }
+
+  .totals td:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .totals tr.grand td {
+    border-top: 2px solid #1f2430;
+    font-size: 13px;
+    font-weight: 700;
+    padding-top: 8px;
+  }
+
+  .terms {
+    font-size: 9.5px;
+    color: #4b5563;
+    break-inside: avoid;
+  }
+
+  .terms-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: #6b7280;
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div>
+      <p class="seller-name">{{SellerName}}</p>
+      <div class="muted">
+        {{SellerAddress1}}<br />
+        {{SellerAddress2}}<br />
+        {{SellerCity}} {{SellerPostCode}}<br />
+        {{SellerCountry}}<br />
+        VAT {{SellerTaxId}}
+      </div>
+    </div>
+    <div>
+      <p class="doc-title">INVOICE</p>
+      <dl class="doc-meta">
+        <div><dt>Number</dt><dd>{{Number}}</dd></div>
+        <div><dt>Issued</dt><dd>{{IssuedOn}}</dd></div>
+        <div><dt>Due</dt><dd>{{DueOn}}</dd></div>
+        <div><dt>Amount due</dt><dd><strong>{{Total}}</strong></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section class="parties">
+    <div>
+      <p class="party-label">Billed to</p>
+      <p class="party-name">{{BuyerName}}</p>
+      <div class="muted">
+        {{BuyerAddress1}}<br />
+        {{BuyerAddress2}}<br />
+        {{BuyerCity}} {{BuyerPostCode}}<br />
+        {{BuyerCountry}}<br />
+        VAT {{BuyerTaxId}}
+      </div>
+    </div>
+    <div>
+      <p class="party-label">Remit to</p>
+      <p class="party-name">{{SellerName}}</p>
+      <div class="muted">
+        Sort code 20-45-771<br />
+        Account 41028866<br />
+        IBAN GB29 NWBK 6016 1331 9268 19
+      </div>
+    </div>
+  </section>
+
+  <table class="lines">
+    <thead>
+      <tr>
+        <th style="width: 76px;">SKU</th>
+        <th>Description</th>
+        <th class="num" style="width: 44px;">Qty</th>
+        <th class="num" style="width: 74px;">Unit</th>
+        <th class="num" style="width: 62px;">Disc.</th>
+        <th class="num" style="width: 84px;">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{Lines}}
+    </tbody>
+  </table>
+
+  <section class="summary">
+    <div class="terms">
+      <p class="terms-label">Payment terms</p>
+      <p>{{PaymentTerms}}</p>
+    </div>
+    <table class="totals">
+      <tr><td class="muted">Subtotal</td><td>{{Subtotal}}</td></tr>
+      <tr><td class="muted">Discount applied</td><td>-{{TotalDiscount}}</td></tr>
+      <tr><td class="muted">VAT ({{TaxRatePercent}})</td><td>{{Tax}}</td></tr>
+      <tr class="grand"><td>Total due</td><td>{{Total}}</td></tr>
+    </table>
+  </section>
+
+</body>
+</html>
