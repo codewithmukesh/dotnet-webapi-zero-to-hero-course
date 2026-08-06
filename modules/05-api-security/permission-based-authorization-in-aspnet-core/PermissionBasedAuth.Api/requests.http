@@ -1,0 +1,92 @@
+@host = https://localhost:7160
+
+### Log in as Admin - holds every Products permission
+# @name adminLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@codewithmukesh.com",
+  "password": "Admin123!"
+}
+
+### Log in as Manager - View + Create only
+# @name managerLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "manager@codewithmukesh.com",
+  "password": "Manager123!"
+}
+
+### Log in as User - View only
+# @name userLogin
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@codewithmukesh.com",
+  "password": "User123!"
+}
+
+### Anonymous delete -> 401 (no identity at all)
+DELETE {{host}}/api/products/1
+
+### User deletes -> 403 (authenticated, but lacks Products.Delete)
+DELETE {{host}}/api/products/1
+Authorization: Bearer {{userLogin.response.body.token}}
+
+### Admin deletes -> 204 (holds Products.Delete)
+DELETE {{host}}/api/products/1
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Manager creates a product -> 201
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+{
+  "name": "Standing Desk",
+  "price": 429.00
+}
+
+### What can the Manager role do right now?
+GET {{host}}/api/admin/roles/Manager/permissions
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+### Revoke Create from Manager - no redeploy, no restart
+DELETE {{host}}/api/admin/roles/Manager/permissions
+Content-Type: application/json
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+{
+  "permission": "Permissions.Products.Create"
+}
+
+### Manager creates again with the SAME token -> 403 immediately
+# With Permissions:Source = Lookup this is denied on the very next request.
+# Flip appsettings.json to "Token" and this still returns 201 until the token expires.
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{managerLogin.response.body.token}}
+
+{
+  "name": "Desk Lamp",
+  "price": 59.00
+}
+
+### Grant it back
+POST {{host}}/api/admin/roles/Manager/permissions
+Content-Type: application/json
+Authorization: Bearer {{adminLogin.response.body.token}}
+
+{
+  "permission": "Permissions.Products.Create"
+}
+
+### Measure what permissions-in-the-token actually cost
+GET {{host}}/api/diagnostics/token-size
+
+### Measure a single permission count
+GET {{host}}/api/diagnostics/token-size?permissions=120
