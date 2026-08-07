@@ -33,6 +33,7 @@ Build a strong foundation in ASP.NET Core Web API fundamentals.
 | 10 | Filters in ASP.NET Core | [Read](https://codewithmukesh.com/blog/filters-in-aspnet-core/) | [`filters`](./modules/01-getting-started/filters-in-aspnet-core/) |
 | 11 | Options Pattern | [Read](https://codewithmukesh.com/blog/options-pattern-in-aspnet-core/) | [`options-pattern`](./modules/01-getting-started/options-pattern-in-aspnet-core/) |
 | 12 | Dependency Injection Deep Dive | Coming Soon | — |
+| 13 | Migrating from Swagger to Scalar | Coming Soon | [`migrating-swagger-to-scalar`](./modules/01-getting-started/migrating-swagger-to-scalar/) |
 
 ### Module 02 — Database Management with EF Core
 
@@ -47,16 +48,16 @@ Master data access, migrations, and advanced EF Core patterns with PostgreSQL.
 | 5 | Soft Deletes | [Read](https://codewithmukesh.com/blog/soft-deletes-efcore/) | [`soft-deletes`](./modules/02-database-management-with-ef-core/soft-deletes-efcore/) |
 | 6 | Bulk Operations | [Read](https://codewithmukesh.com/blog/bulk-operations-efcore/) | [`bulk-operations`](./modules/02-database-management-with-ef-core/bulk-operations-efcore/) |
 | 7 | Multiple DbContext | [Read](https://codewithmukesh.com/blog/multiple-dbcontext-efcore/) | [`multiple-dbcontext`](./modules/02-database-management-with-ef-core/multiple-dbcontext-efcore/) |
-| 8 | Concurrency Control (Optimistic Locking) | Coming Soon | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
-| 9 | Running Migrations | Coming Soon | [`running-migrations`](./modules/02-database-management-with-ef-core/running-migrations-efcore/) |
-| 10 | Seeding Initial Data | Coming Soon | [`seeding-data`](./modules/02-database-management-with-ef-core/seeding-initial-data-efcore/) |
-| 11 | Cleaning Migrations | Coming Soon | [`cleaning-migrations`](./modules/02-database-management-with-ef-core/cleaning-migrations-efcore/) |
-| 12 | Tracking vs No-Tracking Queries | Coming Soon | [`tracking-vs-no-tracking`](./modules/02-database-management-with-ef-core/tracking-vs-no-tracking-queries-efcore/) |
+| 8 | Concurrency Control (Optimistic Locking) | [Read](https://codewithmukesh.com/blog/concurrency-control-optimistic-locking-efcore/) | [`concurrency-control`](./modules/02-database-management-with-ef-core/concurrency-control-optimistic-locking-efcore/) |
+| 9 | Running Migrations | [Read](https://codewithmukesh.com/blog/running-migrations-efcore/) | [`running-migrations`](./modules/02-database-management-with-ef-core/running-migrations-efcore/) |
+| 10 | Seeding Initial Data | [Read](https://codewithmukesh.com/blog/seeding-initial-data-efcore/) | [`seeding-data`](./modules/02-database-management-with-ef-core/seeding-initial-data-efcore/) |
+| 11 | Cleaning Migrations | [Read](https://codewithmukesh.com/blog/cleaning-migrations-efcore/) | [`cleaning-migrations`](./modules/02-database-management-with-ef-core/cleaning-migrations-efcore/) |
+| 12 | Tracking vs No-Tracking Queries | [Read](https://codewithmukesh.com/blog/tracking-vs-no-tracking-queries-efcore/) | [`tracking-vs-no-tracking`](./modules/02-database-management-with-ef-core/tracking-vs-no-tracking-queries-efcore/) |
 | 13 | Compiled Queries | Coming Soon | — |
 | 14 | LeftJoin & RightJoin in LINQ | Coming Soon | — |
 | 15 | EF Core Interceptors | [Read](https://codewithmukesh.com/blog/ef-core-interceptors/) | [`ef-core-interceptors`](./modules/02-database-management-with-ef-core/ef-core-interceptors/) |
-| 16 | EF Core Bulk Insert (Benchmarks) | Coming Soon | [`ef-core-bulk-insert`](./modules/02-database-management-with-ef-core/ef-core-bulk-insert/) |
-| 17 | EF Core Second-Level Caching | Coming Soon | [`ef-core-second-level-caching`](./modules/02-database-management-with-ef-core/ef-core-second-level-caching/) |
+| 16 | EF Core Bulk Insert (Benchmarks) | [Read](https://codewithmukesh.com/blog/ef-core-bulk-insert/) | [`ef-core-bulk-insert`](./modules/02-database-management-with-ef-core/ef-core-bulk-insert/) |
+| 17 | EF Core Second-Level Caching | [Read](https://codewithmukesh.com/blog/ef-core-second-level-caching/) | [`ef-core-second-level-caching`](./modules/02-database-management-with-ef-core/ef-core-second-level-caching/) |
 
 ### Module 03 — Advanced API Patterns
 
@@ -67,7 +68,7 @@ Implement production-grade patterns for scalable APIs.
 | 1 | CQRS with MediatR | [Read](https://codewithmukesh.com/blog/cqrs-and-mediatr-in-aspnet-core/) | [`cqrs-mediatr`](./modules/03-advanced-api-patterns/cqrs-and-mediatr-in-aspnet-core/) |
 | 2 | CQRS Without MediatR (Custom Dispatcher) | [Read](https://codewithmukesh.com/blog/cqrs-without-mediatr/) | [`cqrs-without-mediatr`](./modules/03-advanced-api-patterns/cqrs-without-mediatr/) |
 | 3 | Validation with MediatR Pipeline Behavior | [Read](https://codewithmukesh.com/blog/validation-with-mediatr-pipeline-behavior-and-fluentvalidation/) | [`validation-pipeline`](./modules/03-advanced-api-patterns/validation-with-mediatr-pipeline-behavior-and-fluentvalidation/) |
-| 4 | AutoMapper vs Mapster vs Manual Mapping | [Read](https://codewithmukesh.com/blog/automapper-vs-mapster-vs-manual-mapping-dotnet/) | [`mapping-benchmark`](./modules/03-advanced-api-patterns/automapper-vs-mapster-vs-manual-mapping/) |
+| 4 | AutoMapper vs Mapster vs Manual Mapping | Coming Soon | [`mapping-benchmark`](./modules/03-advanced-api-patterns/automapper-vs-mapster-vs-manual-mapping/) |
 | 5 | API Versioning | Coming Soon | [`api-versioning`](./modules/03-advanced-api-patterns/api-versioning-in-aspnet-core/) |
 
 ### Module 04 — Performance & Caching
@@ -94,8 +95,17 @@ Secure your APIs with authentication, authorization, and traffic controls.
 | 6 | Claims-Based Authorization | [Read](https://codewithmukesh.com/blog/claims-based-authorization-in-aspnet-core/) | [`claims-based-auth`](./modules/05-api-security/claims-based-authorization-in-aspnet-core/) |
 | 7 | Policy-Based Authorization | [Read](https://codewithmukesh.com/blog/policy-based-authorization-in-aspnet-core/) | [`policy-based-auth`](./modules/05-api-security/policy-based-authorization-in-aspnet-core/) |
 | 8 | API Key Authentication | [Read](https://codewithmukesh.com/blog/api-key-authentication-aspnet-core/) | [`api-key-auth`](./modules/05-api-security/api-key-authentication-aspnet-core/) |
-| 9 | CORS | [Read](https://codewithmukesh.com/blog/cors-in-aspnet-core/) | [`cors`](./modules/05-api-security/cors-in-aspnet-core/) |
+| 9 | CORS | Coming Soon | [`cors`](./modules/05-api-security/cors-in-aspnet-core/) |
 | 10 | Rate Limiting | [Read](https://codewithmukesh.com/blog/rate-limiting-aspnet-core/) | [`rate-limiting`](./modules/05-api-security/rate-limiting-aspnet-core/) |
+| 11 | Permission-Based Authorization | [Read](https://codewithmukesh.com/blog/permission-based-authorization-in-aspnet-core/) | [`permission-based-auth`](./modules/05-api-security/permission-based-authorization-in-aspnet-core/) |
+
+### Module 07 — File Handling & Storage
+
+Handle uploads, downloads, and document generation.
+
+| # | Lesson | Article | Code |
+|---|--------|---------|------|
+| 1 | Generate PDF Invoices from a Web API | Coming Soon | [`pdf-invoices`](./modules/07-file-handling-storage/generate-pdf-invoices-aspnet-core-web-api/) |
 
 ### Module 08 — Architecture & Best Practices
 
@@ -112,7 +122,7 @@ Monitor and diagnose production APIs.
 
 | # | Lesson | Article | Code |
 |---|--------|---------|------|
-| 1 | Health Checks in ASP.NET Core | Coming Soon | [`health-checks`](./modules/10-observability/health-checks-in-aspnet-core/) |
+| 1 | Health Checks in ASP.NET Core | [Read](https://codewithmukesh.com/blog/health-checks-in-aspnet-core/) | [`health-checks`](./modules/10-observability/health-checks-in-aspnet-core/) |
 
 ### Module 12 — Background Processing
 
