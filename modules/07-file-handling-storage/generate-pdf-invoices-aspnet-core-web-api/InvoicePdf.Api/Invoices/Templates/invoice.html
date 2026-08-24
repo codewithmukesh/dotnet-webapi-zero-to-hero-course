@@ -20,7 +20,11 @@
     font-size: 10.5px;
     line-height: 1.5;
     color: #1f2430;
-    /* Without this, Chromium drops every background colour when printing. */
+    /* Redundant for this project: the renderer sets PrintHtmlBackgrounds = true,
+       and that is what actually keeps the dark table header from printing as
+       black on white. I verified it by removing these two lines and
+       re-rendering. Kept anyway so the same template still prints correctly
+       straight from a browser, where there is no renderer option to set. */
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -91,9 +95,11 @@
     margin-top: 6px;
   }
 
-  /* The one rule that makes a multi-page invoice readable: repeat the header
-     row at the top of every page. */
-  table.lines thead { display: table-header-group; }
+  /* There is deliberately no thead display rule here. table-header-group is
+     already the browser default, so the header repeats on page two without
+     anyone writing it down. What breaks paged output is an override:
+     thead { display: block }, carried over from responsive table CSS, stops
+     the repeat AND collapses the column widths. Leave the default alone. */
 
   table.lines th {
     background: #1f2430;
