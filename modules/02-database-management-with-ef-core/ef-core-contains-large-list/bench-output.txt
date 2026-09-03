@@ -1,0 +1,75 @@
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26200.9278/25H2/2025Update/HudsonValley2)
+Intel Core Ultra 9 275HX 2.70GHz, 1 CPU, 24 logical and 24 physical cores
+.NET SDK 10.0.303
+  [Host]     : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+  Job-XZXOLD : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+
+IterationCount=8  RunStrategy=Monitoring  WarmupCount=2  
+
+| Method                | ListSize | Mean            | Error          | StdDev       | Median          | Ratio | RatioSD | Allocated   | Alloc Ratio |
+
+| Method                | ListSize | Mean            | Error          | StdDev       | Median          | Ratio | RatioSD | Allocated   | Alloc Ratio |
+|---------------------- |--------- |----------------:|---------------:|-------------:|----------------:|------:|--------:|------------:|------------:|
+| Contains_Default      | 10       |        862.6 us |       582.5 us |     304.7 us |        780.1 us |  1.08 |    0.45 |   171.63 KB |        1.00 |
+| Contains_EfParameter  | 10       |        931.1 us |       263.9 us |     138.0 us |        954.2 us |  1.17 |    0.33 |   155.55 KB |        0.91 |
+| Contains_EfConstant   | 10       |        674.9 us |       277.5 us |     145.1 us |        640.5 us |  0.85 |    0.27 |   160.86 KB |        0.94 |
+| Contains_Chunked      | 10       |        820.5 us |       195.2 us |     102.1 us |        792.6 us |  1.03 |    0.28 |   172.08 KB |        1.00 |
+| TempTable_Manual      | 10       |      1,910.0 us |       373.6 us |     195.4 us |      1,864.5 us |  2.39 |    0.62 |    18.09 KB |        0.11 |
+| WhereBulkContains_EFE | 10       |      5,385.3 us |       988.0 us |     516.8 us |      5,359.8 us |  6.75 |    1.74 |    298.8 KB |        1.74 |
+| WhereContains_EFPlus  | 10       |      1,006.8 us |       634.1 us |     331.6 us |        919.5 us |  1.26 |    0.50 |   179.32 KB |        1.04 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 100      |      1,157.5 us |       366.7 us |     191.8 us |      1,084.7 us |  1.02 |    0.21 |   306.59 KB |        1.00 |
+| Contains_EfParameter  | 100      |      1,116.8 us |       482.2 us |     252.2 us |      1,071.5 us |  0.98 |    0.25 |   179.51 KB |        0.59 |
+| Contains_EfConstant   | 100      |      1,809.0 us |       669.1 us |     350.0 us |      1,733.5 us |  1.59 |    0.36 |   195.38 KB |        0.64 |
+| Contains_Chunked      | 100      |      1,501.0 us |       786.7 us |     411.5 us |      1,467.8 us |  1.32 |    0.39 |   310.52 KB |        1.01 |
+| TempTable_Manual      | 100      |      2,374.9 us |       600.1 us |     313.9 us |      2,416.1 us |  2.09 |    0.38 |    42.88 KB |        0.14 |
+| WhereBulkContains_EFE | 100      |      5,917.7 us |     1,608.3 us |     841.2 us |      5,866.6 us |  5.22 |    0.98 |   365.11 KB |        1.19 |
+| WhereContains_EFPlus  | 100      |      1,280.1 us |       547.5 us |     286.4 us |      1,214.2 us |  1.13 |    0.28 |      319 KB |        1.04 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 1000     |     12,798.6 us |    21,925.1 us |  11,467.2 us |      8,925.9 us |  1.32 |    1.23 |  1641.45 KB |        1.00 |
+| Contains_EfParameter  | 1000     |      2,640.6 us |     2,244.1 us |   1,173.7 us |      2,226.6 us |  0.27 |    0.14 |   386.59 KB |        0.24 |
+| Contains_EfConstant   | 1000     |      3,628.9 us |     6,038.1 us |   3,158.1 us |      2,501.8 us |  0.37 |    0.34 |   530.16 KB |        0.32 |
+| Contains_Chunked      | 1000     |     15,995.5 us |    28,311.8 us |  14,807.6 us |     11,049.2 us |  1.65 |    1.58 |  1657.22 KB |        1.01 |
+| TempTable_Manual      | 1000     |      5,844.4 us |     9,493.7 us |   4,965.4 us |      4,189.6 us |  0.60 |    0.53 |   312.23 KB |        0.19 |
+| WhereBulkContains_EFE | 1000     |      9,341.6 us |     1,660.4 us |     868.4 us |      9,497.2 us |  0.97 |    0.30 |   1024.6 KB |        0.62 |
+| WhereContains_EFPlus  | 1000     |      8,357.9 us |    11,611.6 us |   6,073.1 us |      6,583.3 us |  0.86 |    0.67 |    934.8 KB |        0.57 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 2098     |     34,582.0 us |    20,468.9 us |  10,705.7 us |     31,778.6 us |  1.06 |    0.37 |  3393.01 KB |        1.00 |
+| Contains_EfParameter  | 2098     |      4,322.0 us |     1,819.5 us |     951.6 us |      4,031.6 us |  0.13 |    0.04 |   668.41 KB |        0.20 |
+| Contains_EfConstant   | 2098     |      5,947.9 us |     8,638.6 us |   4,518.2 us |      4,556.1 us |  0.18 |    0.14 |   998.23 KB |        0.29 |
+| Contains_Chunked      | 2098     |     34,313.3 us |    21,746.2 us |  11,373.7 us |     30,006.2 us |  1.05 |    0.39 |  3374.75 KB |        0.99 |
+| TempTable_Manual      | 2098     |      9,945.1 us |    14,142.3 us |   7,396.7 us |      6,027.5 us |  0.30 |    0.22 |   678.68 KB |        0.20 |
+| WhereBulkContains_EFE | 2098     |     12,483.7 us |     2,947.4 us |   1,541.6 us |     12,431.0 us |  0.38 |    0.08 |  1894.81 KB |        0.56 |
+| WhereContains_EFPlus  | 2098     |     10,809.7 us |    10,429.5 us |   5,454.8 us |      8,655.9 us |  0.33 |    0.17 |  1819.55 KB |        0.54 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 2099     |      3,990.3 us |     1,573.6 us |     823.0 us |      3,724.7 us |  1.03 |    0.25 |    743.3 KB |        1.00 |
+| Contains_EfParameter  | 2099     |      4,631.9 us |     1,888.8 us |     987.9 us |      4,304.7 us |  1.19 |    0.30 |   668.72 KB |        0.90 |
+| Contains_EfConstant   | 2099     |      5,072.4 us |     6,363.0 us |   3,328.0 us |      3,825.8 us |  1.31 |    0.84 |   998.56 KB |        1.34 |
+| Contains_Chunked      | 2099     |     35,466.6 us |    22,182.9 us |  11,602.1 us |     31,773.9 us |  9.14 |    3.15 |  3374.26 KB |        4.54 |
+| TempTable_Manual      | 2099     |      7,839.0 us |     9,485.5 us |   4,961.1 us |      6,293.7 us |  2.02 |    1.25 |   678.91 KB |        0.91 |
+| WhereBulkContains_EFE | 2099     |     14,981.6 us |     4,492.5 us |   2,349.7 us |     14,247.2 us |  3.86 |    0.81 |  1898.65 KB |        2.55 |
+| WhereContains_EFPlus  | 2099     |     13,576.8 us |    11,668.3 us |   6,102.8 us |     11,286.1 us |  3.50 |    1.58 |  1819.92 KB |        2.45 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 5000     |      6,239.5 us |       832.2 us |     435.3 us |      6,062.4 us |  1.00 |    0.09 |  1532.27 KB |        1.00 |
+| Contains_EfParameter  | 5000     |      7,645.1 us |     1,888.6 us |     987.8 us |      7,346.1 us |  1.23 |    0.17 |  1367.18 KB |        0.89 |
+| Contains_EfConstant   | 5000     |    102,457.1 us |     5,201.5 us |   2,720.5 us |    101,809.9 us | 16.49 |    1.12 |  2084.42 KB |        1.36 |
+| Contains_Chunked      | 5000     |     72,228.3 us |    17,445.1 us |   9,124.1 us |     69,066.4 us | 11.62 |    1.57 |  7529.38 KB |        4.91 |
+| TempTable_Manual      | 5000     |     93,277.2 us |     5,112.2 us |   2,673.8 us |     93,719.3 us | 15.01 |    1.03 |  1566.07 KB |        1.02 |
+| WhereBulkContains_EFE | 5000     |    136,738.6 us |    17,610.8 us |   9,210.8 us |    135,877.0 us | 22.00 |    1.97 |  3345.44 KB |        2.18 |
+| WhereContains_EFPlus  | 5000     |    131,681.8 us |    11,977.3 us |   6,264.4 us |    129,672.9 us | 21.19 |    1.64 |  3885.77 KB |        2.54 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 10000    |     14,783.1 us |     2,131.7 us |   1,114.9 us |     14,358.0 us |  1.00 |    0.10 |  2922.48 KB |        1.00 |
+| Contains_EfParameter  | 10000    |     13,511.6 us |     1,535.7 us |     803.2 us |     13,334.8 us |  0.92 |    0.08 |  2600.88 KB |        0.89 |
+| Contains_EfConstant   | 10000    |    117,612.3 us |    17,732.9 us |   9,274.6 us |    115,650.7 us |  7.99 |    0.80 |   4012.2 KB |        1.37 |
+| Contains_Chunked      | 10000    |    145,087.4 us |    10,016.8 us |   5,239.0 us |    144,147.2 us |  9.86 |    0.74 | 14923.23 KB |        5.11 |
+| TempTable_Manual      | 10000    |    100,677.0 us |     9,471.4 us |   4,953.7 us |     97,618.6 us |  6.84 |    0.56 |   3114.7 KB |        1.07 |
+| WhereBulkContains_EFE | 10000    |    126,383.2 us |     8,379.9 us |   4,382.9 us |    126,796.6 us |  8.59 |    0.64 |  7805.67 KB |        2.67 |
+| WhereContains_EFPlus  | 10000    |    142,114.0 us |    45,372.9 us |  23,730.9 us |    130,734.7 us |  9.66 |    1.65 |  7532.23 KB |        2.58 |
+|                       |          |                 |                |              |                 |       |         |             |             |
+| Contains_Default      | 100000   |    272,838.8 us |    56,347.8 us |  29,471.0 us |    280,873.8 us |  1.01 |    0.15 | 27206.16 KB |        1.00 |
+| Contains_EfParameter  | 100000   |    243,395.6 us |    46,780.7 us |  24,467.2 us |    238,244.5 us |  0.90 |    0.13 | 24072.36 KB |        0.88 |
+| Contains_EfConstant   | 100000   | 20,538,938.4 us | 1,263,715.1 us | 660,947.4 us | 20,442,208.5 us | 76.11 |    8.68 | 18127.28 KB |        0.67 |
+| Contains_Chunked      | 100000   |  1,347,234.7 us |    76,204.9 us |  39,856.6 us |  1,334,704.0 us |  4.99 |    0.57 | 147911.7 KB |        5.44 |
+| TempTable_Manual      | 100000   |    186,813.0 us |    30,133.1 us |  15,760.2 us |    179,927.5 us |  0.69 |    0.09 | 30113.41 KB |        1.11 |
+| WhereBulkContains_EFE | 100000   |    270,091.7 us |    97,953.0 us |  51,231.3 us |    247,788.9 us |  1.00 |    0.21 | 60095.41 KB |        2.21 |
+| WhereContains_EFPlus  | 100000   | 19,809,388.6 us | 1,292,756.2 us | 676,136.5 us | 20,050,254.9 us | 73.41 |    8.41 |  51597.1 KB |        1.90 |

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Contains.Shared/Contains.Shared.csproj" />
+  <Project Path="Contains.Probe/Contains.Probe.csproj" />
+  <Project Path="Contains.Benchmarks/Contains.Benchmarks.csproj" />
+  <Project Path="Contains.Api/Contains.Api.csproj" />
+</Solution>
