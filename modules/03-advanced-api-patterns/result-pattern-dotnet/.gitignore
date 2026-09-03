@@ -1,0 +1,8 @@
+bin/
+obj/
+BenchmarkDotNet.Artifacts/*
+!BenchmarkDotNet.Artifacts/results/
+BenchmarkDotNet.Artifacts/results/*.html
+*.user
+orders.db
+orders.db-*
