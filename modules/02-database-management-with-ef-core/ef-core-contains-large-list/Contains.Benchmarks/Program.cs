@@ -47,4 +47,10 @@ if (args is ["--verify", ..])
     return;
 }
 
+if (args is ["--composite", ..])
+{
+    BenchmarkRunner.Run<CompositeKeyBenchmarks>();
+    return;
+}
+
 BenchmarkRunner.Run<ContainsBenchmarks>();

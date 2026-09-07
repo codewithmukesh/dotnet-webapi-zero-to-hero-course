@@ -1,9 +1,36 @@
 using System.Text;
+using EfCoreContainsLargeList.Probe;
 using EfCoreContainsLargeList.Shared;
 using Microsoft.EntityFrameworkCore;
 
 // Probes what EF Core 10 actually sends to SQL Server for a parameterized Contains,
 // across list sizes, translation modes, and the parameter-limit boundary.
+
+// "--composite <size>": what EF Core 10 does when the filter list is composite keys.
+// "--composite-one <approach> <size>": one approach, one process. Used as a child process
+// by --composite and --composite-limit, because a stack overflow cannot be caught.
+if (args is ["--composite-one", var approachArg, var oneSizeArg])
+{
+    await CompositeProbe.RunOneAsync(approachArg, int.Parse(oneSizeArg));
+    return;
+}
+
+// "--composite-limit <approach> <low> <high>": bisects the largest list an approach survives.
+if (args is ["--composite-limit", var limitApproach, var lowArg, var highArg])
+{
+    await CompositeProbe.FindOrChainLimitAsync(limitApproach, int.Parse(lowArg), int.Parse(highArg));
+    return;
+}
+
+if (args is ["--composite", .. var pairArgs] && pairArgs.Length > 0)
+{
+    foreach (var pairArg in pairArgs)
+    {
+        await CompositeProbe.RunAsync(int.Parse(pairArg));
+    }
+
+    return;
+}
 
 await DbSetup.EnsureSeededAsync();
 

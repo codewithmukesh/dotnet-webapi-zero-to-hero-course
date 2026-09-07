@@ -21,9 +21,9 @@ What EF Core 10 does when you cross that ceiling is the interesting part, and it
 
 | Project | What it does |
 |---|---|
-| `Contains.Shared` | `Product` entity, `AppDbContext` with a configurable `ParameterTranslationMode`, a `DbCommandInterceptor` that captures the real SQL, and the seeder |
+| `Contains.Shared` | `Product` entity, the composite-key `InventoryItem` entity, `AppDbContext` with a configurable `ParameterTranslationMode`, a `DbCommandInterceptor` that captures the real SQL, and both seeders |
 | `Contains.Probe` | Captures what EF actually sends across list sizes, translation modes, and the boundary. Writes `probe-output.md` |
-| `Contains.Benchmarks` | BenchmarkDotNet matrix: seven approaches across eight list sizes |
+| `Contains.Benchmarks` | BenchmarkDotNet matrices: seven approaches across eight list sizes for scalars, six approaches across five list sizes for composite keys |
 | `Contains.Api` | Minimal API showing which approach fits which endpoint |
 
 ## Requirements
@@ -50,6 +50,54 @@ dotnet run --project Contains.Benchmarks -c Release
 # The API
 dotnet run --project Contains.Api
 ```
+
+### Composite keys
+
+A second set of modes covers the case where the filter list is `(TenantId, ProductId)` pairs against the one-million-row `Inventory` table.
+
+```bash
+# Every composite-key approach at one list size, each in its own process
+dotnet run --project Contains.Probe -c Release -- --composite 400
+
+# One approach on its own (this is what --composite spawns)
+dotnet run --project Contains.Probe -c Release -- --composite-one orchain-param 400
+
+# Bisect the largest list an approach survives
+dotnet run --project Contains.Probe -c Release -- --composite-limit orchain-param 1 4000
+
+# The composite-key benchmark matrix
+dotnet run --project Contains.Benchmarks -c Release -- --composite
+```
+
+Approach names for `--composite-one` and `--composite-limit`: `valuetuple`, `anonymous`, `any`, `orchain-param`, `orchain-const`, `orchain-balanced`, `stringkey`, `efe-bulk`, `efplus`, `temptable`.
+
+Each approach runs in its own child process on purpose. An OR chain built from enough pairs overflows the stack while EF walks the expression tree, and a stack overflow cannot be caught: it takes the process down with `STATUS_STACK_OVERFLOW` (`0xC00000FD`). Running them in one process would lose every later result.
+
+## The composite-key approaches
+
+| Approach | Result |
+|---|---|
+| `keys.Contains(new ValueTuple<int, int>(...))` | Does not translate, at any size |
+| `keys.Contains(new { ... })` | Does not translate, at any size |
+| `keys.Any(k => k.A == i.A && k.B == i.B)` | Does not translate, at any size |
+| OR chain, left-deep (what a `foreach` builds) | Kills the process at 490 pairs. 489 works |
+| OR chain, balanced | Survives to 1,049 pairs, then throws the real 2,100 parameter error |
+| String key `Contains` | Translates, then scans: both columns are `CAST` before comparison |
+| Temp table + join on both columns | No parameters, no ceiling |
+| `WhereBulkContains` | No parameters, no ceiling, stays in `IQueryable` |
+| `WhereContains` (free) | Resolves to an inlined OR chain, so it inherits the stack ceiling |
+
+The 489/490 edge is a stack depth limit, so it moves with stack size, build configuration and runtime version. Reproduce it rather than quoting it.
+
+### Reading the composite benchmark output
+
+`CompositeKeyBenchmarks` refuses to build an OR chain past `OrChainCeiling` (489) and returns `-1` instead, because a stack overflow would take the BenchmarkDotNet runner down with it rather than failing one case.
+
+That means **the sub-microsecond rows in the report are not measurements.** `OrChain_Parameters`, `OrChain_Constants` and `WhereContains_EFPlus` show times like `162.5 ns` at 1,000 pairs and above. That is the guard returning early, not a fast query. Read those cells as "cannot run at this size".
+
+Similarly, the `StringKey_Contains` rows sitting at almost exactly `30 s` are the default SqlClient command timeout expiring, not a completed query. It only returns real numbers at 5,000 and 100,000 pairs, where the key list itself crosses 2,098 values and picks up the `OPENJSON` fallback.
+
+Run `--composite-one <approach> <size>` if you want to see which of those a given cell is.
 
 ### A trap worth knowing
 

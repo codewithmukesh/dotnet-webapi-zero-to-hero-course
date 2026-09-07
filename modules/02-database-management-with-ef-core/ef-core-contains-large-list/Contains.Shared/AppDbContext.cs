@@ -17,6 +17,8 @@ public class AppDbContext : DbContext
 
     public DbSet<Product> Products => Set<Product>();
 
+    public DbSet<InventoryItem> Inventory => Set<InventoryItem>();
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(DbSetup.ConnectionString, sql =>
@@ -43,6 +45,13 @@ public class AppDbContext : DbContext
             product.Property(p => p.Name).HasMaxLength(128).IsRequired();
             product.Property(p => p.Price).HasPrecision(18, 2);
             product.HasIndex(p => p.CategoryId);
+        });
+
+        modelBuilder.Entity<InventoryItem>(item =>
+        {
+            item.ToTable("Inventory");
+            item.HasKey(i => new { i.TenantId, i.ProductId });
+            item.Property(i => i.Quantity);
         });
     }
 }

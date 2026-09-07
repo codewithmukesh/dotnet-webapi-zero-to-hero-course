@@ -88,4 +88,106 @@ public static class DbSetup
 
         return ids;
     }
+
+    public const int TenantCount = 50;
+    public const int ProductsPerTenant = RowCount / TenantCount;
+
+    /// <summary>
+    /// Creates and fills the composite-key Inventory table - (TenantId, ProductId) as the
+    /// primary key, <see cref="RowCount"/> rows. Kept separate from the Products seed because
+    /// EnsureCreated will not add a table to a database that already exists.
+    /// </summary>
+    public static async Task EnsureCompositeSeededAsync(bool quiet = false)
+    {
+        await using var context = new AppDbContext();
+        await context.Database.EnsureCreatedAsync();
+
+        await context.Database.ExecuteSqlRawAsync(
+            """
+            IF OBJECT_ID(N'[Inventory]', N'U') IS NULL
+            CREATE TABLE [Inventory] (
+                [TenantId]  int NOT NULL,
+                [ProductId] int NOT NULL,
+                [Quantity]  int NOT NULL,
+                CONSTRAINT [PK_Inventory] PRIMARY KEY CLUSTERED ([TenantId], [ProductId])
+            );
+            """);
+
+        var existing = await context.Inventory.CountAsync();
+        if (existing >= RowCount)
+        {
+            if (!quiet)
+            {
+                Console.WriteLine($"Inventory already seeded with {existing:N0} rows.");
+            }
+
+            return;
+        }
+
+        if (existing > 0)
+        {
+            await context.Database.ExecuteSqlRawAsync("TRUNCATE TABLE [Inventory]");
+        }
+
+        Console.WriteLine($"Seeding {RowCount:N0} composite-key rows...");
+        var started = DateTime.UtcNow;
+
+        using var table = new DataTable();
+        table.Columns.Add("TenantId", typeof(int));
+        table.Columns.Add("ProductId", typeof(int));
+        table.Columns.Add("Quantity", typeof(int));
+
+        await using var connection = new SqlConnection(ConnectionString);
+        await connection.OpenAsync();
+
+        using var bulk = new SqlBulkCopy(connection)
+        {
+            DestinationTableName = "Inventory",
+            BatchSize = 50_000,
+            BulkCopyTimeout = 0
+        };
+
+        foreach (var column in table.Columns.Cast<DataColumn>())
+        {
+            bulk.ColumnMappings.Add(column.ColumnName, column.ColumnName);
+        }
+
+        for (var tenantId = 1; tenantId <= TenantCount; tenantId++)
+        {
+            for (var productId = 1; productId <= ProductsPerTenant; productId++)
+            {
+                table.Rows.Add(tenantId, productId, (tenantId * productId) % 997);
+
+                if (table.Rows.Count == 50_000)
+                {
+                    await bulk.WriteToServerAsync(table);
+                    table.Clear();
+                }
+            }
+        }
+
+        if (table.Rows.Count > 0)
+        {
+            await bulk.WriteToServerAsync(table);
+        }
+
+        Console.WriteLine($"Seeded in {(DateTime.UtcNow - started).TotalSeconds:F1}s.");
+    }
+
+    /// <summary>
+    /// Builds a list of distinct (TenantId, ProductId) pairs spread across the Inventory table.
+    /// Every pair exists, so a correct query returns exactly <paramref name="count"/> rows.
+    /// </summary>
+    public static List<(int TenantId, int ProductId)> BuildPairs(int count)
+    {
+        var step = Math.Max(1, RowCount / Math.Max(count, 1));
+        var pairs = new List<(int, int)>(count);
+        for (var i = 0; i < count; i++)
+        {
+            var slot = i * step % RowCount;
+            pairs.Add((slot % TenantCount + 1, slot / TenantCount + 1));
+        }
+
+        return pairs;
+    }
 }
