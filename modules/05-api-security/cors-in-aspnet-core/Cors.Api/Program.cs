@@ -146,3 +146,7 @@ public sealed class CorsPolicySettings
     public bool AllowCredentials { get; set; }
     public int PreflightMaxAgeSeconds { get; set; } = 600;
 }
+
+// Exposes the generated Program class to the test project.
+// Top-level statements make it internal by default, which WebApplicationFactory<Program> cannot reach.
+public partial class Program { }

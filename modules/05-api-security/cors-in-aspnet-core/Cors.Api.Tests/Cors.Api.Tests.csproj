@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Cors.Api.Tests</RootNamespace>
+    <IsPackable>false</IsPackable>
+
+    <!-- xUnit v3 test projects are executables: the runner is compiled in and
+         the suite is launched with `dotnet run`, not `dotnet test`. See the
+         README for why `dotnet test` is not the command here on .NET 10. -->
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Cors.Api/Cors.Api.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.11" />
+    <PackageReference Include="xunit.v3" Version="4.0.0" />
+  </ItemGroup>
+</Project>

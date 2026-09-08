@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Cors.Api/Cors.Api.csproj" />
+  <Project Path="Cors.Api.Tests/Cors.Api.Tests.csproj" />
 </Solution>
