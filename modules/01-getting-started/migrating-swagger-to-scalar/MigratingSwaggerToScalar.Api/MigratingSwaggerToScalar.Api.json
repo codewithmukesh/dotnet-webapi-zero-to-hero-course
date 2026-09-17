@@ -1,0 +1,140 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Catalog API",
+    "description": "Product catalog endpoints, migrated from Swagger to Scalar.",
+    "contact": {
+      "name": "Mukesh Murugan",
+      "url": "https://codewithmukesh.com"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get a development JWT",
+        "description": "Issues a short-lived JWT for testing the secured endpoints.",
+        "operationId": "GetToken",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns every product in the catalog.",
+        "operationId": "ListProducts",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Creates a new product in the catalog.",
+        "operationId": "CreateProduct",
+        "requestBody": {
+          "description": "The product details.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The created product with its generated id."
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateProductRequest": {
+        "required": [
+          "name",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the product."
+          },
+          "price": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "description": "Unit price in USD.",
+            "format": "double"
+          }
+        },
+        "description": "Payload to create a new product."
+      },
+      "TokenRequest": {
+        "required": [
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "The username to embed in the token."
+          }
+        },
+        "description": "Payload to request a development JWT."
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Paste a JWT access token. No 'Bearer' prefix needed.",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "Products"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ namespace MigratingSwaggerToScalar.Api.OpenApi;
 /// <summary>
 /// Adds the JWT Bearer security scheme to the OpenAPI document so Scalar renders the authorize lock.
 /// This is the native replacement for AddSecurityDefinition + AddSecurityRequirement in Swashbuckle.
-/// Scalar reads security schemes from the document, so WithPreferredScheme("Bearer") does nothing
+/// Scalar reads security schemes from the document, so AddPreferredSecuritySchemes("Bearer") does nothing
 /// without this transformer.
 /// </summary>
 internal sealed class BearerSecuritySchemeTransformer(
@@ -28,7 +28,6 @@ internal sealed class BearerSecuritySchemeTransformer(
         {
             Type = SecuritySchemeType.Http,
             Scheme = "bearer",
-            In = ParameterLocation.Header,
             BearerFormat = "JWT",
             Description = "Paste a JWT access token. No 'Bearer' prefix needed."
         };

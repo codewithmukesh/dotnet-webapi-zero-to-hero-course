@@ -18,7 +18,10 @@ concept ported to a transformer. Build clean and runtime-verified end to end.
 - `AuthResponsesTransformer` - an `IOpenApiOperationTransformer` replacing a Swashbuckle `IOperationFilter`
 - `BearerSecuritySchemeTransformer` - the JWT security scheme so Scalar renders the authorize lock (Microsoft.OpenApi 2.0 shapes)
 - XML doc comments feeding OpenAPI via `GenerateDocumentationFile` - no `IncludeXmlComments`
-- Scalar customization (theme, preferred scheme, dev-token prefill) and production hardening (proxy off, docs behind auth)
+- Stable operation IDs with `.WithName()` so generated clients keep their method names
+- Output-cached document (`CacheOutput()`) plus a YAML route at `/openapi/v1.yaml`
+- Build-time generation via `Microsoft.Extensions.ApiDescription.Server` - `dotnet build` writes `MigratingSwaggerToScalar.Api.json` next to the project
+- Scalar customization (theme, preferred scheme, dev-token prefill) and production hardening (no proxy, docs behind auth)
 
 ## Run It
 
@@ -26,7 +29,7 @@ concept ported to a transformer. Build clean and runtime-verified end to end.
 dotnet run --project MigratingSwaggerToScalar.Api
 ```
 
-Then open `/scalar` for the UI, or `/openapi/v1.json` for the raw document.
+Then open `/scalar` for the UI, or `/openapi/v1.json` (or `/openapi/v1.yaml`) for the raw document.
 
 ## Try the Auth Flow
 
@@ -37,6 +40,7 @@ Then open `/scalar` for the UI, or `/openapi/v1.json` for the raw document.
 ## Stack
 
 - .NET 10
-- Microsoft.AspNetCore.OpenApi 10.0.x
-- Scalar.AspNetCore 2.16.x
-- Microsoft.AspNetCore.Authentication.JwtBearer 10.0.x
+- Microsoft.AspNetCore.OpenApi 10.0.12
+- Microsoft.Extensions.ApiDescription.Server 10.0.12
+- Scalar.AspNetCore 2.17.4
+- Microsoft.AspNetCore.Authentication.JwtBearer 10.0.12
