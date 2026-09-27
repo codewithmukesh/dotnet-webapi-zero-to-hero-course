@@ -127,3 +127,13 @@ The connection pool has been exhausted, either raise 'Max Pool Size' (currently 
 ```
 
 The health check uses the same pool, so once the slow query holds every connection, even `/health` has to wait in line and starts failing.
+
+The same test with the 30,000-row query (no documents, `load-single-c*.json` / `load-split-c*.json`) never exhausted the pool, but the gap is just as wide:
+
+| concurrent users | single: completed, median | split: completed, median | slowest `/health` during single | slowest `/health` during split |
+|---|---|---|---|---|
+| 100 | 2,043, 1.4 s | 14,816, 168 ms | 1.4 s | 0.4 s |
+| 200 | 2,192, 2.4 s | 17,554, 314 ms | 2.7 s | 0.5 s |
+| 400 | 2,311, 4.7 s | 16,424, 635 ms | 4.4 s | 1.2 s |
+
+At 200 users the split query served 8x as many requests.

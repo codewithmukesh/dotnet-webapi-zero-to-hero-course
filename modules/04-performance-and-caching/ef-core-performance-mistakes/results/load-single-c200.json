@@ -1,0 +1,24 @@
+{
+  "mode": "single",
+  "documents": false,
+  "concurrency": 200,
+  "seconds": 30,
+  "main": {
+    "count": 2192,
+    "p50Ms": 2407,
+    "p95Ms": 4229,
+    "maxMs": 6136,
+    "outcomes": {
+      "ok": 2192
+    }
+  },
+  "health": {
+    "count": 18,
+    "p50Ms": 1091,
+    "p95Ms": 2741,
+    "maxMs": 2741,
+    "outcomes": {
+      "ok": 18
+    }
+  }
+}

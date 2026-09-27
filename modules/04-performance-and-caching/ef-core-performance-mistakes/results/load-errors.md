@@ -10,5 +10,6 @@ Tallied from the API's console log for each run (the raw logs were mostly repeat
 | split-c100 | none |
 | split-c200 | none |
 | split-c400 | none |
+| 30,000-row query (no documents), single and split at 100 / 200 / 400 users | none |
 
 Each failed request is logged more than once (EF Core and ASP.NET Core both log the exception), so these counts are higher than the client-side `http-500` counts in the `load-*.json` files. Use the JSON files for request counts; use this table only for *which* error happened.
