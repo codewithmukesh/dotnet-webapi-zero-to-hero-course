@@ -15,7 +15,7 @@ return command switch
     "bench" => await Bench.RunAsync(options, cts.Token),
     "growth" => await Growth.RunAsync(options, cts.Token),
     "memory" => await Memory.RunAsync(options, cts.Token),
-    // "load" => await Load.RunAsync(options, cts.Token),
+    "load" => await Load.RunAsync(options, cts.Token),
     _ => Help(),
 };
 
