@@ -36,7 +36,7 @@ docker compose up -d
 dotnet run --project CartesianExplosion.Api -- --Seed:Size Tiny
 ```
 
-`Tiny` seeds one department, Engineering, with the projects Apollo, Borealis and Comet and the employees Asha, Ben, Chen and Dev. Then:
+`Tiny` seeds one department, Engineering, with the projects Aryabhata, Bhaskara and Chandrayaan and the employees Aarav, Bhavya, Chetan and Divya. Then:
 
 ```bash
 curl http://localhost:5080/departments/single

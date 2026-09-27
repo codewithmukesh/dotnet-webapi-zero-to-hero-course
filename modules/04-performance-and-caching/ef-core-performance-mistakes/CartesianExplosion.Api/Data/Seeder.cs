@@ -4,8 +4,8 @@ namespace CartesianExplosion.Api.Data;
 
 public static class Seeder
 {
-    private static readonly string[] ProjectNames = ["Apollo", "Borealis", "Comet"];
-    private static readonly string[] EmployeeNames = ["Asha", "Ben", "Chen", "Dev"];
+    private static readonly string[] ProjectNames = ["Aryabhata", "Bhaskara", "Chandrayaan"];
+    private static readonly string[] EmployeeNames = ["Aarav", "Bhavya", "Chetan", "Divya"];
     private const string Filler = "Owns planning, delivery and support for its area, and reports progress at the end of every sprint.";
 
     /// <summary>Drops and recreates the database, then seeds a deterministic data set.</summary>

@@ -5,7 +5,7 @@ namespace CartesianExplosion.Api.Data;
 /// <summary>How much data to seed, and the row math the video quotes.</summary>
 public sealed record SeedSize(int Departments, int ProjectsPerDepartment, int EmployeesPerDepartment, int DocumentsPerDepartment)
 {
-    /// <summary>Engineering with Apollo, Borealis, Comet and Asha, Ben, Chen, Dev (plus 2 documents).</summary>
+    /// <summary>Engineering with Aryabhata, Bhaskara, Chandrayaan and Aarav, Bhavya, Chetan, Divya (plus 2 documents).</summary>
     public static SeedSize Tiny { get; } = new(1, 3, 4, 2);
 
     /// <summary>The article's example: 50 departments, 20 projects and 30 employees each (plus 10 documents).</summary>

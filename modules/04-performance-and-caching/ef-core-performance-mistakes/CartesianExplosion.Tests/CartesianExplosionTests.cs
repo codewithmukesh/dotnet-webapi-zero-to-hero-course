@@ -82,8 +82,8 @@ public sealed class CartesianExplosionTests(PostgresFixture postgres) : IClassFi
         var engineering = Assert.Single(await query.ToListAsync(Ct));
 
         Assert.Equal("Engineering", engineering.Name);
-        Assert.Equal(new[] { "Apollo", "Borealis", "Comet" }, engineering.Projects.Select(p => p.Name).Order());
-        Assert.Equal(new[] { "Asha", "Ben", "Chen", "Dev" }, engineering.Employees.Select(e => e.FullName).Order());
+        Assert.Equal(new[] { "Aryabhata", "Bhaskara", "Chandrayaan" }, engineering.Projects.Select(p => p.Name).Order());
+        Assert.Equal(new[] { "Aarav", "Bhavya", "Chetan", "Divya" }, engineering.Employees.Select(e => e.FullName).Order());
     }
 
     [Fact]
