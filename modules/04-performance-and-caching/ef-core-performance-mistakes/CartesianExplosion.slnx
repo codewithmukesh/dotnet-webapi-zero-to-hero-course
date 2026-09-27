@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CartesianExplosion.Api/CartesianExplosion.Api.csproj" />
+  <Project Path="CartesianExplosion.Measure/CartesianExplosion.Measure.csproj" />
+  <Project Path="CartesianExplosion.Tests/CartesianExplosion.Tests.csproj" />
+</Solution>
