@@ -1,0 +1,24 @@
+{
+  "mode": "split",
+  "documents": true,
+  "concurrency": 200,
+  "seconds": 30,
+  "main": {
+    "count": 15414,
+    "p50Ms": 358,
+    "p95Ms": 701,
+    "maxMs": 1588,
+    "outcomes": {
+      "ok": 15414
+    }
+  },
+  "health": {
+    "count": 72,
+    "p50Ms": 123,
+    "p95Ms": 325,
+    "maxMs": 629,
+    "outcomes": {
+      "ok": 72
+    }
+  }
+}

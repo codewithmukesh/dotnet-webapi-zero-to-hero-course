@@ -1,0 +1,96 @@
+{
+  "size": {
+    "Departments": 50,
+    "ProjectsPerDepartment": 20,
+    "EmployeesPerDepartment": 30,
+    "DocumentsPerDepartment": 10
+  },
+  "runs": 15,
+  "results": [
+    {
+      "Mode": "single",
+      "Documents": false,
+      "Statements": [
+        {
+          "Sql": "SELECT d.\u0022Id\u0022, d.\u0022Description\u0022, d.\u0022Name\u0022, p.\u0022Id\u0022, p.\u0022DepartmentId\u0022, p.\u0022Name\u0022, p.\u0022Summary\u0022, e.\u0022Id\u0022, e.\u0022DepartmentId\u0022, e.\u0022Email\u0022, e.\u0022FullName\u0022, e.\u0022Title\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nLEFT JOIN \u0022Projects\u0022 AS p ON d.\u0022Id\u0022 = p.\u0022DepartmentId\u0022\r\nLEFT JOIN \u0022Employees\u0022 AS e ON d.\u0022Id\u0022 = e.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022, p.\u0022Id\u0022",
+          "Rows": 30000,
+          "Bytes": 10145600
+        }
+      ],
+      "MedianMs": 96.4172,
+      "MedianAllocatedBytes": 22087816,
+      "Rows": 30000,
+      "Bytes": 10145600
+    },
+    {
+      "Mode": "split",
+      "Documents": false,
+      "Statements": [
+        {
+          "Sql": "SELECT d.\u0022Id\u0022, d.\u0022Description\u0022, d.\u0022Name\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 50,
+          "Bytes": 7048
+        },
+        {
+          "Sql": "SELECT p.\u0022Id\u0022, p.\u0022DepartmentId\u0022, p.\u0022Name\u0022, p.\u0022Summary\u0022, d.\u0022Id\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nINNER JOIN \u0022Projects\u0022 AS p ON d.\u0022Id\u0022 = p.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 1000,
+          "Bytes": 147400
+        },
+        {
+          "Sql": "SELECT e.\u0022Id\u0022, e.\u0022DepartmentId\u0022, e.\u0022Email\u0022, e.\u0022FullName\u0022, e.\u0022Title\u0022, d.\u0022Id\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nINNER JOIN \u0022Employees\u0022 AS e ON d.\u0022Id\u0022 = e.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 1500,
+          "Bytes": 154397
+        }
+      ],
+      "MedianMs": 5.67,
+      "MedianAllocatedBytes": 3409136,
+      "Rows": 2550,
+      "Bytes": 308845
+    },
+    {
+      "Mode": "single",
+      "Documents": true,
+      "Statements": [
+        {
+          "Sql": "SELECT d.\u0022Id\u0022, d.\u0022Description\u0022, d.\u0022Name\u0022, p.\u0022Id\u0022, p.\u0022DepartmentId\u0022, p.\u0022Name\u0022, p.\u0022Summary\u0022, e.\u0022Id\u0022, e.\u0022DepartmentId\u0022, e.\u0022Email\u0022, e.\u0022FullName\u0022, e.\u0022Title\u0022, d0.\u0022Id\u0022, d0.\u0022DepartmentId\u0022, d0.\u0022Path\u0022, d0.\u0022Title\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nLEFT JOIN \u0022Projects\u0022 AS p ON d.\u0022Id\u0022 = p.\u0022DepartmentId\u0022\r\nLEFT JOIN \u0022Employees\u0022 AS e ON d.\u0022Id\u0022 = e.\u0022DepartmentId\u0022\r\nLEFT JOIN \u0022Documents\u0022 AS d0 ON d.\u0022Id\u0022 = d0.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022, p.\u0022Id\u0022, e.\u0022Id\u0022",
+          "Rows": 300000,
+          "Bytes": 117676000
+        }
+      ],
+      "MedianMs": 1326.3594,
+      "MedianAllocatedBytes": 305798824,
+      "Rows": 300000,
+      "Bytes": 117676000
+    },
+    {
+      "Mode": "split",
+      "Documents": true,
+      "Statements": [
+        {
+          "Sql": "SELECT d.\u0022Id\u0022, d.\u0022Description\u0022, d.\u0022Name\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 50,
+          "Bytes": 7048
+        },
+        {
+          "Sql": "SELECT p.\u0022Id\u0022, p.\u0022DepartmentId\u0022, p.\u0022Name\u0022, p.\u0022Summary\u0022, d.\u0022Id\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nINNER JOIN \u0022Projects\u0022 AS p ON d.\u0022Id\u0022 = p.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 1000,
+          "Bytes": 147400
+        },
+        {
+          "Sql": "SELECT e.\u0022Id\u0022, e.\u0022DepartmentId\u0022, e.\u0022Email\u0022, e.\u0022FullName\u0022, e.\u0022Title\u0022, d.\u0022Id\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nINNER JOIN \u0022Employees\u0022 AS e ON d.\u0022Id\u0022 = e.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 1500,
+          "Bytes": 154397
+        },
+        {
+          "Sql": "SELECT d0.\u0022Id\u0022, d0.\u0022DepartmentId\u0022, d0.\u0022Path\u0022, d0.\u0022Title\u0022, d.\u0022Id\u0022\r\nFROM \u0022Departments\u0022 AS d\r\nINNER JOIN \u0022Documents\u0022 AS d0 ON d.\u0022Id\u0022 = d0.\u0022DepartmentId\u0022\r\nORDER BY d.\u0022Id\u0022",
+          "Rows": 500,
+          "Bytes": 41997
+        }
+      ],
+      "MedianMs": 6.0073,
+      "MedianAllocatedBytes": 4009544,
+      "Rows": 3050,
+      "Bytes": 350842
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "runs": 7,
+  "points": [
+    {
+      "size": {
+        "Departments": 50,
+        "ProjectsPerDepartment": 5,
+        "EmployeesPerDepartment": 8,
+        "DocumentsPerDepartment": 0
+      },
+      "singleRows": 2000,
+      "splitRows": 700,
+      "singleMedianMs": 13.8265,
+      "splitMedianMs": 5.138
+    },
+    {
+      "size": {
+        "Departments": 50,
+        "ProjectsPerDepartment": 10,
+        "EmployeesPerDepartment": 15,
+        "DocumentsPerDepartment": 0
+      },
+      "singleRows": 7500,
+      "splitRows": 1300,
+      "singleMedianMs": 43.9368,
+      "splitMedianMs": 11.6223
+    },
+    {
+      "size": {
+        "Departments": 50,
+        "ProjectsPerDepartment": 20,
+        "EmployeesPerDepartment": 30,
+        "DocumentsPerDepartment": 0
+      },
+      "singleRows": 30000,
+      "splitRows": 2550,
+      "singleMedianMs": 144.2518,
+      "splitMedianMs": 19.3186
+    },
+    {
+      "size": {
+        "Departments": 50,
+        "ProjectsPerDepartment": 40,
+        "EmployeesPerDepartment": 60,
+        "DocumentsPerDepartment": 0
+      },
+      "singleRows": 120000,
+      "splitRows": 5050,
+      "singleMedianMs": 306.1596,
+      "splitMedianMs": 8.1169
+    },
+    {
+      "size": {
+        "Departments": 50,
+        "ProjectsPerDepartment": 80,
+        "EmployeesPerDepartment": 120,
+        "DocumentsPerDepartment": 0
+      },
+      "singleRows": 480000,
+      "splitRows": 10050,
+      "singleMedianMs": 1132.2285,
+      "splitMedianMs": 19.5606
+    }
+  ]
+}
