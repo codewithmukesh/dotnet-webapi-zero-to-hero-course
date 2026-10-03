@@ -34,6 +34,7 @@ Build a strong foundation in ASP.NET Core Web API fundamentals.
 | 11 | Options Pattern | [Read](https://codewithmukesh.com/blog/options-pattern-in-aspnet-core/) | [`options-pattern`](./modules/01-getting-started/options-pattern-in-aspnet-core/) |
 | 12 | Dependency Injection Deep Dive | Coming Soon | — |
 | 13 | Migrating from Swagger to Scalar | Coming Soon | [`migrating-swagger-to-scalar`](./modules/01-getting-started/migrating-swagger-to-scalar/) |
+| 14 | Best Libraries for ASP.NET Core (12 Free NuGet Packages) | [Read](https://codewithmukesh.com/blog/best-libraries-for-aspnet-core/) | [`best-libraries`](./modules/01-getting-started/best-libraries-for-aspnet-core/) |
 
 ### Module 02 — Database Management with EF Core
 

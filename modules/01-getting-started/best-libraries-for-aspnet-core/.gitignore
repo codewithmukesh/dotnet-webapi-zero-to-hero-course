@@ -1,0 +1,7 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+logs/
+TestResults/
