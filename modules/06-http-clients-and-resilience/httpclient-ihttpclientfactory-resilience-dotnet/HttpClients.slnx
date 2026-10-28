@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HttpClients.Api/HttpClients.Api.csproj" />
+    <Project Path="src/HttpClients.Downstream/HttpClients.Downstream.csproj" />
+    <Project Path="src/HttpClients.SocketDemo/HttpClients.SocketDemo.csproj" />
+  </Folder>
+</Solution>

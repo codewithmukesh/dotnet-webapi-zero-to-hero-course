@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Hybrid.Domain/Hybrid.Domain.csproj" />
+    <Project Path="src/Hybrid.Infrastructure/Hybrid.Infrastructure.csproj" />
+    <Project Path="src/Hybrid.Api/Hybrid.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Hybrid.ArchitectureTests/Hybrid.ArchitectureTests.csproj" />
+  </Folder>
+</Solution>
