@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="HttpResilience.Api/HttpResilience.Api.csproj" />
+  <Project Path="HttpResilience.FlakyApi/HttpResilience.FlakyApi.csproj" />
+  <Project Path="HttpResilience.Handlers/HttpResilience.Handlers.csproj" />
+  <Project Path="HttpResilience.Harness/HttpResilience.Harness.csproj" />
+</Solution>
