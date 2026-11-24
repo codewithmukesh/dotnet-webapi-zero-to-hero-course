@@ -6,7 +6,7 @@ A Minimal API that renders a B2B wholesale invoice to PDF from an HTML template.
 
 ## What it demonstrates
 
-- Rendering HTML to PDF with `ChromePdfRenderer` (IronPDF 2026.8.1)
+- Rendering HTML to PDF with `ChromePdfRenderer` (IronPDF 2026.11.1)
 - Print CSS that survives pagination - a real `@page` block, `break-inside: avoid` on rows and the totals block, `tabular-nums` on money columns. The header repeats on page two because `table-header-group` is the browser default, not because the template sets it
 - Culture-aware currency formatting driven by the invoice currency, not the server locale
 - Page numbers via the renderer's footer, because only the renderer knows the page count
@@ -55,7 +55,7 @@ Quick check:
 curl -k -o invoice.pdf https://localhost:<port>/invoices/INV-2026-0841/pdf
 ```
 
-You should get a two-page A4 PDF, roughly 62 KB. Page 2 opens with the repeated table header, both footers read `Page N of 2`, and money renders in GBP (`£15,788.87` subtotal, `£18,946.64` total).
+You should get a two-page A4 PDF, roughly 62 KB. Page 2 opens with the repeated table header, both footers read `Page N of 2`, and money renders in USD (`$15,788.87` subtotal, `$18,946.64` total).
 
 ## Running without a licence key
 

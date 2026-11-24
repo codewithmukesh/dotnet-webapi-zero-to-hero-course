@@ -189,7 +189,7 @@
         {{SellerAddress2}}<br />
         {{SellerCity}} {{SellerPostCode}}<br />
         {{SellerCountry}}<br />
-        VAT {{SellerTaxId}}
+        Tax ID {{SellerTaxId}}
       </div>
     </div>
     <div>
@@ -212,16 +212,16 @@
         {{BuyerAddress2}}<br />
         {{BuyerCity}} {{BuyerPostCode}}<br />
         {{BuyerCountry}}<br />
-        VAT {{BuyerTaxId}}
+        Tax ID {{BuyerTaxId}}
       </div>
     </div>
     <div>
       <p class="party-label">Remit to</p>
       <p class="party-name">{{SellerName}}</p>
       <div class="muted">
-        Sort code 20-45-771<br />
+        ACH routing 123456789<br />
         Account 41028866<br />
-        IBAN GB29 NWBK 6016 1331 9268 19
+        Wire reference {{Number}}
       </div>
     </div>
   </section>
@@ -250,7 +250,7 @@
     <table class="totals">
       <tr><td class="muted">Subtotal</td><td>{{Subtotal}}</td></tr>
       <tr><td class="muted">Discount applied</td><td>-{{TotalDiscount}}</td></tr>
-      <tr><td class="muted">VAT ({{TaxRatePercent}})</td><td>{{Tax}}</td></tr>
+      <tr><td class="muted">Tax ({{TaxRatePercent}})</td><td>{{Tax}}</td></tr>
       <tr class="grand"><td>Total due</td><td>{{Total}}</td></tr>
     </table>
   </section>

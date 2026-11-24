@@ -59,22 +59,22 @@ public static class InvoiceStore
     public static Invoice GetSample(string number = "INV-2026-0841")
     {
         var seller = new Party(
-            "Northwind Coffee Supply Ltd",
-            "Unit 14, Waverley Trade Park",
-            "Ashfield Road",
-            "Manchester",
-            "M15 4QT",
-            "United Kingdom",
-            "GB 412 8837 05");
+            "Northwind Coffee Supply Inc.",
+            "1420 Harbor Way",
+            "Suite 210",
+            "Seattle, WA",
+            "98134",
+            "United States",
+            "91-4128837");
 
         var buyer = new Party(
-            "Riverside Roasters Retail Ltd",
-            "88 Bridgewater Street",
-            "Castlefield",
-            "Manchester",
-            "M3 4NB",
-            "United Kingdom",
-            "GB 771 2094 63");
+            "Riverside Roasters Retail LLC",
+            "88 Riverside Drive",
+            "Floor 3",
+            "Portland, OR",
+            "97204",
+            "United States",
+            "93-7712094");
 
         var lines = Catalogue
             .Select(c => new InvoiceLine(c.Sku, c.Description, c.Qty, c.Price, c.Discount))
@@ -86,11 +86,11 @@ public static class InvoiceStore
             Number: number,
             IssuedOn: issued,
             DueOn: issued.AddDays(30),
-            CurrencyCode: "GBP",
+            CurrencyCode: "USD",
             TaxRate: 0.20m,
             Seller: seller,
             Buyer: buyer,
             Lines: lines,
-            PaymentTerms: "Net 30. Late payments accrue interest at 8% above the Bank of England base rate.");
+            PaymentTerms: "Net 30. Late payments accrue interest at 1.5% per month.");
     }
 }

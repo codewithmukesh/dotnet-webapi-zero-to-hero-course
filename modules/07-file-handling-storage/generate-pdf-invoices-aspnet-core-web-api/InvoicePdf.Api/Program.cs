@@ -11,7 +11,8 @@ builder.Services.AddOpenApi();
 //
 // This assignment is required, not belt-and-braces. IronPDF only auto-applies a
 // key stored under the flat name "IronPdf.LicenseKey"; a nested section is
-// invisible to it, so without these lines every page renders watermarked.
+// invisible to it, so without these lines the key is never applied and the
+// first render throws a LicensingException.
 var licenseKey = builder.Configuration["IronPdf:LicenseKey"];
 if (!string.IsNullOrWhiteSpace(licenseKey))
 {

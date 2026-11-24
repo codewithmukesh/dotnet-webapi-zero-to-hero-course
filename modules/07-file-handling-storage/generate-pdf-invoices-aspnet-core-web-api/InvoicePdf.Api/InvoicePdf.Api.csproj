@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IronPdf" Version="2026.8.1" />
+    <PackageReference Include="IronPdf" Version="2026.11.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
     <!-- Pinned above the transitive 2.0.0 that Microsoft.AspNetCore.OpenApi
          pulls in: CVE-2026-49451 (stack-overflow DoS) is patched in 2.7.5+. -->
